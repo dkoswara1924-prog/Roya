@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul Interaktif - Belajar Nahwu Bersama AHMAD ZAKIN JAISYURROYA</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@700&family=Philosopher:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="materi.css">
+</head>
+<body>
+
+  <!-- Navbar Atas -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="back-link">← Beranda</a>
+      <div class="nav-title">مَنْظُوْمَةُ النَّحْوِ</div>
+      <div class="user-badge">Santri: <span id="userNamaDisplay">Tamu</span></div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero-section">
+    <div class="hero-frame">
+      <span class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+      <h1 class="hero-farisi" dir="rtl" lang="ar">هِمَّةُ النَّحْوِيَّة</h1>
+      <p class="hero-sub">Himpunan Lagu Nahwiyah & Nazham Jurumiyah Interaktif</p>
+      <p class="hero-teacher">Disusun bersama: <strong>AHMAD ZAKIN JAISYURROYA</strong></p>
+    </div>
+  </section>
+
+  <!-- Tab Navigasi Level Pembelajaran -->
+  <div class="tab-wrapper">
+    <button class="tab-btn active" onclick="switchTab('lvl1')">Level 1: Kalimah Haraf & Isim</button>
+    <button class="tab-btn" onclick="switchTab('lvl2')">Level 2: Bangunan Fi'il & Tashrif</button>
+    <button class="tab-btn" onclick="switchTab('lvl3')">Level 3: Kaidah & I'rab</button>
+    <button class="tab-btn" onclick="switchTab('kuis')">⚔️ Latihan & Kuis</button>
+  </div>
+
+  <!-- CONTAINER KONTEN -->
+  <main class="content-container">
+
+    <!-- LEVEL 1 -->
+    <section id="lvl1" class="tab-pane active">
+      <div class="section-title-box">
+        <h2>IDENTIFIKASI KALIMAH LEVEL 1</h2>
+        <p>Mengenal Huruf, Tanda Isim, Dhamir, dan Syarat lewat Melodi yang Berkesan</p>
+      </div>
+
+      <!-- Card 1: Haraf Jar -->
+      <article class="module-card">
+        <div class="card-header">
+          <span class="badge">Bab 01</span>
+          <h3>1. Haraf Jar (حُرُوْفُ الْجَرِّ)</h3>
+        </div>
+        <div class="arabic-box">
+          مِنْ - فِيْ - إِلَى - عَلَى - كَـ - لِـ - بِـ - عَنْ - حَتَّى - مُذْ - مُنْذُ - رُبَّ - وَ (قَسَم) - بِ (قَسَم) - تَ (قَسَم) - خَلَا - عَدَا - حَاشَا
+        </div>
+        <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Tampilkan Irama Lagu</button>
+        <div class="melody-box">
+          <p class="nada-tag">Irama: Mustaf'ilun (Bahr Rajaz)</p>
+          <div class="lyrics">
+            "Min fii ilaa ‘alaa ka li bi ‘an hatta,<br>
+            mudz mundzu rubba qasam dengan wa bi ta,<br>
+            khalaa ‘adaa lafazh haasya selanjutnya,<br>
+            itu haraf jar ulama menyebutnya."
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Haraf Nawasikh Inna -->
+      <article class="module-card">
+        <div class="card-header">
+          <span class="badge">Bab 02</span>
+          <h3>2. Haraf Nawasikh Inna (إِنَّ وَأَخَوَاتُهَا)</h3>
+        </div>
+        <div class="arabic-box">
+          إِنَّ - أَنَّ - لَكِنَّ - لَيْتَ - لَعَلَّ - كَأَنَّ - لَا (نَافِيَةٌ لِلْجِنْسِ)
+        </div>
+        <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Tampilkan Irama Lagu</button>
+        <div class="melody-box">
+          <p class="nada-tag">Irama: Balonku Ada Lima</p>
+          <div class="lyrics">
+            "Inna anna lakinna, laita la’alla ka’anna,<br>
+            Dan la nafiyah lil jinsi...<br>
+            Nashabkan isim setelahnya!"
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: 8 Tanda Isim -->
+      <article class="module-card">
+        <div class="card-header">
+          <span class="badge">Bab 03</span>
+          <h3>3. Mengenal 8 Tanda Isim (عَلَامَاتُ الْإِسْمِ)</h3>
+        </div>
+        <div class="arabic-box">
+          مَـ | مِـ | مُـ | أَلْ (Alif Lam) | التَّنْوِيْن | حُرُوْف النِّدَاء | حُرُوْف النَّصْب وَالْجَرّ | الْإِضَافَة | التَّاء المَرْبُوْطَة
+        </div>
+        <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Tampilkan Irama Lagu</button>
+        <div class="melody-box">
+          <p class="nada-tag">Irama: Metode Qoidaty</p>
+          <div class="lyrics">
+            "Tanda isim jumlahnya ada delapan:<br>
+            <strong>Ma mi mu, al, tanwin</strong> dan <strong>nida</strong> di depan,<br>
+            <strong>Haraf nashab, haraf jar</strong> serta <strong>idhafah</strong>,<br>
+            Jangan lupa yang terakhir <strong>ta marbuthah</strong>."
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Dhamir Munfashil Rafa' -->
+      <article class="module-card">
+        <div class="card-header">
+          <span class="badge">Bab 04</span>
+          <h3>4. Isim Dhamir Munfashil Rafa' (ضَمِيْرٌ مُنْفَصِلٌ مَرْفُوْعٌ)</h3>
+        </div>
+        <div class="arabic-box">
+          هُوَ - هُمَا - هُمْ | هِيَ - هُمَا - هُنَّ | أَنْتَ - أَنْتُمَا - أَنْتُمْ | أَنْتِ - أَنْتُمَا - أَنْتُنَّ | أَنَا - نَحْنُ
+        </div>
+        <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Tampilkan Irama Lagu</button>
+        <div class="melody-box">
+          <p class="nada-tag">Irama: Lagu Raja</p>
+          <div class="lyrics">
+            "Huwa huma hum, hiya huma hunna,<br>
+            Anta antuma antum, anti antuma antunna,<br>
+            Ana dan nahnu... begitu bunyinya,<br>
+            Dhamir munfashil rofa, ulama menyebutnya!"
+          </div>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- LEVEL 2 -->
+    <section id="lvl2" class="tab-pane">
+      <div class="section-title-box">
+        <h2>IDENTIFIKASI KALIMAH LEVEL 2</h2>
+        <p>Membaca Bangunan Wazan Fi'il (Tsulatsi, Ruba'i, Khumasi, Sudasi) & Tashrif</p>
+      </div>
+
+      <!-- Card 5: Wazan Fi'il Madhi -->
+      <article class="module-card">
+        <div class="card-header">
+          <span class="badge">Wazan 01</span>
+          <h3>Wazan Fi'il Madhi (Tsulatsi s/d Sudasi)</h3>
+        </div>
+        <div class="arabic-box">
+          فَعَلَ - فَعِلَ - فَعُلَ | أَفْعَلَ - فَعَّلَ - فَاعَلَ | تَفَعَّلَ - تَفَاعَلَ - اِنْفَعَلَ - اِفْتَعَلَ | اِفْعَلَّ | اِسْتَفْعَلَ | فَعْلَلَ
+        </div>
+        <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Tampilkan Irama Lagu</button>
+        <div class="melody-box">
+          <p class="nada-tag">Irama: Pelangi-Pelangi</p>
+          <div class="lyrics">
+            "Fa’ala, fa’ila, fa’ula tsulatsi,<br>
+            Af’ala, fa’’ala, faa’ala ruba’iy,<br>
+            Tafa’’ala, tafaa’ala, infa’ala, ifta’ala,<br>
+            If’alla khumasi, istaf’ala sudasi!"
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6: Tashrif Fi'il Madhi (14 Pola) -->
+      <article class="module-card">
+        <div class="card-header">
+          <span class="badge">Tashrif</span>
+          <h3>Tashrif Fi'il Madhi (14 Dhomir)</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="tashrif-table">
+            <thead>
+              <tr>
+                <th>Ghaib (L)</th>
+                <th>Ghaibah (P)</th>
+                <th>Mukhattab (L)</th>
+                <th>Mukhattabah (P)</th>
+                <th>Mutakallim</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>فَعَلَ (Dia 1 L)</td>
+                <td>فَعَلَتْ (Dia 1 P)</td>
+                <td>فَعَلْتَ (Kmu 1 L)</td>
+                <td>فَعَلْتِ (Kmu 1 P)</td>
+                <td>فَعَلْتُ (Saya)</td>
+              </tr>
+              <tr>
+                <td>فَعَلَا (Mrk 2 L)</td>
+                <td>فَعَلَتَا (Mrk 2 P)</td>
+                <td>فَعَلْتُمَا (Kmu 2 L)</td>
+                <td>فَعَلْتُمَا (Kmu 2 P)</td>
+                <td>فَعَلْنَا (Kami)</td>
+              </tr>
+              <tr>
+                <td>فَعَلُوْا (Mrk L)</td>
+                <td>فَعَلْنَ (Mrk P)</td>
+                <td>فَعَلْتُمْ (Kmu L)</td>
+                <td>فَعَلْتُنَّ (Kmu P)</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- Card 7: Kaidah Majhul -->
+      <article class="module-card">
+        <div class="card-header">
+          <span class="badge">Kaidah</span>
+          <h3>Rumus Fi'il Majhul (Bentuk Pasif / Di-...)</h3>
+        </div>
+        <div class="grid-two">
+          <div class="rule-box">
+            <h4>Fi'il Madhi Majhul</h4>
+            <p><strong>Rumus:</strong> Dhommahkan huruf awal, kasrahkan sebelum akhir.</p>
+            <p class="ar-example">نَصَرَ ➔ نُصِرَ (Ditolong)</p>
+          </div>
+          <div class="rule-box">
+            <h4>Fi'il Mudhari Majhul</h4>
+            <p><strong>Rumus:</strong> Dhommahkan huruf awal, fathahkan sebelum akhir.</p>
+            <p class="ar-example">يَنْصُرُ ➔ يُنْصَرُ (Sedang ditolong)</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- LEVEL 3 -->
+    <section id="lvl3" class="tab-pane">
+      <div class="section-title-box">
+        <h2>IDENTIFIKASI KALIMAH LEVEL 3</h2>
+        <p>Kaidah I'rab, Isim Marfu', Manshub, dan Kaidah Matan Al-Jurumiyah</p>
+      </div>
+
+      <!-- Card 8: Marfu'at al-Asma -->
+      <article class="module-card">
+        <div class="card-header">
+          <span class="badge">Jurumiyah</span>
+          <h3>7 Isim yang Wajib Di-Rafa'kan (مَرْفُوْعَاتُ الْأَسْمَاءِ)</h3>
+        </div>
+        <div class="arabic-box">
+          الفَاعِل - نَائِبُ الفَاعِل - المُبْتَدَأ - الخَبَر - اِسْمُ كَانَ - خَبَرُ إِنَّ - التَّابِعُ لِلْمَرْفُوْعِ (نَعْت, عَطْف, تَوْكِيْد, بَدَل)
+        </div>
+        <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Tampilkan Irama Lagu</button>
+        <div class="melody-box">
+          <p class="nada-tag">Irama: Nazham Jurumiyah</p>
+          <div class="lyrics">
+            "Rofakan tujuh rupa didalam jumlah,<br>
+            Fail, naibul fail jumlah fi’liyah,<br>
+            Mubtada khabar dalam jumlah ismiyah,<br>
+            Dengan kaana dan inna telah dinasakh,<br>
+            Yakni isim kaana wa akhawatiha, lalu khabar inna wa akhawatiha,<br>
+            Dan tawabi lil marfu’i mengikuti: Naat, athaf, taukid, badal menuruti."
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 9: Rumus Coret Harakat -->
+      <article class="module-card">
+        <div class="card-header">
+          <span class="badge">Rumus Kilat</span>
+          <h3>Kamus Lambang Kode Nyoret I'rab Kitab Kuning</h3>
+        </div>
+        <div class="grid-coret">
+          <div class="coret-item"><span>م (Mim)</span> = Mubtada ("Adapun")</div>
+          <div class="coret-item"><span>خ (Kha)</span> = Khabar ("Itu adalah")</div>
+          <div class="coret-item"><span>ف (Fa)</span> = Fa'il ("Siapa/Apa")</div>
+          <div class="coret-item"><span>نف (Na-Fa)</span> = Naibul Fa'il</div>
+          <div class="coret-item"><span>نص (Nun-Shad)</span> = Na'at ("Yang")</div>
+          <div class="coret-item"><span>مف (Mim-Fa)</span> = Maf'ul Bih ("Terhadap")</div>
+          <div class="coret-item"><span>مط (Mim-Tha)</span> = Maf'ul Muthlaq ("Dengan")</div>
+          <div class="coret-item"><span>هـ (Haa)</span> = Hal ("Secara/Keadaan")</div>
+        </div>
+      </article>
+    </section>
+
+
+    <!-- KUIS INTERAKTIF -->
+    <section id="kuis" class="tab-pane">
+      <div class="section-title-box">
+        <h2>⚔️ UJI PEMAHAMAN NAHWU INTERAKTIF</h2>
+        <p>Jawab pertanyaan berikut dan raih gelar <strong>[Al-Lughawi]</strong>!</p>
+      </div>
+
+      <div class="quiz-container">
+        <!-- Soal 1 -->
+        <div class="quiz-card" id="q1">
+          <h4>1. Manakah di antara pilihan berikut yang merupakan kelompok <strong>Haraf Jar</strong>?</h4>
+          <div class="options">
+            <button onclick="checkAnswer(1, false, this)">A. إِنَّ - أَنَّ - كَأَنَّ</button>
+            <button onclick="checkAnswer(1, true, this)">B. مِنْ - إِلَى - عَنْ - عَلَى</button>
+            <button onclick="checkAnswer(1, false, this)">C. أَنْ - لَنْ - إِذَنْ - كَيْ</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="quiz-card" id="q2">
+          <h4>2. Huruf awal fi'il madhi didhommahkan dan satu huruf sebelum terakhir dikasrahkan (contoh: نُصِرَ) adalah rumus untuk...</h4>
+          <div class="options">
+            <button onclick="checkAnswer(2, true, this)">A. Fi'il Madhi Majhul (Bentuk Pasif)</button>
+            <button onclick="checkAnswer(2, false, this)">B. Fi'il Mudhari Ma'lum (Bentuk Aktif)</button>
+            <button onclick="checkAnswer(2, false, this)">C. Fi'il Amar (Kata Perintah)</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <!-- Soal 3 -->
+        <div class="quiz-card" id="q3">
+          <h4>3. Apa hukum i'rab isim setelah haraf nawasikh <em>"Inna wa Akhawatiha"</em> (إِنَّ)?</h4>
+          <div class="options">
+            <button onclick="checkAnswer(3, false, this)">A. Rafa' (Dhommah)</button>
+            <button onclick="checkAnswer(3, true, this)">B. Nashab (Fathah)</button>
+            <button onclick="checkAnswer(3, false, this)">C. Khafadl / Jar (Kasrah)</button>
+          </div>
+          <div class="feedback"></div>
+        </div>
+
+        <div class="score-box" id="scoreResult" style="display:none;">
+          <h3>Alhamdulillah! 🎉</h3>
+          <p id="scoreText"></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="materi.js"></script>
+</body>
+</html>
