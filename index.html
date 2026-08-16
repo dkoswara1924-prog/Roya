@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Bahasa Arab</title>
+  
+  <!-- Font Google: Khat Farisi (Noto Nastaliq Urdu) & Serif Klasik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel+Decorative:wght@700&family=Noto+Nastaliq+Urdu:wght@700&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Efek Partikel Cahaya Emas -->
+  <div class="stars-bg"></div>
+
+  <!-- Container Bingkai Kubah Moorish -->
+  <main class="moorish-frame">
+    <!-- Ornamen Sudut -->
+    <div class="corner-ornament top-left"></div>
+    <div class="corner-ornament top-right"></div>
+
+    <div class="content-wrapper">
+      <!-- Kaligrafi Basmalah & Khat Farisi -->
+      <div class="arabic-heading">
+        <span class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+        <h1 class="ahlan-farisi" dir="rtl" lang="ar">أهلاً وسهلاً</h1>
+        <div class="gold-divider">
+          <span>◆</span>
+          <div class="line"></div>
+          <span>۞</span>
+          <div class="line"></div>
+          <span>◆</span>
+        </div>
+      </div>
+
+      <!-- Teks Ajakan Belajar -->
+      <h2 class="sub-title">
+        Mau Belajar Bahasa Arab Bareng <br>
+        <span class="highlight-name">AHMAD ZAKIN JAISYURROYA</span>?
+      </h2>
+      <p class="tagline">Metode mudah, terstruktur & mendalam untuk memahami kaidah bahasa Al-Qur'an.</p>
+
+      <!-- Tombol Aksi Elegan -->
+      <div class="button-container">
+        <button id="btnKlik" class="islamic-btn" onclick="bukaModal()">
+          <span class="btn-text">Klik AHMAD ZAKIN JAISYURROYA</span>
+        </button>
+      </div>
+
+      <!-- Hitungan Pendaftar / Santri -->
+      <div class="stats-box">
+        <p>Santri yang sudah bergabung: <strong id="santriCount">1,452</strong></p>
+      </div>
+    </div>
+
+    <!-- Ornamen Sudut Bawah -->
+    <div class="corner-ornament bottom-left"></div>
+    <div class="corner-ornament bottom-right"></div>
+  </main>
+
+  <!-- Modal Formulir Pendaftaran -->
+  <div id="modalDialog" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 dir="rtl" lang="ar">مَرْحَبًا بِكُمْ</h3>
+        <button class="close-btn" onclick="tutupModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h4>Ahlan wa Sahlan!</h4>
+        <p>Mari belajar dan mendalami bahasa Arab bersama <strong>AHMAD ZAKIN JAISYURROYA</strong>.</p>
+        
+        <form id="daftarForm" onsubmit="handleDaftar(event)">
+          <div class="input-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" placeholder="Masukkan nama Anda..." required>
+          </div>
+          <button type="submit" class="submit-btn">Mulai Belajar Sekarang</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
