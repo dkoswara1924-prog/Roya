@@ -1,9 +1,11 @@
 :root {
-  --bg-gradient: radial-gradient(circle at 50% 30%, #0d2820 0%, #061510 60%, #020806 100%);
+  --bg-gradient: radial-gradient(circle at 50% 15%, #0d2e23 0%, #061611 65%, #020806 100%);
   --gold-pure: #d4af37;
   --gold-glow: #f9e295;
   --gold-dark: #8c6d23;
+  --card-bg: linear-gradient(180deg, rgba(11, 48, 35, 0.95) 0%, rgba(5, 24, 17, 0.98) 100%);
   --cream-light: #f7f1e3;
+  --emerald-border: #1a533f;
 }
 
 * {
@@ -14,299 +16,215 @@
 
 body {
   min-height: 100vh;
-  /* Latar Gradasi Hijau Zamrud Gelap */
   background-color: #061712;
-  /* Motif Geometris Bintang 8 Islam Emas Transparan Murni CSS/SVG */
   background-image: 
     radial-gradient(circle at 50% 15%, rgba(13, 56, 41, 0.85) 0%, rgba(3, 15, 10, 0.98) 100%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4af37' fill-opacity='0.08'%3E%3Cpath d='M40 0l10 10-10 10-10-10L40 0zm0 80l-10-10 10-10 10 10-10 10zM0 40l10-10 10 10-10 10L0 40zm80 0l-10 10-10-10 10-10 10 10zM20 20l10-4 4 10-10 4-4-10zm40 40l-10 4-4-10 10-4 4 10zm-40 0l4-10 10 4-4 10-10-4zm40-40l-4 10-10-4 4-10 10 4z'/%3E%3Cpolygon points='40,26 44,36 54,40 44,44 40,54 36,44 26,40 36,36'/%3E%3Cpolygon points='14,14 17,21 24,24 17,27 14,34 11,27 4,24 11,21'/%3E%3Cpolygon points='66,66 69,73 76,76 69,79 66,86 63,79 56,76 63,73'/%3E%3Cpolygon points='66,14 69,21 76,24 69,27 66,34 63,27 56,24 63,21'/%3E%3Cpolygon points='14,66 17,73 24,76 17,79 14,86 11,79 4,76 11,73'/%3E%3C/g%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4af37' fill-opacity='0.07'%3E%3Cpath d='M40 0l10 10-10 10-10-10L40 0zm0 80l-10-10 10-10 10 10-10 10zM0 40l10-10 10 10-10 10L0 40zm80 0l-10 10-10-10 10-10 10 10zM20 20l10-4 4 10-10 4-4-10zm40 40l-10 4-4-10 10-4 4 10zm-40 0l4-10 10 4-4 10-10-4zm40-40l-4 10-10-4 4-10 10 4z'/%3E%3Cpolygon points='40,26 44,36 54,40 44,44 40,54 36,44 26,40 36,36'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
-  color: #f7f1e3;
-  padding-bottom: 70px;
+  color: var(--cream-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-/* Pola Geometris Arabesque Background */
-.stars-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(var(--gold-dark) 1px, transparent 1px),
-    radial-gradient(var(--gold-pure) 1px, transparent 1px);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
-  opacity: 0.12;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Bingkai Arsitektur Klasik Moorish */
-.moorish-frame {
+/* Bingkai Kartu Kubah Klasik */
+.funnel-card {
   position: relative;
-  z-index: 2;
   width: 100%;
-  max-width: 680px;
-  background: linear-gradient(180deg, rgba(10, 51, 36, 0.94) 0%, rgba(5, 24, 17, 0.98) 100%);
-  border: 3px solid var(--gold-pure);
-  border-radius: 180px 180px 24px 24px;
-  box-shadow: 
-    0 0 35px rgba(212, 175, 55, 0.25),
-    inset 0 0 30px rgba(0, 0, 0, 0.8);
-  padding: 50px 35px 40px 35px;
-  text-align: center;
-  backdrop-filter: blur(8px);
+  max-width: 620px;
+  background: var(--card-bg);
+  border: 2px solid var(--gold-pure);
+  border-radius: 40px 40px 20px 20px;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.25), inset 0 0 25px rgba(0,0,0,0.6);
+  padding: 35px 28px 30px;
+  backdrop-filter: blur(10px);
 }
 
 /* Ornamen Sudut */
 .corner-ornament {
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border: 2px solid var(--gold-glow);
   opacity: 0.8;
 }
-.corner-ornament.top-left { top: 14px; left: 14px; border-right: none; border-bottom: none; }
-.corner-ornament.top-right { top: 14px; right: 14px; border-left: none; border-bottom: none; }
-.corner-ornament.bottom-left { bottom: 14px; left: 14px; border-right: none; border-top: none; }
-.corner-ornament.bottom-right { bottom: 14px; right: 14px; border-left: none; border-top: none; }
+.corner-ornament.top-left { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.corner-ornament.top-right { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+.corner-ornament.bottom-left { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+.corner-ornament.bottom-right { bottom: 12px; right: 12px; border-left: none; border-top: none; }
 
-.bismillah {
-  display: block;
-  font-family: 'Amiri', serif;
-  font-size: 1.2rem;
-  color: var(--gold-glow);
-  margin-bottom: 4px;
-  letter-spacing: 1px;
+/* Progress Bar */
+.funnel-header {
+  margin-bottom: 24px;
 }
-
-/* Kaligrafi Khat Farisi (Nasta'liq) */
-.ahlan-farisi {
-  font-family: 'Noto Nastaliq Urdu', serif;
-  font-size: 3.8rem;
-  font-weight: 700;
-  color: var(--gold-pure);
-  line-height: 1.6;
-  text-shadow: 
-    0 0 16px rgba(249, 226, 149, 0.6),
-    0 4px 15px rgba(0, 0, 0, 0.9);
-  margin: 5px 0 10px;
-}
-
-.gold-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: var(--gold-pure);
-  font-size: 0.9rem;
-  margin: 10px 0 25px;
-}
-
-.gold-divider .line {
-  height: 1px;
-  width: 65px;
-  background: linear-gradient(90deg, transparent, var(--gold-pure), transparent);
-}
-
-.sub-title {
-  font-size: 1.6rem;
-  line-height: 1.5;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 12px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-}
-
-.highlight-name {
-  color: var(--gold-glow);
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
-  letter-spacing: 1px;
-}
-
-.tagline {
-  font-size: 0.95rem;
-  color: #d1d8d0;
-  max-width: 480px;
-  margin: 0 auto 28px;
-  line-height: 1.5;
-}
-
-.button-container {
-  margin: 20px 0 15px;
-}
-
-.islamic-btn {
-  background: linear-gradient(135deg, #d4af37 0%, #a67c1e 50%, #d4af37 100%);
-  color: #071511;
-  font-family: 'Philosopher', serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  padding: 14px 34px;
-  border: 2px solid #fff3b0;
-  border-radius: 40px;
-  cursor: pointer;
-  box-shadow: 
-    0 6px 20px rgba(0, 0, 0, 0.6),
-    0 0 15px rgba(212, 175, 55, 0.5);
-  transition: all 0.3s ease;
-}
-
-.islamic-btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 
-    0 10px 25px rgba(0, 0, 0, 0.7),
-    0 0 28px rgba(249, 226, 149, 0.85);
-}
-
-.islamic-btn:active {
-  transform: translateY(1px) scale(0.98);
-}
-
-.stats-box {
-  margin-top: 15px;
-  font-size: 0.85rem;
-  color: var(--gold-glow);
-  opacity: 0.85;
-}
-
-/* Modal Popup */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(5px);
-  z-index: 99;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-card {
-  background: linear-gradient(145deg, #0f392b, #071c15);
-  border: 2px solid var(--gold-pure);
-  border-radius: 16px;
-  padding: 30px;
-  max-width: 430px;
-  width: 90%;
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
-  text-align: center;
-  animation: popup 0.3s ease-out;
-}
-
-@keyframes popup {
-  from { transform: scale(0.85); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.modal-header {
+.nav-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
-  border-bottom: 1px solid var(--gold-dark);
-  padding-bottom: 10px;
+  margin-bottom: 12px;
 }
-
-.modal-header h3 {
-  font-family: 'Amiri', serif;
-  font-size: 1.8rem;
-  color: var(--gold-glow);
-}
-
-.close-btn {
-  background: none;
+.btn-back {
+  background: transparent;
   border: none;
-  color: var(--gold-pure);
-  font-size: 1.8rem;
+  color: var(--gold-glow);
+  font-size: 0.85rem;
   cursor: pointer;
+  visibility: hidden;
+  transition: 0.2s;
+}
+.btn-back:hover { color: #fff; transform: translateX(-3px); }
+.step-indicator {
+  font-size: 0.8rem;
+  color: var(--gold-glow);
+  font-weight: 600;
 }
 
-.modal-body h4 {
-  color: #fff;
-  margin-bottom: 8px;
+.progress-track {
+  background: rgba(0, 0, 0, 0.4);
+  height: 6px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+.progress-bar {
+  background: linear-gradient(90deg, #d4af37, #f9e295);
+  height: 100%;
+  width: 25%;
+  transition: width 0.35s ease;
 }
 
-.modal-body p {
-  font-size: 0.9rem;
-  color: #d1d8d0;
-  margin-bottom: 20px;
+/* Pertanyaan & Header */
+.question-header {
+  text-align: center;
+  margin-bottom: 24px;
 }
-
-.input-group {
-  text-align: left;
-  margin-bottom: 16px;
-}
-
-.input-group label {
+.bismillah-mini {
+  font-family: 'Amiri', serif;
+  font-size: 1.1rem;
+  color: var(--gold-glow);
   display: block;
+  margin-bottom: 4px;
+}
+.question-title {
+  font-family: 'Philosopher', serif;
+  font-size: 1.55rem;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+.question-sub {
+  font-size: 0.85rem;
+  color: #c8d6e5;
+  line-height: 1.5;
+}
+
+/* Kartu Pilihan Jawaban */
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1.5px solid var(--emerald-border);
+  border-radius: 14px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: left;
+}
+
+.option-card:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-pure);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
+.option-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.option-icon {
+  font-size: 1.6rem;
+  background: rgba(212, 175, 55, 0.15);
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--gold-dark);
+}
+
+.option-text h4 {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 3px;
+}
+.option-text p {
+  font-size: 0.78rem;
+  color: #a4b0be;
+}
+.option-arrow {
+  color: var(--gold-pure);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Form Input Nama */
+.input-name-group {
+  margin-top: 15px;
+  text-align: left;
+}
+.input-name-group label {
   font-size: 0.85rem;
   color: var(--gold-glow);
-  margin-bottom: 5px;
+  display: block;
+  margin-bottom: 6px;
 }
-
-.input-group input {
+.input-name-group input {
   width: 100%;
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: 1px solid var(--gold-dark);
-  background: rgba(0, 0, 0, 0.4);
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1.5px solid var(--gold-dark);
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1rem;
   outline: none;
 }
-
-.input-group input:focus {
+.input-name-group input:focus {
   border-color: var(--gold-pure);
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
-.submit-btn {
+.btn-submit-name {
   width: 100%;
-  padding: 12px;
-  background: linear-gradient(90deg, #d4af37, #b8860b);
+  margin-top: 18px;
+  padding: 14px;
+  background: linear-gradient(135deg, #d4af37, #b8860b);
   border: none;
-  border-radius: 8px;
-  color: #071511;
+  border-radius: 10px;
   font-weight: 700;
+  font-size: 1.05rem;
+  color: #061712;
   cursor: pointer;
   transition: 0.2s;
 }
-
-.submit-btn:hover {
+.btn-submit-name:hover {
   background: #f9e295;
+  box-shadow: 0 0 15px rgba(249, 226, 149, 0.6);
 }
 
-/* Contoh untuk bingkai kartu materi atau frame hero */
-.moorish-card {
-  border-radius: 120px 120px 16px 16px; /* Bagian atas melengkung menyerupai kubah */
-  border: 2px solid #d4af37;
-  box-shadow: 
-    0 0 25px rgba(212, 175, 55, 0.2),
-    inset 0 0 20px rgba(0, 0, 0, 0.6);
-  position: relative;
-  background: rgba(10, 43, 31, 0.9);
+/* Animasi Masuk */
+.slide-in {
+  animation: slideIn 0.3s ease-out;
 }
-
-/* Ornamen Bintang Delapan Pemisah (Divider) */
-.islamic-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  color: #d4af37;
-  margin: 15px 0;
-}
-
-.islamic-divider::before,
-.islamic-divider::after {
-  content: "";
-  height: 1px;
-  width: 60px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(15px); }
+  to { opacity: 1; transform: translateX(0); }
 }
