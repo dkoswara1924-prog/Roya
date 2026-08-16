@@ -236,7 +236,7 @@
     </button>
   </div>
 
-  <!-- Sub-Filter Area (Dinamis untuk Tab Lagu & Tab Latihan) -->
+  <!-- Sub-Filter Area Dinamis -->
   <div id="subFilterArea" class="sub-filter-wrapper"></div>
 
   <!-- Kolom Pencarian -->
@@ -247,10 +247,10 @@
   <!-- Area Konten -->
   <main id="mainContainer" class="content-container"></main>
 
-  <!-- 1. MEMANGGIL DATABASE EKSTERNAL data.js -->
+  <!-- PANGGIL DATABASE data.js -->
   <script src="data.js"></script>
 
-  <!-- 2. MESIN LOGIKA INTERFACE & NAVIGASI -->
+  <!-- LOGIKA APLIKASI -->
   <script>
     let currentMainTab = 'lagu';
     let currentLaguLevel = 'all';
@@ -268,17 +268,18 @@
         if (tab === 'lagu') {
           subArea.style.display = 'flex';
           subArea.innerHTML = `
-            <button id="sub-lvl-all" class="sub-filter-btn ${currentLaguLevel === 'all' ? 'active' : ''}" onclick="setSubLevel('all')">Semua Level</button>
-            <button id="sub-lvl-1" class="sub-filter-btn ${currentLaguLevel === 1 ? 'active' : ''}" onclick="setSubLevel(1)">Level 1 (Bab 1-19)</button>
-            <button id="sub-lvl-2" class="sub-filter-btn ${currentLaguLevel === 2 ? 'active' : ''}" onclick="setSubLevel(2)">Level 2 (Bab 20-33)</button>
-            <button id="sub-lvl-3" class="sub-filter-btn ${currentLaguLevel === 3 ? 'active' : ''}" onclick="setSubLevel(3)">Level 3 (Bab 34-42)</button>
+            <button class="sub-filter-btn ${currentLaguLevel === 'all' ? 'active' : ''}" onclick="setSubLevel('all')">Semua Level</button>
+            <button class="sub-filter-btn ${currentLaguLevel === 1 ? 'active' : ''}" onclick="setSubLevel(1)">Level 1 (Bab 1-19)</button>
+            <button class="sub-filter-btn ${currentLaguLevel === 2 ? 'active' : ''}" onclick="setSubLevel(2)">Level 2 (Bab 20-33)</button>
+            <button class="sub-filter-btn ${currentLaguLevel === 3 ? 'active' : ''}" onclick="setSubLevel(3)">Level 3 (Bab 34-42)</button>
           `;
         } else if (tab === 'latihan') {
           subArea.style.display = 'flex';
           subArea.innerHTML = `
             <button class="sub-filter-btn ${currentLatihanLevel === 'all' ? 'active' : ''}" onclick="setLatihanLevel('all')">Semua Latihan</button>
             <button class="sub-filter-btn ${currentLatihanLevel === 1 ? 'active' : ''}" onclick="setLatihanLevel(1)">Level 1 (Bentuk Dasar)</button>
-            <button class="sub-filter-btn ${currentLatihanLevel === 2 ? 'active' : ''}" onclick="setLatihanLevel(2)">Level 2 (Tashrif Dhomir 2A/2B)</button>
+            <button class="sub-filter-btn ${currentLatihanLevel === '2A' ? 'active' : ''}" onclick="setLatihanLevel('2A')">Level 2A (Pola & Penerapan)</button>
+            <button class="sub-filter-btn ${currentLatihanLevel === '2B' ? 'active' : ''}" onclick="setLatihanLevel('2B')">Level 2B (Tashrif Acak)</button>
           `;
         } else {
           subArea.style.display = 'none';
@@ -346,7 +347,8 @@
       // TAB 2: LATIHAN BACA
       else if (currentMainTab === 'latihan') {
         const filtered = dataLatihan.filter(item => {
-          const matchLevel = currentLatihanLevel === 'all' || String(item.level || 1) === String(currentLatihanLevel);
+          const itemLvl = String(item.level || 1);
+          const matchLevel = currentLatihanLevel === 'all' || itemLvl === String(currentLatihanLevel);
           const matchSearch = query === '' || 
             item.kategori.toLowerCase().includes(query) || 
             item.wazan.includes(query) || 
