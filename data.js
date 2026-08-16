@@ -1,5 +1,5 @@
 // ==============================================================
-// 1. DATA HIMPUNAN LAGU NAHWIYAH (LEVEL 1 & LEVEL 2 LENGKAP)
+// 1. DATA HIMPUNAN LAGU NAHWIYAH (LEVEL 1, 2 & 3 LENGKAP)
 // ==============================================================
 const dataLagu = [
   // ------------------------------------------------------------
@@ -280,8 +280,8 @@ const dataLagu = [
     arab: "فَعِلَ - أَفْعَلُ (حَمِرَ أَحْمَرُ)\nفَعِلَ - فَعِلٌ (فَرِحَ فَرِحٌ)\nفَعِلَ - فَعْلَانُ (عَطِشَ عَطْشَانُ)\nفَعُلَ - فَعْلٌ (سَهْلٌ)\nفَعُلَ - فُعْلٌ (شُلْبٌ)\nفَعُلَ - فَعَلٌ (حَسَنٌ)\nفَعُلَ - فُعَالٌ (شُجَاعٌ)\nفَعُلَ - فَعَالٌ (حَصَانٌ)\nفَعُلَ - فَعِيْلٌ (كَرِيْمٌ)",
     irama: "Kaidah Rumus Sifat Musyabbahah",
     lirik: "fa’ila-af’alu rumus pertamanya\nfa’ila-fa’ilun macam keduanya\nfa’ila-fa’laanu itu ketiganya\nfa’ula-fa’lun juga fa’ula fu’lun\nselanjutnya ada fa’ula-fa’alun\nlalu ada juga fa’ula-fu’aalun\nfa’ula-fa’aalun faula-fa’iilun,\nhamira ahmaru fariha farihun"
-  }
-];
+  },
+
   // ------------------------------------------------------------
   // LEVEL 3: IDENTIFIKASI KALIMAH (BAB 34 - 42)
   // ------------------------------------------------------------
@@ -357,6 +357,8 @@ const dataLagu = [
     irama: "mustafilun failun 3x",
     lirik: "‘adapun’ mim untuk mubtada\n‘itu adalah’ kha khabar\n‘siapa apa’ fa’nya fail\njika majhul naibul fail\n‘yang’ nun shad untuk naatnya\n‘dengan’ mim tha maful muthlaqnya\n‘terhadap’ mim fa maful bih\nsemua baca tidak berlebih\n\n‘yaitu’ ba dan dal badal\n‘secara’ haa tuk tanda hal\ntanda dibawah dhomirnya\nsama dengan diatas marjanya\n(mustafilun failun3x)"
   }
+];
+
 // ==============================================================
 // 2. DATA LATIHAN MEMBACA BANGUNAN KALIMAH (BANK LATIHAN)
 // ==============================================================
