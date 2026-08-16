@@ -1,200 +1,204 @@
-// ==========================================
-// 1. DATA HIMPUNAN LAGU NAHWIYAH (BAB 1 - 42)
-// ==========================================
+// ==============================================================
+// 1. DATA HIMPUNAN LAGU NAHWIYAH - IDENTIFIKASI KALIMAH LEVEL 1
+// ==============================================================
 const dataLagu = [
-  // --- LEVEL 1 (BAB 1 - 19) ---
+  // --- BAB 1 ---
   {
     level: 1,
     bab: 1,
     judul: "Haraf Jar",
-    arab: "مِنْ ، فِيْ ، إِلَى ، عَلَى ، كَـ ، لِـ ، بِـ ، عَنْ ، حَتَّى ، مُذْ ، مُنْذُ ، رُبَّ ، وَ (قَسَم) ، بِ (قَسَم) ، تَ (قَسَم) ، خَلَا ، عَدَا ، حَاشَا",
-    irama: "Mustaf'ilun (3x)",
-    lirik: "min fii ilaa ‘alaa ka li bi an hatta,\nmudz mundzu rubba qasam dengan wa bi ta\nkhalaa ‘adaa lafazh haasya selanjutnya\nitu haraf jar ulama menyebutnya"
+    arab: "مِنْ ، فِيْ ، إِلَى ، عَلَى ، كَـ... ، لِـ... ، بِـ... ، عَنْ ، حَتَّى ، مُذْ ، مُنْذُ ، رُبَّ ، وَ ، بِـ... ، تَـ... ، خَلَا ، عَدَا ، حَاشَا",
+    irama: "mustafilun 3x",
+    lirik: "min fii ilaa ‘alaa ka li bi an hatta,\nmudz mundzu rubba qasam dengan wa bi ta\nkhalaa ‘adaa lafazh haasya selanjutnya\nitu haraf jar ulama menyebutnya\n(mustafilun3x)"
   },
+
+  // --- BAB 2 ---
   {
     level: 1,
     bab: 2,
     judul: "Haraf Nawasikh Inna",
-    arab: "إِنَّ ، أَنَّ ، لَكِنَّ ، لَيْتَ ، لَعَلَّ ، كَأَنَّ ، لَا (نَافِيَةٌ لِلْجِنْسِ)",
-    irama: "Balonku Ada Lima / Sedang Apa",
-    lirik: "inna anna dan lakinna, laita kaanna la’alla,\ndan la nafiyah lil jinsi, nashabkan isim setelahnya."
+    arab: "إِنَّ ، أَنَّ ، لَكِنَّ ، لَيْتَ ، لَعَلَّ ، كَأَنَّ ، لَا",
+    irama: "Balonku Ada Lima / Aku Pergi ke Mekkah / Sedang Apa",
+    lirik: "• Versi 1 (balonku ada lima):\ninna anna lakinna\nlaita laalla kaanna\ndan la nafiyah lil jinsi\nnashabkan isim setelahnya\n\n• Versi 2 (aku pergi ke mekkah):\ninna anna lakinna, laalla dan kaanna,\nlaita dan la nafi lil jinsi ikut serta\ninna anna lakinna, laalla dan kaanna,\nnashabkan isim yang ada setelahnya\n\n• Versi 3 (sedang apa):\ninna anna dan lakinna, laita kaanna la’alla,\ndan la nafiyah lil jinsi, nashabkan isim setelahnya"
   },
+
+  // --- BAB 3 ---
   {
     level: 1,
     bab: 3,
     judul: "Haraf Athaf",
-    arab: "وَ ، فَـ ، ثُمَّ ، أَوْ ، أَمْ ، لَكِنْ ، لَا ، بَلْ ، حَتَّى ، إِمَّا",
+    arab: "وَ ، فَـ... ، ثُمَّ ، أَوْ ، أَمْ ، لَكِنْ ، لَا ، بَلْ ، حَتَّى ، إِمَّا",
     irama: "Dua Mata Saya",
-    lirik: "wa fa tsumma aw am, lakin laa bal hatta,\nimmaa ikut serta, haraf athaf namanya."
+    lirik: "wa fa tsumma aw am, lakin laa bal hatta,\nimmaa ikut serta, haraf athaf namanya\n(dua mata saya)"
   },
+
+  // --- BAB 4 ---
   {
     level: 1,
     bab: 4,
-    judul: "Haraf Nawashib Mudhari",
-    arab: "أَنْ ، لَنْ ، إِذَنْ ، كَيْ ، لِـ (كَيْ) ، لِـ (جُحُوْد) ، حَتَّى ، أَوْ ، فَـ ، وَ (مَعِيَّة)",
-    irama: "Lagu Raja / Ya Rabbi Bil Musthafa",
-    lirik: "an lan idzan kai, li wa hatta aw fa,\nnashabkan mudhari yang ada setelahnya (2x)"
+    judul: "Haraf Nawashib al Mudhari",
+    arab: "أَنْ ، لَنْ ، إِذَنْ ، كَيْ ، لِـ... ، وَ ، فَـ... ، أَوْ ، حَتَّى ، لِـ (لِلْجُحُوْد)",
+    irama: "Raja",
+    lirik: "an lan idzan kai, li wa hatta aw fa,\nnashabkan mudhari yang ada setelahnya 2x\n(raja)"
   },
+
+  // --- BAB 5 ---
   {
     level: 1,
     bab: 5,
-    judul: "Haraf Jawazim Mudhari",
-    arab: "لَمْ ، أَلَمْ ، لَمَّا ، أَلَمَّا ، إِنْ ، لِـ (لَامُ الْأَمْرِ) ، إِذْمَا ، لَا (نَاهِيَة)",
-    irama: "Lagu Raja",
-    lirik: "lam alam lamma in, alamma lamul amri,\ndan idzma laa nahi, jawazim fiil mudhari."
+    judul: "Haraf Jawazim",
+    arab: "لَمْ ، أَلَمْ ، لَمَّا ، أَلَمَّا ، إِنْ ، لَا ، لِـ... ، إِذْمَا",
+    irama: "Ya Rabbi Bil Musthafa",
+    lirik: "lam alam lamma in, alamma lamul amri\ndan idzma laa nahi, jawazim fiil mudhari\n(ya rabbi bil musthafa)"
   },
+
+  // --- BAB 6 ---
+  {
+    level: 1,
+    bab: 6,
+    judul: "Haraf Nida, Haraf Istisna dan Haraf Istifham",
+    arab: "• Haraf Nida: يَا ، أَيْ ، آ ، يَا أَيَّتُهَا ، يَا أَيُّهَا\n• Haraf Istisna: إِلَّا ، خَلَا ، عَدَا ، حَاشَا\n• Haraf Istifham: أَ ، هَلْ",
+    irama: "Apuse Kokondao",
+    lirik: "yaa ay aa, yaa ayyatuha, ya ayyuha haraf nida\nilla khala ‘adaa hasya huruf istisna\nhamzah dan hal haraf tanya\n(apuse kokondao)"
+  },
+
+  // --- BAB 7 ---
+  {
+    level: 1,
+    bab: 7,
+    judul: "Haraf yang Menjadi Tanda Fiil & Catatan Kaidah",
+    arab: "• Haraf Jawab: نَعَمْ ، لَا ، بَلَى ، أَجَلْ ، جَيْرِ\n• Haraf yang Lain: لَوْ ، لَوْلَا ، لَوْمَا ، أَمَّا ، كَلَّا ، أَلَا\n• Tanda Fiil: قَدْ ، لَقَدْ ، سَـ ، سَوْفَ ، تْ (تَاءُ التَّأْنِيْثِ السَّاكِنَةِ) ، لَمْ ، لَا نَافِي ، لَا نَاهِي\n• Haraf Lain: إِنَّمَا ، لَا ، مَا ، لَاتَ",
+    irama: "Kaidah / Catatan Pembelajaran",
+    lirik: "Catatan Pembelajaran:\n1. Haraf Tafsir: (ai)\n2. Haraf Alamat Fiil: (qad, laqad, sa, saufa, ta tanits yang sukun, lam, laa nafi, laa nahi)\n3. Haraf yang lain: lau laulaa dan laumaa, innamaa, haraf nasakh selain inna yaitu laa, maa dan laata, juga ada haraf ammaa, kalla dan alaa\n4. Haraf jawab: na’am, bala, ajal, jairi, laa"
+  },
+
+  // --- MATERI SISIPAN: CIRI KALIMAH ISIM ---
+  {
+    level: 1,
+    bab: "Kaidah",
+    judul: "Mengenal Kalimah Isim Melalui Tandanya dan Beberapa Jenisnya",
+    arab: "مَـ | مِـ | مُـ | أَلْ | التَّنْوِيْن | حُرُوْف النِّدَاء | حُرُوْف النَّصْب وَالْجَرّ | الْإِضَافَة | التَّاء المَرْبُوْطَة",
+    irama: "Lagu Qaidaty",
+    lirik: "Tanda isim jumlahnya ada delapan\nma mi mu al tanwin dan nida di depan\nHaraf nashab haraf jar serta idhofah\njangan lupa yang terakhir ta marbuthoh\n(lagu qaidaty)"
+  },
+
+  // --- BAB 8 ---
   {
     level: 1,
     bab: 8,
-    judul: "Isim Isyarah (Kata Tunjuk)",
-    arab: "هٰذَا ، هٰذَانِ ، هٰؤُلَاءِ | هٰذِهِ ، هَاتَانِ ، هٰؤُلَاءِ | ذٰلِكَ ، ذَانِكَ ، أُولٰئِكَ | تِلْكَ ، تَانِكَ ، أُولٰئِكَ | هُنَا ، هُنَاكَ ، هُنَالِكَ",
+    judul: "Isim Isyarah",
+    arab: "هٰذَا ، هٰذَانِ ، هٰؤُلَاءِ | هٰذِهِ ، هَاتَانِ ، هٰؤُلَاءِ | ذٰلِكَ ، ذَانِكَ ، أُولٰئِكَ | تِلْكَ ، تَانِكَ ، أُولٰئِكَ | هُنَا ، ثَمَّ ، هُنَاكَ ، هُنَالِكَ",
     irama: "Anak Gembala",
-    lirik: "hadza hadzani haulai, hadzihi hatani haulai,\ndzalika dzanika ulaika, tilka tanika ulaika,\nhuna hunaka hunalika, tsamma tsammata isyarah namanya."
+    lirik: "hadza hadzani haulai, hadzihi hatani haulai,\ndzalika dzanika ulaika, tilka tanika ulaika,\nhuna hunaka hunalika, tsamma tsammata isyarah namanya 2x\n(anak gembala)"
   },
+
+  // --- BAB 9 ---
   {
     level: 1,
     bab: 9,
-    judul: "Isim Dhamir Munfashil Rafa'",
+    judul: "Isim Dhomir Munfashil Rofa",
     arab: "هُوَ ، هُمَا ، هُمْ | هِيَ ، هُمَا ، هُنَّ | أَنْتَ ، أَنْتُمَا ، أَنْتُمْ | أَنْتِ ، أَنْتُمَا ، أَنْتُنَّ | أَنَا ، نَحْنُ",
-    irama: "Lagu Raja / Ya Thayba",
-    lirik: "huwa huma hum, hiya huma hunna,\nanta antuma antum, anti antuma antuna,\nana dan nahnu begitu bunyinya,\ndhamir munfashil rofa ulama menyebutnya."
+    irama: "Lagu Raja",
+    lirik: "huwa huma hum, hiya huma hunna,\nanta antuma antum, anti antuma antuna,\nana dan nahnu, begitu bunyinya,\ndhamir munfashil rofa, ulama menyebutnya\n(lagu raja)"
   },
 
-  // --- LEVEL 2 (BAB 20 - 33) ---
+  // --- BAB 10 ---
   {
-    level: 2,
-    bab: 20,
-    judul: "Wazan Fi'il Madhi (Tsulatsi, Ruba'i, Khumasi, Sudasi)",
-    arab: "فَعَلَ فَعِلَ فَعُلَ | أَفْعَلَ فَعَّلَ فَاعَلَ | تَفَعَّلَ تَفَاعَلَ اِنْفَعَلَ اِفْتَعَلَ اِفْعَلَّ | اِسْتَفْعَلَ",
-    irama: "Pelangi-Pelangi / Mustaf'ilun",
-    lirik: "Fa’ala, fa’ila fa’ula tsulatsi,\nAf’ala, fa’’ala, faa’ala ruba’iy,\nTafa’’ala, tafaa’ala, infa’ala, ifta’ala,\nif’alla khumasi Istaf’ala sudasi."
-  },
-  {
-    level: 2,
-    bab: 26,
-    judul: "Kaidah Fi'il Madhi & Mudhari Majhul (Bentuk Pasif)",
-    arab: "مَاضِي مَجْهُوْل: ضُمَّ أَوَّلُهُ وَكُسِرَ مَا قَبْلَ آخِرِهِ (نُصِرَ ، خُلِقَ)\nمُضَارِع مَجْهُوْل: ضُمَّ أَوَّلُهُ وَفُتِحَ مَا قَبْلَ آخِرِهِ (يُنْصَرُ ، يُخْلَقُ)",
-    irama: "Kaidah Langsung",
-    lirik: "Madhi majhul: Dhommahkan awalnya, kasrahkan sebelum akhirnya.\nMudhari majhul: Dhommahkan awalnya, fathahkan sebelum akhirnya."
-  },
-  {
-    level: 2,
-    bab: 29,
-    judul: "Wazan Isim Fa'il (Pelaku)",
-    arab: "فَاعِل ، مُفْعِل ، مُفَعِّل ، مُفَاعِل ، مُتَفَعِّل ، مُتَفَاعِل ، مُنْفَعِل ، مُفْتَعِل ، مُسْتَفْعِل",
-    irama: "Irama Wazan",
-    lirik: "Fa'ilun muf'ilun mufa''ilun mufaa'ilun,\nmutafa''ilun mutafaa'ilun munfa'ilun mufta'ilun mustaf'ilun."
+    level: 1,
+    bab: 10,
+    judul: "Isim Dhomir Munfashil Nashab",
+    arab: "إِيَّاهُ ، إِيَّاهُمَا ، إِيَّاهُمْ | إِيَّاهَا ، إِيَّاهُمَا ، إِيَّاهُنَّ | إِيَّاكَ ، إِيَّاكُمَا ، إِيَّاكُمْ | إِيَّاكِ ، إِيَّاكُمَا ، إِيَّاكُنَّ | إِيَّايَ ، إِيَّانَا",
+    irama: "Ya Thayba",
+    lirik: "iyyahu iyaahuma iyyaahum\niyyaha iyuhaama iyahunna\niyyaka iyyakuma iyaakum\niyyaaki iyakuma iyaakunna\niyyaya iyaana\n(ya thayba)"
   },
 
-  // --- LEVEL 3 (BAB 34 - 42) ---
+  // --- BAB 11 ---
   {
-    level: 3,
-    bab: 36,
-    judul: "7 Marfu'at al-Asma (Isim yang Dibaca Rafa')",
-    arab: "الفَاعِل ، نَائِبُ الفَاعِل ، المُبْتَدَأ ، الخَبَر ، اِسْمُ كَانَ ، خَبَرُ إِنَّ ، التَّوَابِعُ لِلْمَرْفُوْعِ (نَعْت ، عَطْف ، تَوْكِيْد ، بَدَل)",
-    irama: "Irama Jurumiyah",
-    lirik: "Fa'il, naibul fa'il, mubtada dan khabar,\nisim kaana khabar inna dan tawabi' yang menyertai."
+    level: 1,
+    bab: 11,
+    judul: "Isim Dhomir Muttashil Rofa (Taiwan)",
+    arab: "ـتَ... ، ـتُمَا... ، ـتُمْ... ، ـتُ... ، ـتِ... ، ـتُنَّ... | نَا... ، نَ... ، وا... ، يْ...",
+    irama: "Sedang Apa",
+    lirik: "ta tuma tum, tu ti tunna,\nalif nun dan waw ya,\ndhamir taiwan muttashil rofa\ndengan fiil nempelnya\n(sedang apa)"
   },
+
+  // --- BAB 12 ---
   {
-    level: 3,
-    bab: 37,
-    judul: "13 Manshubat al-Asma (Isim yang Dibaca Nashab)",
-    arab: "مَفْعُوْل بِهِ ، مَفْعُوْل فِيْهِ ، مَفْعُوْل مُطْلَق ، مَفْعُوْل مَعَهُ ، مَفْعُوْل لِأَجْلِهِ ، الحَال ، التَّمْيِيْز ، المُنَادَى ، المُسْتَثْنَى ، خَبَرُ كَانَ ، اِسْمُ إِنَّ ، اِسْمُ لَا ، التَّوَابِعُ لِلْمَنْصُوْبِ",
-    irama: "Irama Jurumiyah",
-    lirik: "Maf'ul yang lima (bih, fih, muthlaq, ma'ah, liajlih),\nhal tamyiz munada istisna, khabar kana isim inna, isim laa dan tawabi'."
+    level: 1,
+    bab: 12,
+    judul: "Isim Dhomir Muttashil Nashab/Jar (Haik)",
+    arab: "ـهُ... ، ـهُمَا... ، ـهُمْ... ، ـهَا... ، ـهُمَا... ، ـهُنَّ... | ـكَ... ، ـكُمَا... ، ـكُمْ... ، ـكِ... ، ـكُمَا... ، ـكُنَّ... | ـيْ / ـنِيْ... ، ـنَا...",
+    irama: "Sedang Apa",
+    lirik: "hu humaa hum, ha huma hunna,\nka kuma kum ki kuma kunna,\nii ya nii na dhamir muttashil,\nnashab dan jar hukumnya\n(sedang apa)"
   },
+
+  // --- BAB 13 ---
   {
-    level: 3,
-    bab: 42,
-    judul: "Rumus Lambang Makna Gandul / Nyoret Pegon",
-    arab: "م (مبتدأ) | خ (خبر) | ف (فاعل) | نف (نائب الفاعل) | نص (نعت/صفة) | مف (مفعول به) | مط (مفعول مطلق) | هـ (حال) | مل (مفعول لأجله)",
-    irama: "Metode Pesantren",
-    lirik: "Mim = Adapun (Mubtada), Kha = Itu adalah (Khabar), Fa = Siapa/Apa (Fa'il), Na-Fa = Naibul Fa'il, Nun-Shad = Yang (Na'at), Mim-Fa = Terhadap (Maf'ul Bih), Haa = Keadaan (Hal)."
+    level: 1,
+    bab: 13,
+    judul: "Isim Maushul",
+    arab: "الَّذِيْ ، اللَّذَانِ ، الَّذِيْنَ ، الَّتِيْ ، اللَّتَانِ ، اللَّائِيْ | اللَّاتِيْ ، أَيُّ ، ذَا ، مَا ، مَنْ",
+    irama: "Aku Pergi ke Mekkah",
+    lirik: "alladzi alladani dan juga alladzina,\nallati allatani allaa`i dan allaatii\njangan lupa sertakan ayu dza juga ma man\nisim maushul jadi penyambung kalam\n(aku pergi ke mekkah)"
+  },
+
+  // --- BAB 14 ---
+  {
+    level: 1,
+    bab: 14,
+    judul: "Isim Istifham",
+    arab: "مَا ، مَنْ ، أَيْنَ ، أَيُّ ، أَنَّى ، كَيْفَ | كَمْ ، مَتَى ، أَيَّانَ",
+    irama: "Sedang Apa",
+    lirik: "ma man aina, ayyu annaa, kaifa kam mataa ayyana\nma man aina, ayu annaa, isim istifham disebutnya\n(sedang apa)"
+  },
+
+  // --- BAB 15 ---
+  {
+    level: 1,
+    bab: 15,
+    judul: "Isim Syarat",
+    arab: "مَا ، مَنْ ، أَيْنَمَا ، أَيُّ ، أَنَّى ، كَيْفَمَا | مَهْمَا ، مَتَى ، أَيَّانَ ، حَيْثُمَا",
+    irama: "Dimana Dimana Anak Kambing Saya",
+    lirik: "ma man ainama, mataa mahma ayyaana,\nhaitsuma kaifama ayyun dan juga anna 2x\ningat itu semua, isim syarat namanya,\njazmkan dua mudhari setelahnya\n(dimana dimana anak kambing saya)"
+  },
+
+  // --- BAB 16 ---
+  {
+    level: 1,
+    bab: 16,
+    judul: "Zharaf (Makan Zaman)",
+    arab: "خَلْفَ ، أَمَامَ ، فَوْقَ ، تَحْتَ ، يَمِيْنَ ، شِمَالَ | قَبْلَ ، بَعْدَ ، دُوْنَ ، جَانِبَ ، عِنْدَ ، بَيْنَ | لَدُنْ ، لَدَى ، إِذَا ، لَمَّا ، مَعَ ، حَوْلَ | كُلَّمَا ، حَيْثُ",
+    irama: "Bila Kau Senang Hati Tepuk Tangan",
+    lirik: "Haula khalfa amama fawqa tahta,\nyamiina syimaala qabla ba’da,\nduuna janiba inda, baina ladun ladaa,\nidza lamma kullama haitsu ma’a\n(bila kau senang hati tepuk tangan)"
+  },
+
+  // --- BAB 17 ---
+  {
+    level: 1,
+    bab: 17,
+    judul: "Lagu Isim Idhofah",
+    arab: "جَمِيْع ، بَعْض ، كُلّ ، غَيْر ، كِلَا | كِلْتَا ، حَسْب ، سُبْحَانَ ، سِوَى ، مِائَة | أَلْف ، اِبْن ، بِنْت ، وِفْق ، ذُوْ | مِثْل ، أَبُوْ ، أَخُوْ ، نَحْو ، فُوْ",
+    irama: "Pelangi-Pelangi",
+    lirik: "Jamiu badhu kullu ghairu dan kila\nKilta hasba subhaana dan juga siwa\nMiatu alfu ibnu bintu wifqa dan dzu\nMitslu abu akhu hamuu dan juga nahwu\n(pelangi-pelangi)"
+  },
+
+  // --- BAB 18 ---
+  {
+    level: 1,
+    bab: 18,
+    judul: "Isim Fiil",
+    arab: "أُفٍّ ، قَطْ ، وَيْ (وَيْكَأَنَّهُ) ، صَهْ / صَهٍ | هَيَّا ، هَيْتَ ، هَلُمَّ إِلَى ، هَاكَ | رُوَيْدَكَ ، فَعَالِ ، آمِيْنَ ، حَيَّ | إِلَيْكَ عَنْ ، مَهْ",
+    irama: "mustaf’ilun fa’ilun",
+    lirik: "qath, way, mah, hayya dan uffin\nhayyaa, haita laka, aamiin\nhalumma ila, haaka, shahin 2x\nruwaidaka, ilaika annii\njuga ada wazan fa’aali\nitu Isim akan tetapi\njadi fiil dimaknai\n(mustaf’ilun fa’ilun)"
   }
 ];
 
-// ==========================================
-// 2. DATA LATIHAN BACA BANGUNAN KALIMAH
-// ==========================================
-const dataLatihan = [
+// --- BAB 19 ---
   {
-    kategori: "Fi'il Shahih Tsulatsi Mujarrad",
-    wazan: "فَعَلَ - يَفْعُلُ",
-    contoh: "نَصَرَ يَنْصُرُ ، خَلَقَ يَخْلُقُ ، رَزَقَ يَرْزُقُ ، قَتَلَ يَقْتُلُ ، سَلَكَ يَسْلُكُ ، كَتَبَ يَكْتُبُ ، حَكَمَ يَحْكُمُ ، ذَكَرَ يَذْكُرُ"
-  },
-  {
-    kategori: "Fi'il Shahih Tsulatsi Mazid (Af'ala)",
-    wazan: "أَفْعَلَ - يُفْعِلُ - إِفْعَالًا",
-    contoh: "أَكْرَمَ يُكْرِمُ إِكْرَامًا ، أَحْسَنَ يُحْسِنُ إِحْسَانًا ، أَرْسَلَ يُرْسِلُ إِرْسَالًا ، أَسْلَمَ يُسْلِمُ إِسْلَامًا ، أَخْرَجَ يُخْرِجُ إِخْرَاجًا"
-  },
-  {
-    kategori: "Fi'il Shahih Tsulatsi Mazid (Fa''ala)",
-    wazan: "فَعَّلَ - يُفَعِّلُ - تَفْعِيْلًا",
-    contoh: "عَلَّمَ يُعَلِّمُ تَعْلِيْمًا ، قَدَّمَ يُقَدِّمُ تَقْدِيْمًا ، سَهَّلَ يُسَهِّلُ تَسْهِيْلًا ، عَظَّمَ يُعَظِّمُ تَعْظِيْمًا ، نَفَّذَ يُنَفِّذُ تَنْفِيْذًا"
-  },
-  {
-    kategori: "Bina Ajwaf (Tengah Huruf 'Illat)",
-    wazan: "قَالَ - يَقُوْلُ - قُلْ",
-    contoh: "قَالَ يَقُوْلُ قُلْ | بَاعَ يَبِيْعُ بِعْ | خَافَ يَخَافُ خَفْ | صَامَ يَصُوْمُ صُمْ | زَارَ يَزُوْرُ زُرْ | اِسْتَقَامَ يَسْتَقِيْمُ اِسْتَقِمْ"
-  },
-  {
-    kategori: "Bina Naqish (Akhir Huruf 'Illat)",
-    wazan: "دَعَا - يَدْعُوْ - اُدْعُ",
-    contoh: "دَعَا يَدْعُوْ اُدْعُ | رَمَى يَرْمِي اِرْمِ | سَعَى يَسْعَى اِسْعَ | قَضَى يَقْضِي اِقْضِ | رَضِيَ يَرْضَى اِرْضَ"
-  },
-  {
-    kategori: "Bina Mitsal (Awal Wawu / Ya)",
-    wazan: "وَجَدَ - يَجِدُ - جِدْ",
-    contoh: "وَجَدَ يَجِدُ جِدْ | وَعَدَ يَعِدُ عِدْ | وَقَفَ يَقِفُ قِفْ | وَصَفَ يَصِفُ صِفْ | وَضَعَ يَضَعُ ضَعْ"
-  },
-  {
-    kategori: "Bina Mudha'af (Huruf Kembar / Tasydid)",
-    wazan: "مَدَّ - يَمُدُّ - مُدَّ",
-    contoh: "مَدَّ يَمُدُّ مُدَّ | شَدَّ يَشُدُّ شُدَّ | رَدَّ يَرُدُّ رُدَّ | فَرَّ يَفِرُّ فِرَّ | ضَلَّ يَضِلُّ ضِلَّ"
+    level: 1,
+    bab: 19,
+    judul: "Tanda Fiil Madhi dan Mudhari",
+    arab: "• Tanda Madhi: ...تْ | لَقَدْ | قَدْ | ...تُ | ...تَ | ...تِ\n• Tanda Mudhari: سَوْفَ | ...سَـ | أَلَمْ | لَمْ | أَنَيْتَ",
+    irama: "Qaidaty",
+    lirik: "Tanda madhi tiga mari kita susun,\nTa fail qad laqad ta tanits yang sukun\nAnita lam alam qad sa dan saufa\nItu tanda mudhari janganlah lupa\n(qaidaty)"
   }
-];
-
-// ==========================================
-// 3. DATA NAZHAM JURUMIYAH BAHASA INDONESIA
-// ==========================================
-const dataNazham = [
-  {
-    bab: "Mukaddimah & Bab Kalam",
-    bait: "Bait 1 - 10",
-    syair: `Ubaid Rabbih Muhammad telah bertutur # Pujian bagi Allah Maha Pengatur
-Shalawat pada nabi dan keluarga # Serta sahabatnya yang ikhlas terjaga
-Selanjutnya maksud dari nazham kami # Memudahkan natsar Ibnu Ajurumi
-Bagi syapa yang ingin menghafalkannya # Tapi kesulitan menghafal natsarnya
-
-[BAB KALAM]
-Sesungguhnya had kalam menurut kami # Lafaz murakkab mufid wadha’ arabi
-Pembagian kalam ada tiga warna # Isim, fiil kemudian haraf makna
-Isim dikenal dengan khafadl dan tanwin # Kemasukan alif lam dengannya mungkin
-Dengan huruf khafadl yakni min dan ilaa # ‘An, fii dan rubba, serta ba juga ‘alaa
-Kaf, lam dan mudz mundzu juga huruf qasam # Jangan lupa hatta disbagian maqam`
-  },
-  {
-    bab: "Bab I'rab & Alamat I'rab",
-    bait: "Bait 11 - 25",
-    syair: `I’rab itu perubahan ujung kalim # Taqdiran lafzhan dengannya harus yakin
-Perubahan kalim mu’rab diujungnya # Karna amil berbeda memasukinya
-I’rab dibagi jadi empat warnanya # Rafa, nashab, khafadl, jazm istilahnya
-Rafa nashab tidak bisa dipungkiri # Hanya dalam isim dan fiil mudhari
-Khafadl hanya untuk isim lain tidak # Sedang jazm untuk mudhari semata
-
-[ALAMAT RAFA']
-Dhammah dan wawu juga alif serta nun # Tanda rafa dengannya umdah tersusun
-Isim mufrad dirofakan dengan dommah # Jaa’a zaydun contoh yang kokoh tak lemah
-Yang dengannya jamak taksir dirofakan # Jamak muanats salim pun disertakan`
-  },
-  {
-    bab: "Bab Kaana & Inna",
-    bait: "Bait 31 - 45",
-    syair: `Isim dirofakan khobar dinasabkan # Dengan af’al naqish harap perhatikan
-Kaana ashbaha amsa zhalla dan adhhaa # Baata shaara laisa juga maa bariha
-Maa zala maa infakka maa fati'a maa daam # Ikut beramal tanpa ragu dan bimbang
-
-Kebalikan kaana berlaku tuk inna # Anna lakinna layta la’alla ka’anna
-Contohnya inna malikan la alimu # Semisalnya laytal habiba qadimu`
-  }
-];
