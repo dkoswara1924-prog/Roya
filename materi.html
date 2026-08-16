@@ -104,7 +104,7 @@
     }
     .main-tab-btn.active span.sub { color: #1e272e; font-weight: 500; }
 
-    /* Sub-Filter Tab Wrapper */
+    /* Sub-Filter Tab Wrapper (Pill Selector) */
     .sub-filter-wrapper {
       display: flex;
       justify-content: center;
@@ -116,16 +116,18 @@
       background: rgba(0, 0, 0, 0.4);
       border: 1px solid var(--gold-dark);
       color: var(--gold-glow);
-      padding: 6px 14px;
+      padding: 6px 16px;
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.2s ease;
     }
     .sub-filter-btn.active, .sub-filter-btn:hover {
       background: rgba(212, 175, 55, 0.25);
       border-color: var(--gold-pure);
       color: #fff;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
     }
 
     /* Search Bar */
@@ -166,7 +168,7 @@
     .arabic-box {
       font-family: 'Amiri', serif;
       font-size: 1.55rem;
-      line-height: 2.1;
+      line-height: 2.2;
       color: var(--gold-glow);
       direction: rtl;
       background: rgba(0, 0, 0, 0.45);
@@ -236,7 +238,7 @@
     </button>
   </div>
 
-  <!-- Sub-Filter Area Dinamis -->
+  <!-- Sub-Filter Area Dinamis (Pil Level) -->
   <div id="subFilterArea" class="sub-filter-wrapper"></div>
 
   <!-- Kolom Pencarian -->
@@ -247,7 +249,7 @@
   <!-- Area Konten -->
   <main id="mainContainer" class="content-container"></main>
 
-  <!-- PANGGIL DATABASE data.js -->
+  <!-- DATABASE EKSTERNAL data.js -->
   <script src="data.js"></script>
 
   <!-- LOGIKA APLIKASI -->
@@ -259,6 +261,7 @@
     function selectMainTab(tab) {
       currentMainTab = tab;
       
+      // Update aktif tab utama
       document.querySelectorAll('.main-tab-btn').forEach(btn => btn.classList.remove('active'));
       const activeBtn = document.getElementById('tab-' + tab);
       if (activeBtn) activeBtn.classList.add('active');
@@ -306,7 +309,7 @@
       const query = filterQuery.toLowerCase().trim();
 
       if (typeof dataLagu === 'undefined' || typeof dataLatihan === 'undefined' || typeof dataNazham === 'undefined') {
-        container.innerHTML = `<div class="empty-state">File data.js tidak ditemukan atau sedang mengalami kendala.</div>`;
+        container.innerHTML = `<div class="empty-state">File data.js tidak ditemukan atau sedang mengalami kendala pembacaan.</div>`;
         return;
       }
 
