@@ -1,5 +1,6 @@
 // Ambil Nama Santri yang tersimpan dari Halaman Depan
 window.addEventListener('DOMContentLoaded', () => {
+  // Ambil Nama Santri
   const savedNama = localStorage.getItem('namaSantri');
   if (savedNama) {
     const userDisplay = document.getElementById('userNamaDisplay');
@@ -7,8 +8,16 @@ window.addEventListener('DOMContentLoaded', () => {
       userDisplay.innerText = savedNama;
     }
   }
-});
 
+  // Buka otomatis Tab sesuai pilihan di Funnel (Lagu / Teks Gundul / Nazham)
+  const targetTab = localStorage.getItem('targetTabAwal');
+  if (targetTab) {
+    const targetBtn = document.querySelector(`button[onclick="switchTab('${targetTab}')"]`);
+    if (targetBtn) {
+      targetBtn.click();
+    }
+  }
+});
 // Pergantian Tab Level, Latihan, Nazham, dan Kuis
 function switchTab(tabId) {
   // Sembunyikan semua tab pane
