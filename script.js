@@ -3,6 +3,14 @@ let count = 1452;
 function bukaModal() {
   const modal = document.getElementById('modalDialog');
   modal.style.display = 'flex';
+  
+  const btn = document.getElementById('btnKlik');
+  if (btn) {
+    btn.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      btn.style.transform = '';
+    }, 150);
+  }
 }
 
 function tutupModal() {
@@ -22,12 +30,7 @@ function handleDaftar(event) {
   const namaInput = document.getElementById('nama').value;
   
   if (namaInput.trim() !== "") {
-    count++;
-    document.getElementById('santriCount').innerText = count.toLocaleString('id-ID');
-    
-    alert(`Barakallahu fiik, ${namaInput}! Selamat bergabung dalam pembelajaran Bahasa Arab bersama AHMAD ZAKIN JAISYURROYA ✨`);
-    
-    document.getElementById('daftarForm').reset();
-    tutupModal();
+    localStorage.setItem('namaSantri', namaInput);
+    window.location.href = "materi.html";
   }
 }
