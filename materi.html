@@ -7,7 +7,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@700&family=Philosopher:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@700&family=Philosopher:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -15,7 +15,7 @@
       --gold-pure: #d4af37;
       --gold-glow: #f9e295;
       --gold-dark: #8c6d23;
-      --card-bg: rgba(9, 38, 28, 0.92);
+      --card-bg: rgba(9, 38, 28, 0.94);
       --card-border: #b89128;
       --cream-light: #f7f1e3;
       --green-accent: #2ecc71;
@@ -52,28 +52,84 @@
     .nav-title { font-family: 'Amiri', serif; font-size: 1.5rem; color: var(--gold-pure); }
     .user-badge { font-size: 0.85rem; background: rgba(212, 175, 55, 0.15); padding: 5px 14px; border-radius: 20px; border: 1px solid var(--gold-dark); color: var(--gold-glow); }
 
-    /* Hero */
-    .hero-section { text-align: center; padding: 35px 20px 15px; }
+    /* Hero Section */
+    .hero-section { text-align: center; padding: 30px 20px 10px; }
     .hero-frame {
-      max-width: 820px;
+      max-width: 840px;
       margin: 0 auto;
       background: linear-gradient(180deg, rgba(11, 48, 35, 0.85) 0%, rgba(5, 24, 17, 0.95) 100%);
       border: 2px solid var(--gold-pure);
       border-radius: 24px;
-      padding: 26px 20px;
+      padding: 24px 20px;
       box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
     }
     .bismillah { font-family: 'Amiri', serif; font-size: 1.25rem; color: var(--gold-glow); }
-    .hero-farisi { font-family: 'Noto Nastaliq Urdu', serif; font-size: 3.2rem; color: var(--gold-pure); line-height: 1.6; margin: 6px 0; }
-    .hero-sub { font-size: 1.05rem; font-weight: 700; color: #fff; }
-    .hero-dedication { font-size: 0.82rem; color: var(--gold-glow); margin-top: 8px; }
+    .hero-farisi { font-family: 'Noto Nastaliq Urdu', serif; font-size: 3rem; color: var(--gold-pure); line-height: 1.6; margin: 4px 0; }
+    .hero-sub { font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+    .hero-dedication { font-size: 0.82rem; color: var(--gold-glow); margin-top: 6px; }
+
+    /* 3 TAB UTAMA */
+    .tab-wrapper-main {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      max-width: 1000px;
+      margin: 24px auto 15px;
+      padding: 0 15px;
+      flex-wrap: wrap;
+    }
+    .main-tab-btn {
+      background: rgba(8, 30, 22, 0.85);
+      border: 2px solid var(--gold-dark);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 14px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      min-width: 260px;
+    }
+    .main-tab-btn span.sub { font-size: 0.72rem; font-weight: 400; color: #a4b0be; }
+    .main-tab-btn:hover, .main-tab-btn.active {
+      background: var(--gold-pure);
+      color: #051610;
+      border-color: #fff;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+      transform: translateY(-2px);
+    }
+    .main-tab-btn.active span.sub { color: #1e272e; font-weight: 500; }
+
+    /* Sub-Filter Tab Lagu */
+    .sub-filter-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .sub-filter-btn {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--gold-dark);
+      color: var(--gold-glow);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .sub-filter-btn.active, .sub-filter-btn:hover {
+      background: rgba(212, 175, 55, 0.25);
+      border-color: var(--gold-pure);
+      color: #fff;
+    }
 
     /* Search Bar */
-    .search-wrapper {
-      max-width: 600px;
-      margin: 15px auto 0;
-      padding: 0 15px;
-    }
+    .search-wrapper { max-width: 600px; margin: 0 auto 20px; padding: 0 15px; }
     .search-input {
       width: 100%;
       padding: 12px 18px;
@@ -90,38 +146,8 @@
       box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
     }
 
-    /* Tabs */
-    .tab-wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      max-width: 1100px;
-      margin: 20px auto 25px;
-      padding: 0 15px;
-      flex-wrap: wrap;
-    }
-    .tab-btn {
-      background: rgba(8, 30, 22, 0.85);
-      border: 1.5px solid var(--gold-dark);
-      color: #dcdde1;
-      padding: 9px 15px;
-      border-radius: 25px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .tab-btn:hover, .tab-btn.active {
-      background: var(--gold-pure);
-      color: #051610;
-      border-color: #fff;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
-      transform: translateY(-2px);
-    }
-
     /* Content Area */
-    .content-container { max-width: 960px; margin: 0 auto; padding: 0 15px; }
-
+    .content-container { max-width: 940px; margin: 0 auto; padding: 0 15px; }
     .module-card {
       background: var(--card-bg);
       border: 1.5px solid var(--card-border);
@@ -148,6 +174,7 @@
       border-radius: 10px;
       border-right: 4px solid var(--gold-pure);
       margin-bottom: 12px;
+      white-space: pre-line;
     }
 
     .melody-toggle {
@@ -165,10 +192,12 @@
     .nada-tag { font-size: 0.8rem; color: var(--green-accent); font-weight: bold; margin-bottom: 6px; }
     .lyrics { font-style: italic; line-height: 1.7; color: #f1f2f6; font-size: 0.95rem; white-space: pre-line; }
 
-    .empty-state {
-      text-align: center;
-      padding: 40px 20px;
-      color: #a4b0be;
+    .empty-state { text-align: center; padding: 40px 20px; color: #a4b0be; }
+
+    @media(max-width: 768px) {
+      .main-tab-btn { min-width: 100%; }
+      .hero-farisi { font-size: 2.2rem; }
+      .arabic-box { font-size: 1.35rem; }
     }
   </style>
 </head>
@@ -186,54 +215,331 @@
     <div class="hero-frame">
       <span class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
       <h1 class="hero-farisi" dir="rtl" lang="ar">هِمَّةُ النَّحْوِيَّة</h1>
-      <p class="hero-sub">HIMPUNAN LAGU NAHWIYAH & NAZHAM JURUMIYAH</p>
+      <p class="hero-sub">PLATFORM PEMBELAJARAN NAHWU INTERAKTIF</p>
       <p class="hero-dedication">Karya Abi Liwa • Dibina oleh <strong>AHMAD ZAKIN JAISYURROYA</strong></p>
-      
-      <!-- Kolom Pencarian Bab / Wazan -->
-      <div class="search-wrapper">
-        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Cari Bab, Kaidah, atau Wazan..." oninput="handleSearch()">
-      </div>
     </div>
   </section>
 
-  <!-- Pilihan Tab Modul -->
-  <div class="tab-wrapper">
-    <button id="btn-lvl1" class="tab-btn" onclick="setActiveTab('lvl1')">Level 1 (Bab 1-19)</button>
-    <button id="btn-lvl2" class="tab-btn" onclick="setActiveTab('lvl2')">Level 2 (Bab 20-33)</button>
-    <button id="btn-lvl3" class="tab-btn" onclick="setActiveTab('lvl3')">Level 3 (Bab 34-42)</button>
-    <button id="btn-latihan" class="tab-btn" onclick="setActiveTab('latihan')">Latihan Bangunan Kalimah</button>
-    <button id="btn-nazham" class="tab-btn" onclick="setActiveTab('nazham')">Nazham Jurumiyah (24 Bab)</button>
+  <!-- 3 TAB UTAMA -->
+  <div class="tab-wrapper-main">
+    <button id="tab-lagu" class="main-tab-btn" onclick="selectMainTab('lagu')">
+      <span>1. Himpunan Lagu Nahwiyah</span>
+      <span class="sub">Haraf, Isim, Fi'il & Bangunan Kalimah</span>
+    </button>
+    <button id="tab-latihan" class="main-tab-btn" onclick="selectMainTab('latihan')">
+      <span>2. Buku Latihan I</span>
+      <span class="sub">Membaca Bangunan Kalimah (Arab Gundul)</span>
+    </button>
+    <button id="tab-nazham" class="main-tab-btn" onclick="selectMainTab('nazham')">
+      <span>3. Buku Nazham Jurumiyah</span>
+      <span class="sub">Bahasa Indonesia (2015)</span>
+    </button>
   </div>
 
-  <!-- Area Konten yang Dirender Dinamis dari data.js -->
+  <!-- Sub-Filter Khusus Tab Lagu -->
+  <div id="subFilterArea" class="sub-filter-wrapper">
+    <button id="sub-lvl-all" class="sub-filter-btn active" onclick="setSubLevel('all')">Semua Level</button>
+    <button id="sub-lvl-1" class="sub-filter-btn" onclick="setSubLevel(1)">Level 1 (Bab 1-19)</button>
+    <button id="sub-lvl-2" class="sub-filter-btn" onclick="setSubLevel(2)">Level 2 (Bab 20-33)</button>
+    <button id="sub-lvl-3" class="sub-filter-btn" onclick="setSubLevel(3)">Level 3 (Bab 34-42)</button>
+  </div>
+
+  <!-- Kolom Pencarian -->
+  <div class="search-wrapper">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Cari Bab, Kaidah, Wazan, atau Bait..." oninput="handleSearch()">
+  </div>
+
+  <!-- Area Konten -->
   <main id="mainContainer" class="content-container"></main>
 
-  <!-- Memuat Database Materi -->
-  <script src="data.js"></script>
-
   <script>
-    let activeTab = 'lvl1';
+    // ==========================================
+    // DATABASE DATA MATERI LENGKAP
+    // ==========================================
+    const dataLagu = [
+      {
+        level: 1,
+        bab: 1,
+        judul: "Haraf Jar",
+        arab: "مِنْ ، فِيْ ، إِلَى ، عَلَى ، كَـ... ، لِـ... ، بِـ... ، عَنْ ، حَتَّى ، مُذْ ، مُنْذُ ، رُبَّ ، وَ ، بِـ... ، تَـ... ، خَلَا ، عَدَا ، حَاشَا",
+        irama: "mustafilun 3x",
+        lirik: "min fii ilaa ‘alaa ka li bi an hatta,\nmudz mundzu rubba qasam dengan wa bi ta\nkhalaa ‘adaa lafazh haasya selanjutnya\nitu haraf jar ulama menyebutnya\n(mustafilun3x)"
+      },
+      {
+        level: 1,
+        bab: 2,
+        judul: "Haraf Nawasikh Inna",
+        arab: "إِنَّ ، أَنَّ ، لَكِنَّ ، لَيْتَ ، لَعَلَّ ، كَأَنَّ ، لَا",
+        irama: "Balonku Ada Lima / Aku Pergi ke Mekkah / Sedang Apa",
+        lirik: "• Versi 1 (balonku ada lima):\ninna anna lakinna\nlaita laalla kaanna\ndan la nafiyah lil jinsi\nnashabkan isim setelahnya\n\n• Versi 2 (aku pergi ke mekkah):\ninna anna lakinna, laalla dan kaanna,\nlaita dan la nafi lil jinsi ikut serta\ninna anna lakinna, laalla dan kaanna,\nnashabkan isim yang ada setelahnya\n\n• Versi 3 (sedang apa):\ninna anna dan lakinna, laita kaanna la’alla,\ndan la nafiyah lil jinsi, nashabkan isim setelahnya"
+      },
+      {
+        level: 1,
+        bab: 3,
+        judul: "Haraf Athaf",
+        arab: "وَ ، فَـ... ، ثُمَّ ، أَوْ ، أَمْ ، لَكِنْ ، لَا ، بَلْ ، حَتَّى ، إِمَّا",
+        irama: "Dua Mata Saya",
+        lirik: "wa fa tsumma aw am, lakin laa bal hatta,\nimmaa ikut serta, haraf athaf namanya\n(dua mata saya)"
+      },
+      {
+        level: 1,
+        bab: 4,
+        judul: "Haraf Nawashib al Mudhari",
+        arab: "أَنْ ، لَنْ ، إِذَنْ ، كَيْ ، لِـ... ، وَ ، فَـ... ، أَوْ ، حَتَّى ، لِـ (لِلْجُحُوْد)",
+        irama: "Raja",
+        lirik: "an lan idzan kai, li wa hatta aw fa,\nnashabkan mudhari yang ada setelahnya 2x\n(raja)"
+      },
+      {
+        level: 1,
+        bab: 5,
+        judul: "Haraf Jawazim",
+        arab: "لَمْ ، أَلَمْ ، لَمَّا ، أَلَمَّا ، إِنْ ، لَا ، لِـ... ، إِذْمَا",
+        irama: "Ya Rabbi Bil Musthafa",
+        lirik: "lam alam lamma in, alamma lamul amri\ndan idzma laa nahi, jawazim fiil mudhari\n(ya rabbi bil musthafa)"
+      },
+      {
+        level: 1,
+        bab: 6,
+        judul: "Haraf Nida, Haraf Istisna dan Haraf Istifham",
+        arab: "• Haraf Nida: يَا ، أَيْ ، آ ، يَا أَيَّتُهَا ، يَا أَيُّهَا\n• Haraf Istisna: إِلَّا ، خَلَا ، عَدَا ، حَاشَا\n• Haraf Istifham: أَ ، هَلْ",
+        irama: "Apuse Kokondao",
+        lirik: "yaa ay aa, yaa ayyatuha, ya ayyuha haraf nida\nilla khala ‘adaa hasya huruf istisna\nhamzah dan hal haraf tanya\n(apuse kokondao)"
+      },
+      {
+        level: 1,
+        bab: 7,
+        judul: "Haraf yang Menjadi Tanda Fiil & Catatan Kaidah",
+        arab: "• Haraf Jawab: نَعَمْ ، لَا ، بَلَى ، أَجَلْ ، جَيْرِ\n• Haraf yang Lain: لَوْ ، لَوْلَا ، لَوْمَا ، أَمَّا ، كَلَّا ، أَلَا\n• Tanda Fiil: قَدْ ، لَقَدْ ، سَـ ، سَوْفَ ، تْ (تَاءُ التَّأْنِيْثِ السَّاكِنَةِ) ، لَمْ ، لَا نَافِي ، لَا نَاهِي\n• Haraf Lain: إِنَّمَا ، لَا ، مَا ، لَاتَ",
+        irama: "Kaidah / Catatan Pembelajaran",
+        lirik: "Catatan Pembelajaran:\n1. Haraf Tafsir: (ai)\n2. Haraf Alamat Fiil: (qad, laqad, sa, saufa, ta tanits yang sukun, lam, laa nafi, laa nahi)\n3. Haraf yang lain: lau laulaa dan laumaa, innamaa, haraf nasakh selain inna yaitu laa, maa dan laata, juga ada haraf ammaa, kalla dan alaa\n4. Haraf jawab: na’am, bala, ajal, jairi, laa"
+      },
+      {
+        level: 1,
+        bab: "Kaidah",
+        judul: "Mengenal Kalimah Isim Melalui Tandanya dan Beberapa Jenisnya",
+        arab: "مَـ | مِـ | مُـ | أَلْ | التَّنْوِيْن | حُرُوْف النِّدَاء | حُرُوْف النَّصْب وَالْجَرّ | الْإِضَافَة | التَّاء المَرْبُوْطَة",
+        irama: "Lagu Qaidaty",
+        lirik: "Tanda isim jumlahnya ada delapan\nma mi mu al tanwin dan nida di depan\nHaraf nashab haraf jar serta idhofah\njangan lupa yang terakhir ta marbuthoh\n(lagu qaidaty)"
+      },
+      {
+        level: 1,
+        bab: 8,
+        judul: "Isim Isyarah",
+        arab: "هٰذَا ، هٰذَانِ ، هٰؤُلَاءِ | هٰذِهِ ، هَاتَانِ ، هٰؤُلَاءِ | ذٰلِكَ ، ذَانِكَ ، أُولٰئِكَ | تِلْكَ ، تَانِكَ ، أُولٰئِكَ | هُنَا ، ثَمَّ ، هُنَاكَ ، هُنَالِكَ",
+        irama: "Anak Gembala",
+        lirik: "hadza hadzani haulai, hadzihi hatani haulai,\ndzalika dzanika ulaika, tilka tanika ulaika,\nhuna hunaka hunalika, tsamma tsammata isyarah namanya 2x\n(anak gembala)"
+      },
+      {
+        level: 1,
+        bab: 9,
+        judul: "Isim Dhomir Munfashil Rofa",
+        arab: "هُوَ ، هُمَا ، هُمْ | هِيَ ، هُمَا ، هُنَّ | أَنْتَ ، أَنْتُمَا ، أَنْتُمْ | أَنْتِ ، أَنْتُمَا ، أَنْتُنَّ | أَنَا ، نَحْنُ",
+        irama: "Lagu Raja",
+        lirik: "huwa huma hum, hiya huma hunna,\nanta antuma antum, anti antuma antuna,\nana dan nahnu, begitu bunyinya,\ndhamir munfashil rofa, ulama menyebutnya\n(lagu raja)"
+      },
+      {
+        level: 1,
+        bab: 10,
+        judul: "Isim Dhomir Munfashil Nashab",
+        arab: "إِيَّاهُ ، إِيَّاهُمَا ، إِيَّاهُمْ | إِيَّاهَا ، إِيَّاهُمَا ، إِيَّاهُنَّ | إِيَّاكَ ، إِيَّاكُمَا ، إِيَّاكُمْ | إِيَّاكِ ، إِيَّاكُمَا ، إِيَّاكُنَّ | إِيَّايَ ، إِيَّانَا",
+        irama: "Ya Thayba",
+        lirik: "iyyahu iyaahuma iyyaahum\niyyaha iyuhaama iyahunna\niyyaka iyyakuma iyaakum\niyyaaki iyakuma iyaakunna\niyyaya iyaana\n(ya thayba)"
+      },
+      {
+        level: 1,
+        bab: 11,
+        judul: "Isim Dhomir Muttashil Rofa (Taiwan)",
+        arab: "ـتَ... ، ـتُمَا... ، ـتُمْ... ، ـتُ... ، ـتِ... ، ـتُنَّ... | نَا... ، نَ... ، وا... ، يْ...",
+        irama: "Sedang Apa",
+        lirik: "ta tuma tum, tu ti tunna,\nalif nun dan waw ya,\ndhamir taiwan muttashil rofa\ndengan fiil nempelnya\n(sedang apa)"
+      },
+      {
+        level: 1,
+        bab: 12,
+        judul: "Isim Dhomir Muttashil Nashab/Jar (Haik)",
+        arab: "ـهُ... ، ـهُمَا... ، ـهُمْ... ، ـهَا... ، ـهُمَا... ، ـهُنَّ... | ـكَ... ، ـكُمَا... ، ـكُمْ... ، ـكِ... ، ـكُمَا... ، ـكُنَّ... | ـيْ / ـنِيْ... ، ـنَا...",
+        irama: "Sedang Apa",
+        lirik: "hu humaa hum, ha huma hunna,\nka kuma kum ki kuma kunna,\nii ya nii na dhamir muttashil,\nnashab dan jar hukumnya\n(sedang apa)"
+      },
+      {
+        level: 1,
+        bab: 13,
+        judul: "Isim Maushul",
+        arab: "الَّذِيْ ، اللَّذَانِ ، الَّذِيْنَ ، الَّتِيْ ، اللَّتَانِ ، اللَّائِيْ | اللَّاتِيْ ، أَيُّ ، ذَا ، مَا ، مَنْ",
+        irama: "Aku Pergi ke Mekkah",
+        lirik: "alladzi alladani dan juga alladzina,\nallati allatani allaa`i dan allaatii\njangan lupa sertakan ayu dza juga ma man\nisim maushul jadi penyambung kalam\n(aku pergi ke mekkah)"
+      },
+      {
+        level: 1,
+        bab: 14,
+        judul: "Isim Istifham",
+        arab: "مَا ، مَنْ ، أَيْنَ ، أَيُّ ، أَنَّى ، كَيْفَ | كَمْ ، مَتَى ، أَيَّانَ",
+        irama: "Sedang Apa",
+        lirik: "ma man aina, ayyu annaa, kaifa kam mataa ayyana\nma man aina, ayu annaa, isim istifham disebutnya\n(sedang apa)"
+      },
+      {
+        level: 1,
+        bab: 15,
+        judul: "Isim Syarat",
+        arab: "مَا ، مَنْ ، أَيْنَمَا ، أَيُّ ، أَنَّى ، كَيْفَمَا | مَهْمَا ، مَتَى ، أَيَّانَ ، حَيْثُمَا",
+        irama: "Dimana Dimana Anak Kambing Saya",
+        lirik: "ma man ainama, mataa mahma ayyaana,\nhaitsuma kaifama ayyun dan juga anna 2x\ningat itu semua, isim syarat namanya,\njazmkan dua mudhari setelahnya\n(dimana dimana anak kambing saya)"
+      },
+      {
+        level: 1,
+        bab: 16,
+        judul: "Zharaf (Makan Zaman)",
+        arab: "خَلْفَ ، أَمَامَ ، فَوْقَ ، تَحْتَ ، يَمِيْنَ ، شِمَالَ | قَبْلَ ، بَعْدَ ، دُوْنَ ، جَانِبَ ، عِنْدَ ، بَيْنَ | لَدُنْ ، لَدَى ، إِذَا ، لَمَّا ، مَعَ ، حَوْلَ | كُلَّمَا ، حَيْثُ",
+        irama: "Bila Kau Senang Hati Tepuk Tangan",
+        lirik: "Haula khalfa amama fawqa tahta,\nyamiina syimaala qabla ba’da,\nduuna janiba inda, baina ladun ladaa,\nidza lamma kullama haitsu ma’a\n(bila kau senang hati tepuk tangan)"
+      },
+      {
+        level: 1,
+        bab: 17,
+        judul: "Lagu Isim Idhofah",
+        arab: "جَمِيْع ، بَعْض ، كُلّ ، غَيْر ، كِلَا | كِلْتَا ، حَسْب ، سُبْحَانَ ، سِوَى ، مِائَة | أَلْف ، اِبْن ، بِنْت ، وِفْق ، ذُوْ | مِثْل ، أَبُوْ ، أَخُوْ ، نَحْو ، فُوْ",
+        irama: "Pelangi-Pelangi",
+        lirik: "Jamiu badhu kullu ghairu dan kila\nKilta hasba subhaana dan juga siwa\nMiatu alfu ibnu bintu wifqa dan dzu\nMitslu abu akhu hamuu dan juga nahwu\n(pelangi-pelangi)"
+      },
+      {
+        level: 1,
+        bab: 18,
+        judul: "Isim Fiil",
+        arab: "أُفٍّ ، قَطْ ، وَيْ (وَيْكَأَنَّهُ) ، صَهْ / صَهٍ | هَيَّا ، هَيْتَ ، هَلُمَّ إِلَى ، هَاكَ | رُوَيْدَكَ ، فَعَالِ ، آمِيْنَ ، حَيَّ | إِلَيْكَ عَنْ ، مَهْ",
+        irama: "mustaf’ilun fa’ilun",
+        lirik: "qath, way, mah, hayya dan uffin\nhayyaa, haita laka, aamiin\nhalumma ila, haaka, shahin 2x\nruwaidaka, ilaika annii\njuga ada wazan fa’aali\nitu Isim akan tetapi\njadi fiil dimaknai\n(mustaf’ilun fa’ilun)"
+      },
+      {
+        level: 1,
+        bab: 19,
+        judul: "Tanda Fiil Madhi dan Mudhari",
+        arab: "• Tanda Madhi: ...تْ | لَقَدْ | قَدْ | ...تُ | ...تَ | ...تِ\n• Tanda Mudhari: سَوْفَ | ...سَـ | أَلَمْ | لَمْ | أَنَيْتَ",
+        irama: "Qaidaty",
+        lirik: "Tanda madhi tiga mari kita susun,\nTa fail qad laqad ta tanits yang sukun\nAnita lam alam qad sa dan saufa\nItu tanda mudhari janganlah lupa\n(qaidaty)"
+      },
+      {
+        level: 2,
+        bab: 20,
+        judul: "Wazan Fi'il Madhi, Mudhari & Amar",
+        arab: "فَعَلَ فَعِلَ فَعُلَ | أَفْعَلَ فَعَّلَ فَاعَلَ | تَفَعَّلَ تَفَاعَلَ اِنْفَعَلَ اِفْتَعَلَ اِفْعَلَّ | اِسْتَفْعَلَ",
+        irama: "Pelangi-Pelangi / Mustaf'ilun",
+        lirik: "Fa’ala, fa’ila fa’ula tsulatsi,\nAf’ala, fa’’ala, faa’ala ruba’iy,\nTafa’’ala, tafaa’ala, infa’ala, ifta’ala,\nif’alla khumasi Istaf’ala sudasi."
+      },
+      {
+        level: 2,
+        bab: 26,
+        judul: "Kaidah Fi'il Majhul (Bentuk Pasif)",
+        arab: "مَاضِي مَجْهُوْل: ضُمَّ أَوَّلُهُ وَكُسِرَ مَا قَبْلَ آخِرِهِ (نُصِرَ ، خُلِقَ)\nمُضَارِع مَجْهُوْل: ضُمَّ أَوَّلُهُ وَفُتِحَ مَا قَبْلَ آخِرِهِ (يُنْصَرُ ، يُخْلَقُ)",
+        irama: "Kaidah Langsung",
+        lirik: "Madhi majhul: Dhommahkan awalnya, kasrahkan sebelum akhirnya.\nMudhari majhul: Dhommahkan awalnya, fathahkan sebelum akhirnya."
+      },
+      {
+        level: 3,
+        bab: 36,
+        judul: "7 Marfu'at al-Asma (Isim Dibaca Rafa')",
+        arab: "الفَاعِل ، نَائِبُ الفَاعِل ، المُبْتَدَأ ، الخَبَر ، اِسْمُ كَانَ ، خَبَرُ إِنَّ ، التَّوَابِعُ لِلْمَرْفُوْعِ (نَعْت ، عَطْف ، تَوْكِيْد ، بَدَل)",
+        irama: "Irama Jurumiyah",
+        lirik: "Fa'il, naibul fa'il, mubtada dan khabar,\nisim kaana khabar inna dan tawabi' yang menyertai."
+      },
+      {
+        level: 3,
+        bab: 37,
+        judul: "13 Manshubat al-Asma (Isim Dibaca Nashab)",
+        arab: "مَفْعُوْل بِهِ ، مَفْعُوْل فِيْهِ ، مَفْعُوْل مُطْلَق ، مَفْعُوْل مَعَهُ ، مَفْعُوْل لِأَجْلِهِ ، الحَال ، التَّمْيِيْز ، المُنَادَى ، المُسْتَثْنَى ، خَبَرُ كَانَ ، اِسْمُ إِنَّ ، اِسْمُ لَا ، التَّوَابِعُ",
+        irama: "Irama Jurumiyah",
+        lirik: "Maf'ul yang lima (bih, fih, muthlaq, ma'ah, liajlih),\nhal tamyiz munada istisna, khabar kana isim inna, isim laa dan tawabi'."
+      }
+    ];
 
-    function setActiveTab(tabId) {
-      activeTab = tabId;
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      const activeBtn = document.getElementById('btn-' + tabId);
+    const dataLatihan = [
+      {
+        kategori: "Fi'il Shahih Tsulatsi Mujarrad",
+        wazan: "فَعَلَ - يَفْعُلُ",
+        contoh: "نَصَرَ يَنْصُرُ ، خَلَقَ يَخْلُقُ ، رَزَقَ يَرْزُقُ ، قَتَلَ يَقْتُلُ ، سَلَكَ يَسْلُكُ ، كَتَبَ يَكْتُبُ ، حَكَمَ يَحْكُمُ ، ذَكَرَ يَذْكُرُ"
+      },
+      {
+        kategori: "Fi'il Shahih Tsulatsi Mazid (Af'ala)",
+        wazan: "أَفْعَلَ - يُفْعِلُ - إِفْعَالًا",
+        contoh: "أَكْرَمَ يُكْرِمُ إِكْرَامًا ، أَحْسَنَ يُحْسِنُ إِحْسَانًا ، أَرْسَلَ يُرْسِلُ إِرْسَالًا ، أَسْلَمَ يُسْلِمُ إِسْلَامًا ، أَخْرَجَ يُخْرِجُ إِخْرَاجًا"
+      },
+      {
+        kategori: "Bina Ajwaf (Tengah Huruf 'Illat)",
+        wazan: "قَالَ - يَقُوْلُ - قُلْ",
+        contoh: "قَالَ يَقُوْلُ قُلْ | بَاعَ يَبِيْعُ بِعْ | خَافَ يَخَافُ خَفْ | صَامَ يَصُوْمُ صُمْ | زَارَ يَزُوْرُ زُرْ | اِسْتَقَامَ يَسْتَقِيْمُ اِسْتَقِمْ"
+      },
+      {
+        kategori: "Bina Naqish (Akhir Huruf 'Illat)",
+        wazan: "دَعَا - يَدْعُوْ - اُدْعُ",
+        contoh: "دَعَا يَدْعُوْ اُدْعُ | رَمَى يَرْمِي اِرْمِ | سَعَى يَسْعَى اِسْعَ | قَضَى يَقْضِي اِقْضِ | رَضِيَ يَرْضَى اِرْضَ"
+      }
+    ];
+
+    const dataNazham = [
+      {
+        bab: "Mukaddimah & Bab Kalam",
+        bait: "Bait 1 - 10",
+        syair: `Ubaid Rabbih Muhammad telah bertutur # Pujian bagi Allah Maha Pengatur
+Shalawat pada nabi dan keluarga # Serta sahabatnya yang ikhlas terjaga
+Selanjutnya maksud dari nazham kami # Memudahkan natsar Ibnu Ajurumi
+Bagi syapa yang ingin menghafalkannya # Tapi kesulitan menghafal natsarnya
+
+[BAB KALAM]
+Sesungguhnya had kalam menurut kami # Lafaz murakkab mufid wadha’ arabi
+Pembagian kalam ada tiga warna # Isim, fiil kemudian haraf makna
+Isim dikenal dengan khafadl dan tanwin # Kemasukan alif lam dengannya mungkin`
+      },
+      {
+        bab: "Bab I'rab & Alamat I'rab",
+        bait: "Bait 11 - 25",
+        syair: `I’rab itu perubahan ujung kalim # Taqdiran lafzhan dengannya harus yakin
+Perubahan kalim mu’rab diujungnya # Karna amil berbeda memasukinya
+I’rab dibagi jadi empat warnanya # Rafa, nashab, khafadl, jazm istilahnya
+Rafa nashab tidak bisa dipungkiri # Hanya dalam isim dan fiil mudhari
+Khafadl hanya untuk isim lain tidak # Sedang jazm untuk mudhari semata`
+      }
+    ];
+
+    // ==========================================
+    // LOGIKA RENDER & NAVIGASI
+    // ==========================================
+    let currentMainTab = 'lagu';
+    let currentLaguLevel = 'all';
+
+    function selectMainTab(tab) {
+      currentMainTab = tab;
+      
+      document.querySelectorAll('.main-tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('tab-' + tab);
       if (activeBtn) activeBtn.classList.add('active');
+
+      const subArea = document.getElementById('subFilterArea');
+      if (subArea) {
+        subArea.style.display = tab === 'lagu' ? 'flex' : 'none';
+      }
 
       document.getElementById('searchInput').value = '';
       renderContent();
     }
 
+    function setSubLevel(lvl) {
+      currentLaguLevel = lvl;
+      document.querySelectorAll('.sub-filter-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById('sub-lvl-' + lvl);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      renderContent();
+    }
+
     function renderContent(filterQuery = '') {
       const container = document.getElementById('mainContainer');
+      if (!container) return;
       container.innerHTML = '';
       const query = filterQuery.toLowerCase().trim();
 
-      // RENDER LEVEL 1, 2, atau 3
-      if (activeTab === 'lvl1' || activeTab === 'lvl2' || activeTab === 'lvl3') {
-        const lvlNum = activeTab === 'lvl1' ? 1 : activeTab === 'lvl2' ? 2 : 3;
+      // TAB 1: LAGU NAHWIYAH
+      if (currentMainTab === 'lagu') {
         const filtered = dataLagu.filter(item => {
-          const matchLevel = item.level === lvlNum;
+          const matchLevel = currentLaguLevel === 'all' || item.level === currentLaguLevel;
           const matchSearch = query === '' || 
             item.judul.toLowerCase().includes(query) || 
             item.arab.includes(query) || 
@@ -242,7 +548,7 @@
         });
 
         if (filtered.length === 0) {
-          container.innerHTML = `<div class="empty-state">Materi tidak ditemukan. Coba kata kunci lain.</div>`;
+          container.innerHTML = `<div class="empty-state">Materi Lagu Nahwiyah tidak ditemukan.</div>`;
           return;
         }
 
@@ -262,8 +568,8 @@
         });
       }
 
-      // RENDER LATIHAN BANGUNAN KALIMAH
-      else if (activeTab === 'latihan') {
+      // TAB 2: LATIHAN BACA
+      else if (currentMainTab === 'latihan') {
         const filtered = dataLatihan.filter(item => {
           return query === '' || item.kategori.toLowerCase().includes(query) || item.wazan.includes(query) || item.contoh.includes(query);
         });
@@ -285,8 +591,8 @@
         });
       }
 
-      // RENDER NAZHAM JURUMIYAH
-      else if (activeTab === 'nazham') {
+      // TAB 3: NAZHAM JURUMIYAH
+      else if (currentMainTab === 'nazham') {
         const filtered = dataNazham.filter(item => {
           return query === '' || item.bab.toLowerCase().includes(query) || item.syair.toLowerCase().includes(query);
         });
@@ -327,19 +633,29 @@
       renderContent(q);
     }
 
-    // Inisialisasi Saat Dimuat
-    window.addEventListener('DOMContentLoaded', () => {
+    // Inisialisasi awal saat DOM siap
+    document.addEventListener('DOMContentLoaded', () => {
       const nama = localStorage.getItem('namaSantri');
       if (nama) {
         document.getElementById('userNamaDisplay').innerText = nama;
       }
 
-      let target = window.location.hash ? window.location.hash.replace('#', '') : localStorage.getItem('targetTabAwal');
-      if (!target || !['lvl1', 'lvl2', 'lvl3', 'latihan', 'nazham'].includes(target)) {
-        target = 'lvl1';
+      let initialTarget = window.location.hash ? window.location.hash.replace('#', '') : localStorage.getItem('targetTabAwal');
+      
+      if (initialTarget === 'latihan') {
+        selectMainTab('latihan');
+      } else if (initialTarget === 'nazham') {
+        selectMainTab('nazham');
+      } else if (initialTarget === 'lvl2') {
+        selectMainTab('lagu');
+        setSubLevel(2);
+      } else if (initialTarget === 'lvl3') {
+        selectMainTab('lagu');
+        setSubLevel(3);
+      } else {
+        selectMainTab('lagu');
+        setSubLevel(1);
       }
-
-      setActiveTab(target);
     });
   </script>
 </body>
