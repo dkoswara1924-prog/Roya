@@ -3,308 +3,413 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Belajar Nahwu Bersama AHMAD ZAKIN JAISYURROYA</title>
+  <title>Buku Lagu Nahwu & Latihan Baca - AHMAD ZAKIN JAISYURROYA</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Philosopher:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@700&family=Philosopher:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #0d2e23 0%, #061611 65%, #020806 100%);
       --gold-pure: #d4af37;
       --gold-glow: #f9e295;
       --gold-dark: #8c6d23;
-      --card-bg: linear-gradient(180deg, #0d3829 0%, #061c14 100%);
-      --emerald-border: #1b5e43;
+      --card-bg: rgba(9, 38, 28, 0.92);
+      --card-border: #b89128;
       --cream-light: #f7f1e3;
+      --green-accent: #2ecc71;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       min-height: 100vh;
-      background: radial-gradient(circle at 50% 20%, #0e3b2c 0%, #061811 70%, #020a07 100%);
+      background: var(--bg-gradient);
       font-family: 'Poppins', sans-serif;
       color: var(--cream-light);
+      padding-bottom: 70px;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(4, 18, 13, 0.95);
+      border-bottom: 2px solid var(--gold-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-link { color: var(--gold-glow); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .nav-title { font-family: 'Amiri', serif; font-size: 1.5rem; color: var(--gold-pure); }
+    .user-badge { font-size: 0.85rem; background: rgba(212, 175, 55, 0.15); padding: 5px 14px; border-radius: 20px; border: 1px solid var(--gold-dark); color: var(--gold-glow); }
+
+    /* Hero Section */
+    .hero-section { text-align: center; padding: 30px 20px 10px; }
+    .hero-frame {
+      max-width: 840px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(11, 48, 35, 0.85) 0%, rgba(5, 24, 17, 0.95) 100%);
+      border: 2px solid var(--gold-pure);
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+    }
+    .bismillah { font-family: 'Amiri', serif; font-size: 1.25rem; color: var(--gold-glow); }
+    .hero-farisi { font-family: 'Noto Nastaliq Urdu', serif; font-size: 3.2rem; color: var(--gold-pure); line-height: 1.6; margin: 4px 0; }
+    .hero-sub { font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+    .hero-dedication { font-size: 0.82rem; color: var(--gold-glow); margin-top: 6px; }
+
+    /* 3 TAB UTAMA */
+    .tab-wrapper-main {
       display: flex;
       justify-content: center;
+      gap: 12px;
+      max-width: 1000px;
+      margin: 24px auto 15px;
+      padding: 0 15px;
+      flex-wrap: wrap;
+    }
+    .main-tab-btn {
+      background: rgba(8, 30, 22, 0.85);
+      border: 2px solid var(--gold-dark);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 14px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      padding: 20px;
+      gap: 3px;
+      min-width: 260px;
+    }
+    .main-tab-btn span.sub { font-size: 0.72rem; font-weight: 400; color: #a4b0be; }
+    .main-tab-btn:hover, .main-tab-btn.active {
+      background: var(--gold-pure);
+      color: #051610;
+      border-color: #fff;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+      transform: translateY(-2px);
+    }
+    .main-tab-btn.active span.sub { color: #1e272e; font-weight: 500; }
+
+    /* Sub-Filter Khusus Tab 1 (Level 1, 2, 3) */
+    .sub-filter-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .sub-filter-btn {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--gold-dark);
+      color: var(--gold-glow);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .sub-filter-btn.active, .sub-filter-btn:hover {
+      background: rgba(212, 175, 55, 0.25);
+      border-color: var(--gold-pure);
+      color: #fff;
     }
 
-    .funnel-card {
-      position: relative;
+    /* Search Bar */
+    .search-wrapper { max-width: 600px; margin: 0 auto 20px; padding: 0 15px; }
+    .search-input {
       width: 100%;
-      max-width: 580px;
+      padding: 12px 18px;
+      border-radius: 25px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1.5px solid var(--gold-dark);
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+      text-align: center;
+    }
+    .search-input:focus {
+      border-color: var(--gold-pure);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Content Area */
+    .content-container { max-width: 940px; margin: 0 auto; padding: 0 15px; }
+    .module-card {
       background: var(--card-bg);
-      border: 2px solid var(--gold-pure);
-      border-radius: 28px;
-      box-shadow: 0 0 35px rgba(212, 175, 55, 0.25), 0 15px 40px rgba(0, 0, 0, 0.8);
-      padding: 35px 26px;
+      border: 1.5px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      animation: fadeIn 0.3s ease-out;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .card-header .badge { background: var(--gold-dark); color: #fff; font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; font-weight: bold; }
+    .card-header h3 { font-size: 1.15rem; color: #fff; }
+
+    .arabic-box {
+      font-family: 'Amiri', serif;
+      font-size: 1.55rem;
+      line-height: 2.1;
+      color: var(--gold-glow);
+      direction: rtl;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 16px 20px;
+      border-radius: 10px;
+      border-right: 4px solid var(--gold-pure);
+      margin-bottom: 12px;
     }
 
-    .corner-ornament {
-      position: absolute;
-      width: 22px;
-      height: 22px;
-      border: 2px solid var(--gold-glow);
-      opacity: 0.85;
-      pointer-events: none;
+    .melody-toggle {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px dashed var(--gold-pure);
+      color: var(--gold-glow);
+      padding: 7px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
     }
-    .corner-ornament.top-left { top: 12px; left: 12px; border-right: none; border-bottom: none; }
-    .corner-ornament.top-right { top: 12px; right: 12px; border-left: none; border-bottom: none; }
-    .corner-ornament.bottom-left { bottom: 12px; left: 12px; border-right: none; border-top: none; }
-    .corner-ornament.bottom-right { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+    .melody-toggle:hover { background: var(--gold-pure); color: #051610; }
+    .melody-box { display: none; margin-top: 12px; background: rgba(0, 0, 0, 0.45); padding: 14px 16px; border-radius: 10px; border-left: 3px solid var(--gold-glow); }
+    .nada-tag { font-size: 0.8rem; color: var(--green-accent); font-weight: bold; margin-bottom: 6px; }
+    .lyrics { font-style: italic; line-height: 1.7; color: #f1f2f6; font-size: 0.95rem; white-space: pre-line; }
 
-    .funnel-header { margin-bottom: 22px; }
-    .nav-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-    .btn-back { background: transparent; border: none; color: var(--gold-glow); font-size: 0.85rem; cursor: pointer; font-weight: 600; visibility: hidden; }
-    .btn-back:hover { color: #fff; }
-    .step-indicator { font-size: 0.8rem; color: var(--gold-glow); font-weight: 600; }
+    .empty-state { text-align: center; padding: 40px 20px; color: #a4b0be; }
 
-    .progress-track { background: rgba(0, 0, 0, 0.5); height: 8px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.3); }
-    .progress-bar { background: linear-gradient(90deg, #d4af37, #f9e295); height: 100%; width: 25%; transition: width 0.3s ease; }
-
-    .question-header { text-align: center; margin-bottom: 22px; }
-    .bismillah-mini { font-family: 'Amiri', serif; font-size: 1.15rem; color: var(--gold-glow); display: block; margin-bottom: 4px; }
-    .question-title { font-family: 'Philosopher', serif; font-size: 1.45rem; color: #fff; line-height: 1.4; margin-bottom: 6px; }
-    .question-sub { font-size: 0.85rem; color: #c8d6e5; line-height: 1.5; }
-
-    .step-section { display: none; }
-    .step-section.active { display: block; }
-
-    .options-container { display: flex; flex-direction: column; gap: 12px; }
-    .option-card { display: flex; align-items: center; justify-content: space-between; background: rgba(0, 0, 0, 0.45); border: 1.5px solid var(--emerald-border); border-radius: 14px; padding: 16px 18px; cursor: pointer; transition: all 0.22s ease; user-select: none; }
-    .option-card:hover { background: rgba(212, 175, 55, 0.18); border-color: var(--gold-pure); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.25); }
-
-    .option-left { display: flex; align-items: center; gap: 14px; }
-    .option-icon { font-size: 1.5rem; background: rgba(212, 175, 55, 0.15); padding: 8px 12px; border-radius: 10px; border: 1px solid var(--gold-dark); display: flex; align-items: center; justify-content: center; }
-    .option-text h4 { font-size: 0.95rem; color: #fff; margin-bottom: 3px; }
-    .option-text p { font-size: 0.78rem; color: #a4b0be; line-height: 1.3; }
-    .option-arrow { color: var(--gold-pure); font-size: 1.2rem; font-weight: bold; }
-
-    .input-name-group { margin-top: 10px; text-align: left; }
-    .input-name-group label { font-size: 0.85rem; color: var(--gold-glow); display: block; margin-bottom: 6px; }
-    .input-name-group input { width: 100%; padding: 14px 16px; border-radius: 10px; background: rgba(0, 0, 0, 0.5); border: 1.5px solid var(--gold-dark); color: #fff; font-size: 1rem; outline: none; }
-    .input-name-group input:focus { border-color: var(--gold-pure); box-shadow: 0 0 10px rgba(212, 175, 55, 0.4); }
-
-    .btn-submit-name { width: 100%; margin-top: 18px; padding: 14px; background: linear-gradient(135deg, #d4af37, #b8860b); border: none; border-radius: 10px; font-weight: 700; font-size: 1rem; color: #061712; cursor: pointer; transition: 0.2s; }
-    .btn-submit-name:hover { background: #f9e295; box-shadow: 0 0 15px rgba(249, 226, 149, 0.6); }
+    @media(max-width: 768px) {
+      .main-tab-btn { min-width: 100%; }
+      .hero-farisi { font-size: 2.2rem; }
+      .arabic-box { font-size: 1.35rem; }
+    }
   </style>
 </head>
 <body>
 
-  <main class="funnel-card">
-    <div class="corner-ornament top-left"></div>
-    <div class="corner-ornament top-right"></div>
-
-    <div class="funnel-header">
-      <div class="nav-top">
-        <button id="btnBack" class="btn-back" type="button" onclick="goToStep(currentStep - 1)">← Kembali</button>
-        <span class="step-indicator" id="stepIndicator">Langkah 1 / 4</span>
-      </div>
-      <div class="progress-track">
-        <div id="progressBar" class="progress-bar"></div>
-      </div>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="back-link">← Kembali ke Survei</a>
+      <div class="nav-title">بُغْيَةُ الطُّلَّابِ فِي النَّحْوِ</div>
+      <div class="user-badge">Santri: <span id="userNamaDisplay">Tamu</span></div>
     </div>
+  </header>
 
-    <!-- LANGKAH 1 -->
-    <div id="step1" class="step-section active">
-      <div class="question-header">
-        <span class="bismillah-mini">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
-        <h2 class="question-title">Pilih Fokus Pembelajaran Anda</h2>
-        <p class="question-sub">Pilih materi utama bersama AHMAD ZAKIN JAISYURROYA:</p>
-      </div>
-
-      <div class="options-container">
-        <div class="option-card" onclick="selectMateri('lagu')">
-          <div class="option-left">
-            <div class="option-icon">🎵</div>
-            <div class="option-text">
-              <h4>Himpunan Lagu Nahwiyah</h4>
-              <p>Hafalan tanda Isim, Haraf & Wazan dengan irama lagu yang asyik</p>
-            </div>
-          </div>
-          <div class="option-arrow">→</div>
-        </div>
-
-        <div class="option-card" onclick="selectMateri('latihan')">
-          <div class="option-left">
-            <div class="option-icon">📖</div>
-            <div class="option-text">
-              <h4>Latihan Teks Arab Tanpa Syakal</h4>
-              <p>Membaca pola bangunan fi'il & isim musytaq (Arab Gundul)</p>
-            </div>
-          </div>
-          <div class="option-arrow">→</div>
-        </div>
-
-        <div class="option-card" onclick="selectMateri('nazham')">
-          <div class="option-left">
-            <div class="option-icon">📜</div>
-            <div class="option-text">
-              <h4>Nazham Jurumiyah Bahasa Indonesia</h4>
-              <p>Bait-bait nadhom terjemah puitis memudahkan natsar Jurumiyah</p>
-            </div>
-          </div>
-          <div class="option-arrow">→</div>
-        </div>
-      </div>
+  <section class="hero-section">
+    <div class="hero-frame">
+      <span class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+      <h1 class="hero-farisi" dir="rtl" lang="ar">هِمَّةُ النَّحْوِيَّة</h1>
+      <p class="hero-sub">PLATFORM PEMBELAJARAN NAHWU INTERAKTIF</p>
+      <p class="hero-dedication">Karya Abi Liwa • Dibina oleh <strong>AHMAD ZAKIN JAISYURROYA</strong></p>
     </div>
+  </section>
 
-    <!-- LANGKAH 2 -->
-    <div id="step2" class="step-section">
-      <div class="question-header">
-        <span class="bismillah-mini">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
-        <h2 class="question-title">Tingkat Kemampuan Bahasa Arab</h2>
-        <p class="question-sub">Bantu kami menyesuaikan bab materi belajar Anda:</p>
-      </div>
+  <!-- 3 TAB UTAMA SESUAI BUKU ASLI -->
+  <div class="tab-wrapper-main">
+    <button id="tab-lagu" class="main-tab-btn" onclick="selectMainTab('lagu')">
+      <span>1. Himpunan Lagu Nahwiyah</span>
+      <span class="sub">Haraf, Isim, Fi'il & Bangunan Kalimah</span>
+    </button>
+    <button id="tab-latihan" class="main-tab-btn" onclick="selectMainTab('latihan')">
+      <span>2. Buku Latihan I</span>
+      <span class="sub">Membaca Bangunan Kalimah (Arab Gundul)</span>
+    </button>
+    <button id="tab-nazham" class="main-tab-btn" onclick="selectMainTab('nazham')">
+      <span>3. Buku Nazham Jurumiyah</span>
+      <span class="sub">Bahasa Indonesia (2015)</span>
+    </button>
+  </div>
 
-      <div class="options-container">
-        <div class="option-card" onclick="selectLevel('lvl1')">
-          <div class="option-left">
-            <div class="option-icon">🌱</div>
-            <div class="option-text">
-              <h4>Tingkat Pemula (Mubtadi')</h4>
-              <p>Mulai dari Haraf & Ciri Kalimah Isim (Bab 1-19)</p>
-            </div>
-          </div>
-          <div class="option-arrow">→</div>
-        </div>
+  <!-- Sub-Filter Khusus Bagian I (Level 1, 2, 3) -->
+  <div id="subFilterArea" class="sub-filter-wrapper">
+    <button id="sub-lvl-all" class="sub-filter-btn active" onclick="setSubLevel('all')">Semua Level</button>
+    <button id="sub-lvl-1" class="sub-filter-btn" onclick="setSubLevel(1)">Level 1 (Bab 1-19)</button>
+    <button id="sub-lvl-2" class="sub-filter-btn" onclick="setSubLevel(2)">Level 2 (Bab 20-33)</button>
+    <button id="sub-lvl-3" class="sub-filter-btn" onclick="setSubLevel(3)">Level 3 (Bab 34-42)</button>
+  </div>
 
-        <div class="option-card" onclick="selectLevel('lvl2')">
-          <div class="option-left">
-            <div class="option-icon">🌿</div>
-            <div class="option-text">
-              <h4>Tingkat Menengah (Mutawassith)</h4>
-              <p>Pelajari Bangunan Fi'il, Wazan & Isim Musytaq (Bab 20-33)</p>
-            </div>
-          </div>
-          <div class="option-arrow">→</div>
-        </div>
+  <!-- Kolom Pencarian Cepat -->
+  <div class="search-wrapper">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Cari Bab, Kaidah, Wazan, atau Bait..." oninput="handleSearch()">
+  </div>
 
-        <div class="option-card" onclick="selectLevel('lvl3')">
-          <div class="option-left">
-            <div class="option-icon">🌳</div>
-            <div class="option-text">
-              <h4>Tingkat Lanjutan (Mutaqaddim)</h4>
-              <p>Fokus Marfu'at, Manshubat, Kaana, Inna & I'rab (Bab 34-42)</p>
-            </div>
-          </div>
-          <div class="option-arrow">→</div>
-        </div>
-      </div>
-    </div>
+  <!-- Kontainer Materi yang Dirender Dinamis -->
+  <main id="mainContainer" class="content-container"></main>
 
-    <!-- LANGKAH 3 -->
-    <div id="step3" class="step-section">
-      <div class="question-header">
-        <span class="bismillah-mini">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
-        <h2 class="question-title">Target Waktu Belajar Harian</h2>
-        <p class="question-sub">Konsistensi adalah kunci keberkahan ilmu:</p>
-      </div>
-
-      <div class="options-container">
-        <div class="option-card" onclick="goToStep(4)">
-          <div class="option-left"><div class="option-icon">⏳</div><div class="option-text"><h4>10 - 15 Menit / Hari</h4><p>Santai, menghafal 1 bait per hari</p></div></div>
-          <div class="option-arrow">→</div>
-        </div>
-        <div class="option-card" onclick="goToStep(4)">
-          <div class="option-left"><div class="option-icon">⚡</div><div class="option-text"><h4>20 - 30 Menit / Hari</h4><p>Fokus membaca wazan & latihan</p></div></div>
-          <div class="option-arrow">→</div>
-        </div>
-        <div class="option-card" onclick="goToStep(4)">
-          <div class="option-left"><div class="option-icon">🔥</div><div class="option-text"><h4>Lebih dari 30 Menit / Hari</h4><p>Intensif mengkaji bait nazham & i'rab</p></div></div>
-          <div class="option-arrow">→</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- LANGKAH 4 -->
-    <div id="step4" class="step-section">
-      <div class="question-header">
-        <span class="bismillah-mini">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
-        <h2 class="question-title">Biodata Santri Pembelajar</h2>
-        <p class="question-sub">Masukkan nama Anda untuk membuka modul materi:</p>
-      </div>
-
-      <form onsubmit="handleFinalSubmit(event)">
-        <div class="input-name-group">
-          <label for="inputNama">Nama Lengkap Santri</label>
-          <input type="text" id="inputNama" placeholder="Tuliskan nama Anda..." required>
-        </div>
-        <button type="submit" class="btn-submit-name">Mulai Belajar Sekarang ✨</button>
-      </form>
-    </div>
-
-    <!-- NOTIFIKASI -->
-    <div id="stepSuccess" class="step-section">
-      <div class="question-header" style="padding: 20px 0;">
-        <span class="bismillah-mini">بَارَكَ اللَّهُ فِيْكُمْ</span>
-        <h2 id="successTitle" class="question-title" style="color:var(--gold-glow); margin-top:10px;">Ahlan wa Sahlan!</h2>
-        <p class="question-sub" style="font-size:0.95rem; margin-top:8px;">Membuka modul materi pilihan Anda...</p>
-      </div>
-    </div>
-
-    <div class="corner-ornament bottom-left"></div>
-    <div class="corner-ornament bottom-right"></div>
-  </main>
+  <script src="data.js"></script>
 
   <script>
-    let currentStep = 1;
-    let selectedMain = "lagu";
-    let finalTargetTab = "lvl1";
+    let currentMainTab = 'lagu';
+    let currentLaguLevel = 'all';
 
-    function selectMateri(type) {
-      selectedMain = type;
-      if (type === 'latihan') {
-        finalTargetTab = 'latihan';
-      } else if (type === 'nazham') {
-        finalTargetTab = 'nazham';
+    function selectMainTab(tab) {
+      currentMainTab = tab;
+      
+      // Update styling tombol tab utama
+      document.querySelectorAll('.main-tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('tab-' + tab);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      // Tampilkan/sembunyikan sub-filter level khusus tab lagu
+      const subArea = document.getElementById('subFilterArea');
+      if (subArea) {
+        subArea.style.display = tab === 'lagu' ? 'flex' : 'none';
+      }
+
+      document.getElementById('searchInput').value = '';
+      renderContent();
+    }
+
+    function setSubLevel(lvl) {
+      currentLaguLevel = lvl;
+      document.querySelectorAll('.sub-filter-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById('sub-lvl-' + lvl);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      renderContent();
+    }
+
+    function renderContent(filterQuery = '') {
+      const container = document.getElementById('mainContainer');
+      container.innerHTML = '';
+      const query = filterQuery.toLowerCase().trim();
+
+      // 1. BAGIAN I: HIMPUNAN LAGU NAHWIYAH
+      if (currentMainTab === 'lagu') {
+        const filtered = dataLagu.filter(item => {
+          const matchLevel = currentLaguLevel === 'all' || item.level === currentLaguLevel;
+          const matchSearch = query === '' || 
+            item.judul.toLowerCase().includes(query) || 
+            item.arab.includes(query) || 
+            item.lirik.toLowerCase().includes(query);
+          return matchLevel && matchSearch;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = `<div class="empty-state">Materi Lagu Nahwiyah tidak ditemukan.</div>`;
+          return;
+        }
+
+        filtered.forEach(item => {
+          const card = document.createElement('article');
+          card.className = 'module-card';
+          card.innerHTML = `
+            <div class="card-header"><span class="badge">Bab ${item.bab}</span> <h3>${item.judul}</h3></div>
+            <div class="arabic-box">${item.arab}</div>
+            <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Irama Lagu</button>
+            <div class="melody-box">
+              <p class="nada-tag">Irama: ${item.irama}</p>
+              <div class="lyrics">${item.lirik}</div>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      // 2. BAGIAN II: BUKU LATIHAN I (MEMBACA BANGUNAN KALIMAH)
+      else if (currentMainTab === 'latihan') {
+        const filtered = dataLatihan.filter(item => {
+          return query === '' || item.kategori.toLowerCase().includes(query) || item.wazan.includes(query) || item.contoh.includes(query);
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = `<div class="empty-state">Wazan latihan tidak ditemukan.</div>`;
+          return;
+        }
+
+        filtered.forEach(item => {
+          const card = document.createElement('article');
+          card.className = 'module-card';
+          card.innerHTML = `
+            <div class="card-header"><span class="badge">Wazan</span> <h3>${item.kategori}</h3></div>
+            <p style="font-size:0.85rem; color:#f9e295; margin-bottom:8px;">Pola: <strong>${item.wazan}</strong></p>
+            <div class="arabic-box">${item.contoh}</div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      // 3. BAGIAN III: BUKU NAZHAM JURUMIYAH BAHASA INDONESIA
+      else if (currentMainTab === 'nazham') {
+        const filtered = dataNazham.filter(item => {
+          return query === '' || item.bab.toLowerCase().includes(query) || item.syair.toLowerCase().includes(query);
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = `<div class="empty-state">Bait nazham tidak ditemukan.</div>`;
+          return;
+        }
+
+        filtered.forEach(item => {
+          const card = document.createElement('article');
+          card.className = 'module-card';
+          card.innerHTML = `
+            <div class="card-header"><span class="badge">${item.bait}</span> <h3>${item.bab}</h3></div>
+            <div class="melody-box" style="display:block; border-left: 3px solid var(--gold-pure);">
+              <div class="lyrics">${item.syair}</div>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+    }
+
+    function toggleMelody(btn) {
+      const box = btn.nextElementSibling;
+      if (!box) return;
+      if (box.style.display === 'block') {
+        box.style.display = 'none';
+        btn.innerText = '🎵 Irama Lagu';
       } else {
-        finalTargetTab = 'lvl1';
+        box.style.display = 'block';
+        btn.innerText = '🔼 Sembunyikan Irama';
       }
-      goToStep(2);
     }
 
-    function selectLevel(lvl) {
-      // Jika pengguna memilih jalur Lagu Nahwiyah, tingkat kemampuan menentukan tab level
-      if (selectedMain === 'lagu') {
-        finalTargetTab = lvl;
-      }
-      goToStep(3);
+    function handleSearch() {
+      const q = document.getElementById('searchInput').value;
+      renderContent(q);
     }
 
-    function goToStep(stepNum) {
-      if (stepNum < 1 || stepNum > 4) return;
-      currentStep = stepNum;
-
-      document.querySelectorAll('.step-section').forEach(el => el.classList.remove('active'));
-      const activeEl = document.getElementById('step' + stepNum);
-      if (activeEl) activeEl.classList.add('active');
-
-      document.getElementById('stepIndicator').innerText = `Langkah ${stepNum} / 4`;
-      document.getElementById('progressBar').style.width = (stepNum * 25) + '%';
-      document.getElementById('btnBack').style.visibility = stepNum > 1 ? 'visible' : 'hidden';
-    }
-
-    function handleFinalSubmit(e) {
-      e.preventDefault();
-      const nama = document.getElementById('inputNama').value.trim();
+    window.addEventListener('DOMContentLoaded', () => {
+      const nama = localStorage.getItem('namaSantri');
       if (nama) {
-        localStorage.setItem('namaSantri', nama);
-        localStorage.setItem('targetTabAwal', finalTargetTab);
-
-        document.querySelectorAll('.step-section').forEach(el => el.classList.remove('active'));
-        document.getElementById('stepSuccess').classList.add('active');
-        document.getElementById('successTitle').innerText = `Ahlan wa Sahlan, ${nama}!`;
-
-        setTimeout(() => {
-          // Arahkan ke materi.html dengan hash URL agar auto-load tab pasti berjalan
-          window.location.href = "materi.html#" + finalTargetTab;
-        }, 1000);
+        document.getElementById('userNamaDisplay').innerText = nama;
       }
-    }
+
+      // Deteksi pilihan rute awal
+      let initialTarget = window.location.hash ? window.location.hash.replace('#', '') : localStorage.getItem('targetTabAwal');
+      
+      if (initialTarget === 'latihan') {
+        selectMainTab('latihan');
+      } else if (initialTarget === 'nazham') {
+        selectMainTab('nazham');
+      } else if (initialTarget === 'lvl2') {
+        selectMainTab('lagu');
+        setSubLevel(2);
+      } else if (initialTarget === 'lvl3') {
+        selectMainTab('lagu');
+        setSubLevel(3);
+      } else {
+        selectMainTab('lagu');
+        setSubLevel(1);
+      }
+    });
   </script>
 </body>
 </html>
