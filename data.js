@@ -202,3 +202,147 @@ const dataLagu = [
     irama: "Qaidaty",
     lirik: "Tanda madhi tiga mari kita susun,\nTa fail qad laqad ta tanits yang sukun\nAnita lam alam qad sa dan saufa\nItu tanda mudhari janganlah lupa\n(qaidaty)"
   }
+
+// ==============================================================
+      // IDENTIFIKASI KALIMAH LEVEL 2 (MENGENAL BACAAN BANGUNAN KALIMAH)
+      // ==============================================================
+      
+      // --- BAB 20 ---
+      {
+        level: 2,
+        bab: 20,
+        judul: "Lagu Fiil Madhi Tsulatsi plus Rubaiy Mujarrod",
+        arab: "فَاعَلَ | فَعَّلَ | أَفْعَلَ | فَعُلَ | فَعِلَ | فَعَلَ\nاِسْتَفْعَلَ | اِفْعَلَّ | اِفْتَعَلَ | اِنْفَعَلَ | تَفَاعَلَ | تَفَعَّلَ\nفَعْلَلَ",
+        irama: "Pelangi-pelangi / Mustaf'ilun 6x / Mustafilun Failun",
+        lirik: "• Versi 1 (pelangi-pelangi alangkah indahmu):\nFa’ala, fa’ila fa’ula tsulatsi\nAf’ala, fa’’ala, faa’ala ruba’iy\nTafa’’ala, tafaa’ala, infa’ala, ifta’ala\nif’alla khumasi Istaf’ala sudasi\n\n• Versi 2 (mustaf’ilun6x):\nTsulatsi fa’ala, fa’ila fa’ula\nRuba’iy af’ala, fa’’ala, faa’ala\nKhumasinya infa’ala ifta’ala\nIf’alla dan tafa’’ala tafaa’ala\nLafazh Istaf’ala itu sudasinya\nFa’lala untuk ruba’i mujarrodnya\nPerhatikan fa ain serta huruf lamnya\nAgar tidak salah mengeja mawzunnya\n\n• Versi 3 (mustafilun failun):\nFa’ala dan fa’ila fa’ula madhi tsulatsi\nAf’ala, fa’’ala, faa’ala itu madhi ruba’iy\nTafa’’ala, tafaa’ala, infa’ala ifta’ala\nif’alla itu khumasi dan Istaf’ala sudasy"
+      },
+
+      // --- BAB 21 ---
+      {
+        level: 2,
+        bab: 21,
+        judul: "Lagu Fiil Mudhari Tsulatsi",
+        arab: "يُفَاعِلُ | يُفَعِّلُ | يُفْعِلُ | يَفْعِلُ | يَفْعَلُ | يَفْعُلُ\nيَسْتَفْعِلُ | يَفْعَلُّ | يَفْتَعِلُ | يَنْفَعِلُ | يَتَفَاعَلُ | يَتَفَعَّلُ\nيُفَعْلِلُ",
+        irama: "Mustafilun Failun 2x / Mustaf'ilun 6x",
+        lirik: "• Versi 1 (mustafilun failun2):\nYaf’ulu, yaf’alu dan yaf’ilu itu tsulatsi\nYuf’ilu dan yufa’’ilu yufaa’ilu itu rubaiy\nYatafa’’alu yatafaa’alu, yanfa’ilu yafta’ilu\nYaf’allu itu khumasi, yastaf’ilu nya sudasi\n\n• Versi 2 (mustaf’ilun6x):\nLafazh Yaf’ulu, yaf’alu dan yaf’ilu\nItu mudhari tsulatsi jangan kelu\nYuf’ilu dan yufa’’ilu yufaa’ilu\nItu mudhari ruba’iy ingat s’lalu\nyanfa’ilu yafta’ilu dan yaf’allu\ndan yatafa’’alu wa yatafaa’alu\ntu khumasi dan sudasi yastaf’ilu\ntuk rubai mujarrodnya yufa’lilu"
+      },
+
+      // --- BAB 22 ---
+      {
+        level: 2,
+        bab: 22,
+        judul: "Lagu Wazan Fiil Amar Tsulatsi",
+        arab: "فَاعِلْ | فَعِّلْ | أَفْعِلْ | اِفْعِلْ | اِفْعَلْ | اُفْعُلْ\nاِسْتَفْعِلْ | اِفْعَلَّ | اِفْتَعِلْ | اِنْفَعِلْ | تَفَاعَلْ | تَفَعَّلْ\nفَعْلِلْ",
+        irama: "Dimana-dimana Anak Kambing Saya / Mustafilun 6x",
+        lirik: "• Versi 1 (dimana-dimana anak kambing saya):\nUf’ul, if’al, if’ilitu amr tsulatsi\nAf’il, fa’’il, faa’il itu amr rubaiy\nTafa’’al dan tafaa’al, infa’il ifta’il\nIf’alil khumasi istaf’il sudasi\nTiga tsultasi hey hey, empat rubaiy hey hey\nLima khumasi dan enam sudasi\n\n• Versi 2 (mustafilun6x):\nUf’ul, if’al dan if’il amr tsulatsi\nAf’il, fa’’il, faa’il itu amr rubai\ninfa’il ifta’il if’alil khumasi\nTafa’’al dan tafaa’al juga khumasi\nistaf’il amr untuk yang sudasi-nya\nfa’lil amr di mujarrod rubaiy-nya\nmesti dihafalkan semua wazannya\nagar tidak salah baca dan fahamnya"
+      },
+
+      // --- BAB 23 ---
+      {
+        level: 2,
+        bab: 23,
+        judul: "Lagu Tashrifan Fiil Madhi",
+        arab: "فَعَلْنَ | فَعَلَتَا | فَعَلَتْ | فَعَلُوْا | فَعَلَا | فَعَلَ\nفَعَلْتُنَّ | فَعَلْتُمَا | فَعَلْتِ | فَعَلْتُمْ | فَعَلْتُمَا | فَعَلْتَ\nفَعَلْنَا | فَعَلْتُ",
+        irama: "Bahar / Melodi Tashrif Lughawi 14 Dhamir",
+        lirik: "Fa’ala fa’alaa fa’aluu fa’alat\nFa’alataa fa’alna jangan dilewat\nFa’alta fa’altuma fa’altum lana\nFa’alti fa’altuma dan fa’altunna\nFa’altu dan yang terakhirnya fa’alnaa\nSemwa empat belas jangan kau terlena\nHarus jeli Fiil madhi ditashrifnya\nAgar faham dan ahli engkau akhirnya"
+      },
+
+      // --- BAB 24 ---
+      {
+        level: 2,
+        bab: 24,
+        judul: "Lagu Tashrifan Fiil Mudhari",
+        arab: "يَفْعُلْنَ | تَفْعُلَانِ | تَفْعُلُ | يَفْعُلُوْنَ | يَفْعُلَانِ | يَفْعُلُ\nتَفْعُلْنَ | تَفْعُلَانِ | تَفْعُلِيْنَ | تَفْعُلُوْنَ | تَفْعُلَانِ | تَفْعُلُ\nنَفْعُلُ | أَفْعُلُ",
+        irama: "mustafilun 3x",
+        lirik: "Yaf’ulu yaf’ulani dan yaf’uluuna\ntaf’ulu taf’ulani dan yaf’ulna\ntaf’ulu taf’ulani dan taf’uluuna\ntaf’uliina taf’ulani taf’ulna\nana af’ulu juga nahnu naf’ulu\ntashrif fiil mudhari tadi berlalu\nada empatbelas berlagu tak jemu\ndemi citaku jadi muslim berilmu\n(mustafilun3)"
+      },
+
+      // --- BAB 25 ---
+      {
+        level: 2,
+        bab: 25,
+        judul: "Tashrifan Wazan Fiil Amar",
+        arab: "اُفْعُلْنَ | اُفْعُلَا | اُفْعُلِيْ | اُفْعُلُوْا | اُفْعُلَا | اُفْعُلْ",
+        irama: "mustafilun 3x",
+        lirik: "Uf’ul uf’ulaa uf’uluu dan uf’ulii\nuf’ulaa uf’ulna engkau mesti jeli\ntashrif fiil amar dengan berurutan\nfailnya isim dhamir ada lekatkan\n(mustafilun3x)"
+      },
+
+      // --- BAB 26 ---
+      {
+        level: 2,
+        bab: 26,
+        judul: "Fiil Madhi dan Mudhari Majhul",
+        arab: "• مَاضِي مَجْهُوْل: ضُمَّ أَوَّلُهُ وَكُسِرَ مَا قَبْلَ آخِرِهِ (خُلِقَ ، نُصِرَ ، ذُكِرَ)\n• مُضَارِع مَجْهُوْل: ضُمَّ أَوَّلُهُ وَفُتِحَ مَا قَبْلَ آخِرِهِ (يُخْلَقُ ، يُنْصَرُ ، يُذْكَرُ)",
+        irama: "Kaidah / Nadhom Majhul",
+        lirik: "Fiil Madhi majhul itu bermakna di\nDidhommahkan huruf awalnya menjadi\nKasrohkan huruf sebelum terakhirnya\nkhuliqa nushira dzukira contohnya\n\nFiil Mudhari majhul dimaknai di\nDidhommahkan huruf awalnya menjadi\nFathahkan huruf sebelum terakhirnya\nYukhlaqu yunsharu yudzkaru contohnya"
+      },
+
+      // --- BAB 27 ---
+      {
+        level: 2,
+        bab: 27,
+        judul: "‘Asaa, bi’sa, ni’ma, haati, ta’aala",
+        arab: "تَعَالَ (Kemarilah) | هَاتِ (Tunjukkan/berikan) | نِعْمَ (Sebaik-baiknya) | بِئْسَ (Seburuk-buruknya) | عَسَى (Semoga)",
+        irama: "Kaidah Kosakata Jamid",
+        lirik: "‘Asaa = Semoga\nbi’sa = Seburuk-buruknya\nni’ma = Sebaik-baiknya\nhaati = Tunjukkan / berikan\nta’aala = Kemarilah"
+      },
+
+      // --- BAB 28 ---
+      {
+        level: 2,
+        bab: 28,
+        judul: "Mashdar Tsulatsi Mazid",
+        arab: "فَعَّلَ > تَفْعِيْلًا | أَفْعَلَ > إِفْعَالًا\nتَفَعَّلَ > تَفَعُّلًا | فَاعَلَ > مُفَاعَلَةً وَفِعَالًا\nاِنْفَعَلَ > اِنْفِعَالًا | تَفَاعَلَ > تَفَاعُلًا\nاِفْعَلَّ > اِفْعِلَالًا | اِفْتَعَلَ > اِفْتِعَالًا\nاِسْتَفْعَلَ > اِسْتِفْعَالًا",
+        irama: "Pada Hari Minggu Kuturut Ayah ke Kota",
+        lirik: "Af’ala if’aalan, fa’’ala taf’iilan\nFaa’ala mufaa’alatan dan juga fi’aalan\nTafa’’ala tafa’’ulan, tafaa’ala tafaa’ulan\nInfa’ala infi’aalan ifta’ala ifti’aalan\nUntuk If’alla mashdarnya tu if’ilalan\nSedang istaf’ala mashdarnya tu istif’alan\n\nAkrama ikraaman hassana tahsiinan\nJaahada mujaahadatan dan juga jihaadan\nTajamma’a tajammu’an tabaa’ada tabaa’udan\nInfashala infishaalan iqtashada iqtishaadan\nUntuk ihmarra mashdarnya tu ihmiraaran\nSedang istaghfara mashdarnya tu istighfaaran\n(pada hari minggu kuturut ayah ke kota)"
+      },
+
+      // --- BAB 29 ---
+      {
+        level: 2,
+        bab: 29,
+        judul: "Wazan Isim Fail Tsulatsi",
+        arab: "مُتَفَاعِلٌ | مُتَفَعِّلٌ | مُفَاعِلٌ | مُفَعِّلٌ | مُفْعِلٌ | فَاعِلٌ\nمُسْتَفْعِلٌ | مُفْعَلٌّ | مُفْتَعِلٌ | مُنْفَعِلٌ",
+        irama: "mustafilun failun 2x",
+        lirik: "failun muf’ilun dan mufa’’ilun mufaa’ilun,\nmutafa’’ilun mutafaa’ilun munfa’ilun mufta’ilun\nkemudian lafazh muf’allun, yang terakhir mustaf’ilun\nisim fail dalam tashrifan, yang harus engkau bedakan\n(mustafilun failun2x)"
+      },
+
+      // --- BAB 30 ---
+      {
+        level: 2,
+        bab: 30,
+        judul: "Wazan Isim Maf’ul Tsulatsi",
+        arab: "مُتَفَاعَلٌ | مُتَفَعَّلٌ | مُفَاعَلٌ | مُفَعَّلٌ | مُفْعَلٌ | مَفْعُوْلٌ\nمُسْتَفْعَلٌ | مُفْعَلٌّ | مُفْتَعَلٌ | مُنْفَعَلٌ",
+        irama: "mustafilun failun 2x",
+        lirik: "Maf’uulun, muf’alun dan mufa’’alun mufaa’alun,\nmutafa’’alun mutafaa’alun munfa’alun mufta’alun\nkemudian lafazh muf’allun, yang terakhir mustaf’alun\nisim maful dalam tashrifan, mesti engkau perhatikan\n(mustafilun failun2x)"
+      },
+
+      // --- BAB 31 ---
+      {
+        level: 2,
+        bab: 31,
+        judul: "Wazan Mubalaghah Isim Fail",
+        arab: "فَعَّالٌ | مِفْعَالٌ | فِعِّيْلٌ | فَعَّالَةٌ | مِفْعِيْلٌ | فَعُوْلٌ\nفَعِيْلٌ | فَعِلٌ | فُعَّالٌ | فُعُّوْلٌ | فَيْعُوْلٌ",
+        irama: "Kaidah Wazan Shighah Mubalaghah",
+        lirik: "Fa’’aalun, mif’aalun, fi’’iilun, mif’iilun,\nfa’uulun, fu’’uulun, fa’iilun fa’ilun\nfu’’aalun fai’ulun serta fa’’aalah\nisim fail dalam shighah mubalaghah\n\nContohnya:\nqohhaarun midraarun shiddiiyun miskiinun\nghafuurun qudduusun samii’un farihun\nkubbarun qayyumun allaamah fahhaamah"
+      },
+
+      // --- BAB 32 ---
+      {
+        level: 2,
+        bab: 32,
+        judul: "Beberapa Bentuk Mashdar Tsulatsi Yang Populer",
+        arab: "فَعْلًا : فَهْمًا ، فَتْحًا ، لَفْظًا ، صَبْرًا ، نَصْرًا\nفِعْلًا : عِلْمًا ، وِتْرًا ، حِمْلًا ، ذِكْرًا ، رِزْقًا\nفِعَالَة : تِلَاوَة ، رِوَايَة ، رِعَايَة\nفَعَالَة : نَظَافَة ، عَظَامَة ، كَرَامَة\nفُعُوْلًا : سُجُوْدًا ، قُعُوْدًا ، جُلُوْسًا\nفَعَلًا : شَبَعًا ، مَرَحًا ، فَرَحًا\nفُعُوْلَة : عُذُوْبَة ، صُعُوْبَة ، سُهُوْلَة",
+        irama: "Pada Hari Minggu Kuturut Ayah ke Kota",
+        lirik: "Fa’lan nashran shabran lafzhan fathan dan fahman\nFi’lan rizqan dzikran himlan witran dan ilman\nFi’aalatun ri’aayatun qiraa’atun kitaabatun\nFa’aalatun karaamatun ‘azhaamatun nazhaafatun\nFu’uulan juluusan qu’uudan serta rukuu’an\nFa’alan farahan marahan juga syaba’an\nFu’uulatan suhulatan su’uubatan ‘udzubatan\nMashdar tsulatsi yang simaiy tanpa qiyasan\n(pada hari minggu kuturut ayah ke kota)"
+      },
+
+      // --- BAB 33 ---
+      {
+        level: 2,
+        bab: 33,
+        judul: "Wazan Sifat Musyabbahah",
+        arab: "فَعِلَ - أَفْعَلُ (حَمِرَ أَحْمَرُ)\nفَعِلَ - فَعِلٌ (فَرِحَ فَرِحٌ)\nفَعِلَ - فَعْلَانُ (عَطِشَ عَطْشَانُ)\nفَعُلَ - فَعْلٌ (سَهْلٌ)\nفَعُلَ - فُعْلٌ (شُلْبٌ)\nفَعُلَ - فَعَلٌ (حَسَنٌ)\nفَعُلَ - فُعَالٌ (شُجَاعٌ)\nفَعُلَ - فَعَالٌ (حَصَانٌ)\nفَعُلَ - فَعِيْلٌ (كَرِيْمٌ)",
+        irama: "Kaidah Rumus Sifat Musyabbahah",
+        lirik: "fa’ila-af’alu rumus pertamanya\nfa’ila-fa’ilun macam keduanya\nfa’ila-fa’laanu itu ketiganya\nfa’ula-fa’lun juga fa’ula fu’lun\nselanjutnya ada fa’ula-fa’alun\nlalu ada juga fa’ula-fu’aalun\nfa’ula-fa’aalun faula-fa’iilun,\nhamira ahmaru fariha farihun"
+      }
