@@ -6,22 +6,178 @@
   <title>Buku Lagu Nahwu & Latihan Baca - AHMAD ZAKIN JAISYURROYA</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@700&family=Philosopher:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="materi.css">
+
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at 50% 10%, #0d2e23 0%, #061611 65%, #020806 100%);
+      --gold-pure: #d4af37;
+      --gold-glow: #f9e295;
+      --gold-dark: #8c6d23;
+      --card-bg: rgba(9, 38, 28, 0.92);
+      --card-border: #b89128;
+      --cream-light: #f7f1e3;
+      --green-accent: #2ecc71;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background-color: #061712;
+      background: var(--bg-gradient);
+      font-family: 'Poppins', sans-serif;
+      color: var(--cream-light);
+      padding-bottom: 70px;
+    }
+
+    .navbar {
+      background: rgba(4, 18, 13, 0.95);
+      border-bottom: 2px solid var(--gold-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-link { color: var(--gold-glow); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .nav-title { font-family: 'Amiri', serif; font-size: 1.5rem; color: var(--gold-pure); }
+    .user-badge { font-size: 0.85rem; background: rgba(212, 175, 55, 0.15); padding: 5px 14px; border-radius: 20px; border: 1px solid var(--gold-dark); color: var(--gold-glow); }
+
+    .hero-section { text-align: center; padding: 35px 20px 20px; }
+    .hero-frame {
+      max-width: 800px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(11, 48, 35, 0.85) 0%, rgba(5, 24, 17, 0.95) 100%);
+      border: 2px solid var(--gold-pure);
+      border-radius: 24px;
+      padding: 30px 20px;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+    }
+    .bismillah { font-family: 'Amiri', serif; font-size: 1.25rem; color: var(--gold-glow); }
+    .hero-farisi { font-family: 'Noto Nastaliq Urdu', serif; font-size: 3.2rem; color: var(--gold-pure); line-height: 1.6; margin: 8px 0; }
+    .hero-sub { font-size: 1.1rem; font-weight: 700; color: #fff; }
+    .hero-desc { font-size: 0.85rem; color: #d1d8d0; margin-top: 4px; }
+    .hero-dedication { font-size: 0.85rem; color: var(--gold-glow); margin-top: 10px; }
+
+    .tab-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      max-width: 1100px;
+      margin: 20px auto 30px;
+      padding: 0 15px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: rgba(8, 30, 22, 0.85);
+      border: 1.5px solid var(--gold-dark);
+      color: #dcdde1;
+      padding: 10px 16px;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .tab-btn:hover, .tab-btn.active {
+      background: var(--gold-pure);
+      color: #051610;
+      border-color: #fff;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .content-container { max-width: 960px; margin: 0 auto; padding: 0 15px; }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; animation: fadeIn 0.3s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    .section-title-box { text-align: center; margin-bottom: 25px; }
+    .section-title-box h2 { font-family: 'Philosopher', serif; color: var(--gold-pure); font-size: 1.6rem; }
+    .section-title-box p { font-size: 0.9rem; color: #b2bec3; }
+
+    .module-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+    .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .card-header .badge { background: var(--gold-dark); color: #fff; font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; font-weight: bold; }
+    .card-header h3 { font-size: 1.15rem; color: #fff; }
+
+    .arabic-box {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
+      line-height: 2.1;
+      color: var(--gold-glow);
+      direction: rtl;
+      background: rgba(0, 0, 0, 0.45);
+      padding: 16px 20px;
+      border-radius: 10px;
+      border-right: 4px solid var(--gold-pure);
+      margin-bottom: 14px;
+    }
+
+    .melody-toggle {
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px dashed var(--gold-pure);
+      color: var(--gold-glow);
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .melody-toggle:hover { background: var(--gold-pure); color: #051610; }
+    .melody-box { display: none; margin-top: 14px; background: rgba(0, 0, 0, 0.45); padding: 16px; border-radius: 10px; border-left: 3px solid var(--gold-glow); }
+    .nada-tag { font-size: 0.8rem; color: var(--green-accent); font-weight: bold; margin-bottom: 6px; }
+    .lyrics { font-style: italic; line-height: 1.7; color: #f1f2f6; font-size: 0.95rem; }
+    .lyrics-block { font-style: italic; line-height: 1.8; color: #f1f2f6; font-size: 0.95rem; background: rgba(0, 0, 0, 0.4); padding: 18px; border-radius: 10px; border-left: 3px solid var(--gold-pure); }
+
+    .table-responsive { overflow-x: auto; margin-top: 10px; }
+    .tashrif-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .tashrif-table th, .tashrif-table td { border: 1px solid var(--gold-dark); padding: 10px 12px; text-align: center; }
+    .tashrif-table th { background: rgba(212, 175, 55, 0.2); color: var(--gold-glow); }
+    .tashrif-table td { background: rgba(0, 0, 0, 0.25); font-family: 'Amiri', serif; font-size: 1.25rem; }
+
+    .grid-two { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .rule-box { background: rgba(0, 0, 0, 0.35); padding: 16px; border-radius: 10px; border: 1px solid var(--gold-dark); }
+    .rule-box h4 { color: var(--gold-glow); margin-bottom: 8px; }
+    .ar-example { font-family: 'Amiri', serif; font-size: 1.35rem; color: #fff; direction: rtl; margin-top: 8px; line-height: 1.8; }
+
+    .grid-coret { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+    .coret-item { background: rgba(0, 0, 0, 0.4); padding: 10px 12px; border-radius: 8px; font-size: 0.85rem; border-left: 3px solid var(--gold-pure); }
+    .coret-item span { font-family: 'Amiri', serif; font-size: 1.2rem; color: var(--gold-glow); font-weight: bold; }
+
+    @media(max-width: 650px) {
+      .grid-two { grid-template-columns: 1fr; }
+      .hero-farisi { font-size: 2.2rem; }
+      .arabic-box { font-size: 1.3rem; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar Atas -->
   <header class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="back-link">← Beranda</a>
+      <a href="index.html" class="back-link">← Kembali ke Survei</a>
       <div class="nav-title">بُغْيَةُ الطُّلَّابِ فِي النَّحْوِ</div>
       <div class="user-badge">Santri: <span id="userNamaDisplay">Tamu</span></div>
     </div>
   </header>
 
-  <!-- Hero Header -->
   <section class="hero-section">
     <div class="hero-frame">
       <span class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
@@ -32,31 +188,27 @@
     </div>
   </section>
 
-  <!-- Menu Tab Utama -->
+  <!-- Pilihan Tab Modul -->
   <div class="tab-wrapper">
-    <button class="tab-btn active" onclick="switchTab('lvl1')">Level 1 (Bab 1-19)</button>
-    <button class="tab-btn" onclick="switchTab('lvl2')">Level 2 (Bab 20-33)</button>
-    <button class="tab-btn" onclick="switchTab('lvl3')">Level 3 (Bab 34-42)</button>
-    <button class="tab-btn" onclick="switchTab('latihan')">Latihan Bangunan Kalimah</button>
-    <button class="tab-btn" onclick="switchTab('nazham')">Nazham Jurumiyah (24 Bab)</button>
-    <button class="tab-btn" onclick="switchTab('kuis')">⚔️ Kuis Evaluasi</button>
+    <button id="btn-lvl1" class="tab-btn" onclick="switchTab('lvl1')">Level 1 (Bab 1-19)</button>
+    <button id="btn-lvl2" class="tab-btn" onclick="switchTab('lvl2')">Level 2 (Bab 20-33)</button>
+    <button id="btn-lvl3" class="tab-btn" onclick="switchTab('lvl3')">Level 3 (Bab 34-42)</button>
+    <button id="btn-latihan" class="tab-btn" onclick="switchTab('latihan')">Latihan Bangunan Kalimah</button>
+    <button id="btn-nazham" class="tab-btn" onclick="switchTab('nazham')">Nazham Jurumiyah (24 Bab)</button>
   </div>
 
   <main class="content-container">
 
-    <!-- ============================================================== -->
-    <!-- LEVEL 1: BAB 1 - 19                                            -->
-    <!-- ============================================================== -->
-    <section id="lvl1" class="tab-pane active">
+    <!-- LEVEL 1 -->
+    <section id="lvl1" class="tab-pane">
       <div class="section-title-box">
-        <h2>IDENTIFIKASI KALIMAH LEVEL 1</h2>
+        <h2>IDENTIFIKASI KALIMAH LEVEL 1 (PEMULA)</h2>
         <p>Mengenal Kalimah Haraf & Tanda Kalimah Isim (Bab 1 - 19)</p>
       </div>
 
-      <!-- Bab 1 -->
       <article class="module-card">
         <div class="card-header"><span class="badge">Bab 1</span> <h3>1. Haraf Jar</h3></div>
-        <div class="arabic-box">مِنْ ، فِيْ ، إِلَى ، عَلَى ، كَـ ، لِـ ، بِـ ، عَنْ ، حَتَّى ، مُذْ ، مُنْذُ ، رُبَّ ، وَ (قَسَم) ، بِ (قَسَم) ، تَ (قَسَم) ، خَلَا ، عَدَا ، حَاشَا</div>
+        <div class="arabic-box">مِنْ ، فِيْ ، إِلَى ، عَلَى ، كَـ ، لِـ ، بِـ ، عَنْ ، حَتَّى ، مُذْ ، مُنْذُ ، رُبَّ ، وَ ، بِ ، تَ ، خَلَا ، عَدَا ، حَاشَا</div>
         <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Irama Lagu</button>
         <div class="melody-box">
           <p class="nada-tag">Irama: Mustaf'ilun (3x)</p>
@@ -64,18 +216,16 @@
         </div>
       </article>
 
-      <!-- Bab 2 -->
       <article class="module-card">
         <div class="card-header"><span class="badge">Bab 2</span> <h3>2. Haraf Nawasikh Inna</h3></div>
         <div class="arabic-box">إِنَّ ، أَنَّ ، لَكِنَّ ، لَيْتَ ، لَعَلَّ ، كَأَنَّ ، لَا (نَافِيَةٌ لِلْجِنْسِ)</div>
         <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Irama Lagu</button>
         <div class="melody-box">
-          <p class="nada-tag">Pilihan Irama: Balonku Ada Lima / Aku Pergi ke Mekkah / Sedang Apa</p>
+          <p class="nada-tag">Pilihan Irama: Balonku Ada Lima / Sedang Apa</p>
           <div class="lyrics">"inna anna dan lakinna, laita kaanna la’alla,<br>dan la nafiyah lil jinsi, nashabkan isim setelahnya."</div>
         </div>
       </article>
 
-      <!-- Bab 3 -->
       <article class="module-card">
         <div class="card-header"><span class="badge">Bab 3</span> <h3>3. Haraf Athaf</h3></div>
         <div class="arabic-box">وَ ، فَـ ، ثُمَّ ، أَوْ ، أَمْ ، لَكِنْ ، لَا ، بَلْ ، حَتَّى ، إِمَّا</div>
@@ -86,38 +236,8 @@
         </div>
       </article>
 
-      <!-- Bab 4 & 5 -->
       <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 4 & 5</span> <h3>4. Haraf Nawashib & 5. Haraf Jawazim</h3></div>
-        <div class="arabic-box">
-          <strong>Nawashib Mudhari:</strong> أَنْ ، لَنْ ، إِذَنْ ، كَيْ ، لِـ ، وَ ، حَتَّى ، أَوْ ، فَـ ، لِـ (للجحود)<br>
-          <strong>Jawazim Mudhari:</strong> لَمْ ، أَلَمْ ، لَمَّا ، أَلَمَّا ، إِنْ ، لِـ (لَامُ الْأَمْرِ) ، إِذْمَا ، لَا (نَاهِيَة)
-        </div>
-        <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Irama Lagu</button>
-        <div class="melody-box">
-          <p class="nada-tag">Irama: Raja / Ya Rabbi Bil Musthafa</p>
-          <div class="lyrics">"an lan idzan kai, li wa hatta aw fa, nashabkan mudhari yang ada setelahnya (2x)"<br><br>"lam alam lamma in, alamma lamul amri, dan idzma laa nahi, jawazim fiil mudhari."</div>
-        </div>
-      </article>
-
-      <!-- Bab 6 & 7 -->
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 6 & 7</span> <h3>6. Haraf Nida, Istisna, Istifham & 7. Tanda Fi'il / Haraf Jawab</h3></div>
-        <div class="arabic-box">
-          <strong>Nida:</strong> يَا ، أَيْ ، آ ، أَيَّتُهَا ، يَا أَيُّهَا | <strong>Istisna:</strong> إِلَّا ، خَلَا ، عَدَا ، حَاشَا | <strong>Istifham:</strong> أَ ، هَلْ<br>
-          <strong>Haraf Jawab:</strong> نَعَمْ ، بَلَى ، أَجَلْ ، جَيْرِ ، لَا | <strong>Tanda Fi'il:</strong> قَدْ ، لَقَدْ ، سَـ ، سَوْفَ ، تْ (تَاءُ التَّأْنِيْثِ السَّاكِنَةِ)<br>
-          <strong>Haraf Lain:</strong> لَوْ ، لَوْلَا ، لَوْمَا ، إِنَّمَا ، أَمَّا ، كَلَّا ، أَلَا
-        </div>
-        <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Irama Lagu</button>
-        <div class="melody-box">
-          <p class="nada-tag">Irama: Apuse Kokondao</p>
-          <div class="lyrics">"yaa ay aa, yaa ayyatuha, ya ayyuha haraf nida,<br>illa khala ‘adaa hasya huruf istisna,<br>hamzah dan hal haraf tanya."</div>
-        </div>
-      </article>
-
-      <!-- Ciri Isim (8 Ciri) -->
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Kaidah</span> <h3>Mengenal Kalimah Isim Melalui Tandanya</h3></div>
+        <div class="card-header"><span class="badge">Kaidah</span> <h3>Mengenal Kalimah Isim Melalui 8 Tandanya</h3></div>
         <div class="arabic-box">مَـ | مِـ | مُـ | أَلْ | التَّنْوِيْن | حُرُوْف النِّدَاء | حُرُوْف النَّصْب وَالْجَرّ | الْإِضَافَة | التَّاء المَرْبُوْطَة</div>
         <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Irama Lagu</button>
         <div class="melody-box">
@@ -125,76 +245,21 @@
           <div class="lyrics">"Tanda isim jumlahnya ada delapan:<br>ma mi mu al tanwin dan nida di depan,<br>Haraf nashab haraf jar serta idhofah,<br>jangan lupa yang terakhir ta marbuthoh."</div>
         </div>
       </article>
-
-      <!-- Bab 8: Isim Isyarah -->
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 8</span> <h3>8. Isim Isyarah (Kata Tunjuk)</h3></div>
-        <div class="arabic-box">هٰذَا ، هٰذَانِ ، هٰؤُلَاءِ | هٰذِهِ ، هَاتَانِ ، هٰؤُلَاءِ | ذٰلِكَ ، ذَانِكَ ، أُولٰئِكَ | تِلْكَ ، تَانِكَ ، أُولٰئِكَ | هُنَا ، هُنَاكَ ، هُنَالِكَ ، ثَمَّ ، ثَمَّةَ</div>
-        <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Irama Lagu</button>
-        <div class="melody-box">
-          <p class="nada-tag">Irama: Anak Gembala</p>
-          <div class="lyrics">"hadza hadzani haulai, hadzihi hatani haulai,<br>dzalika dzanika ulaika, tilka tanika ulaika,<br>huna hunaka hunalika, tsamma tsammata isyarah namanya (2x)"</div>
-        </div>
-      </article>
-
-      <!-- Bab 9 & 10: Isim Dhamir Munfashil -->
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 9 & 10</span> <h3>9 & 10. Isim Dhamir Munfashil (Rafa' & Nashab)</h3></div>
-        <div class="arabic-box">
-          <strong>Rafa' Munfashil:</strong> هُوَ ، هُمَا ، هُمْ | هِيَ ، هُمَا ، هُنَّ | أَنْتَ ، أَنْتُمَا ، أَنْتُمْ | أَنْتِ ، أَنْتُمَا ، أَنْتُنَّ | أَنَا ، نَحْنُ<br>
-          <strong>Nashab Munfashil:</strong> إِيَّاهُ ، إِيَّاهُمَا ، إِيَّاهُمْ | إِيَّاهَا ، إِيَّاهُمَا ، إِيَّاهُنَّ | إِيَّاكَ ، إِيَّاكُمَا ، إِيَّاكُمْ | إِيَّاكِ ، إِيَّاكُمَا ، إِيَّاكُنَّ | إِيَّايَ ، إِيَّانَا
-        </div>
-        <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Irama Lagu</button>
-        <div class="melody-box">
-          <p class="nada-tag">Irama: Lagu Raja / Ya Thayba</p>
-          <div class="lyrics">"huwa huma hum, hiya huma hunna, anta antuma antum, anti antuma antuna, ana dan nahnu begitu bunyinya, dhamir munfashil rofa ulama menyebutnya."<br><br>"iyyahu iyaahuma iyyaahum, iyyaha iyuhama iyahunna, iyyaka iyyakuma iyaakum, iyyaaki iyakuma iyaakunna, iyyaya iyaana."</div>
-        </div>
-      </article>
-
-      <!-- Bab 11 & 12: Isim Dhamir Muttashil -->
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 11 & 12</span> <h3>11 & 12. Isim Dhamir Muttashil (Taiwan & Haik)</h3></div>
-        <div class="arabic-box">
-          <strong>Taiwan (Rafa' Muttashil):</strong> ـتَ ، ـتُمَا ، ـتُمْ ، ـتُ ، ـتِ ، ـتُنَّ ، ا (أَلِف) ، و (وَاو) ، ن (نُوْن) ، ي (يَاء)<br>
-          <strong>Haik (Nashab & Jar Muttashil):</strong> ـهُ ، ـهُمَا ، ـهُمْ ، ـهَا ، ـهُمَا ، ـهُنَّ ، ـكَ ، ـكُمَا ، ـكُمْ ، ـكِ ، ـكُمَا ، ـكُنَّ ، ـيْ ، ـنِيْ ، ـنَا
-        </div>
-        <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Irama Lagu</button>
-        <div class="melody-box">
-          <p class="nada-tag">Irama: Sedang Apa</p>
-          <div class="lyrics">"ta tuma tum, tu ti tunna, alif nun dan waw ya, dhomir taiwan muttashil rofa dengan fiil nempelnya."<br><br>"hu humaa hum, ha huma hunna, ka kuma kum ki kuma kunna, ii ya nii na dhamir muttashil, nashab dan jar hukumnya."</div>
-        </div>
-      </article>
-
-      <!-- Bab 13 - 19: Maushul, Istifham, Syarat, Zharaf, Idhafah, Isim Fiil, Tanda Fiil -->
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 13 - 19</span> <h3>13 s/d 19. Maushul, Syarat, Zharaf, Idhafah & Isim Fi'il</h3></div>
-        <div class="arabic-box">
-          <strong>13. Maushul:</strong> الَّذِي ، اللَّذَانِ ، الَّذِيْنَ ، الَّتِي ، اللَّتَانِ ، اللَّائِي ، اللَّاتِي ، أَيُّ ، ذَا ، مَا ، مَنْ<br>
-          <strong>14 & 15. Istifham & Syarat:</strong> مَنْ ، مَا ، أَيْنَ ، أَيّ ، أَنَّى ، كَيْفَ ، كَمْ ، مَتَى ، أَيَّانَ ، مَهْمَا ، حَيْثُمَا ، كَيْفَمَا<br>
-          <strong>16. Zharaf Zaman & Makan:</strong> حَوْلَ ، خَلْفَ ، أَمَامَ ، فَوْقَ ، تَحْتَ ، يَمِيْنَ ، شِمَالَ ، قَبْلَ ، بَعْدَ ، دُوْنَ ، جَانِبَ ، عِنْدَ ، بَيْنَ ، لَدُنْ ، لَدَى ، إِذَا ، لَمَّا ، كُلَّمَا ، حَيْثُ ، مَعَ<br>
-          <strong>17. Isim Idhafah Wajib:</strong> جَمِيْع ، بَعْض ، كُلّ ، غَيْر ، كِلَا ، كِلْتَا ، حَسْب ، سُبْحَان ، سِوَى ، مِائَة ، أَلْف ، اِبْن ، بِنْت ، وِفْق ، ذُوْ ، مِثْل ، أَبُوْ ، أَخُوْ ، حَمُوْ ، نَحْو<br>
-          <strong>18. Isim Fi'il:</strong> قَطْ ، وَيْ ، مَهْ ، هَيَّا ، أُفٍّ ، هَيْهَاتَ ، هَلُمَّ إِلَى ، هَاكَ ، صَهْ ، رُوَيْدَكَ ، إِلَيْكَ عَنِّي ، فَعَالِ<br>
-          <strong>19. Tanda Fi'il Madhi & Mudhari:</strong> ت maksudnya ت analisis ta fail (ـتَ ـتِ ـتُ) dan ta tanits sukun (ـتْ), قَدْ, لَقَدْ | أَنَيْتُ (أ ن ي ت), لَمْ, أَلَمْ, سَـ, سَوْفَ
-        </div>
-      </article>
     </section>
 
-    <!-- ============================================================== -->
-    <!-- LEVEL 2: BAB 20 - 33                                            -->
-    <!-- ============================================================== -->
+    <!-- LEVEL 2 -->
     <section id="lvl2" class="tab-pane">
       <div class="section-title-box">
-        <h2>IDENTIFIKASI KALIMAH LEVEL 2</h2>
+        <h2>IDENTIFIKASI KALIMAH LEVEL 2 (MENENGAH)</h2>
         <p>Mengenal Bacaan Bangunan Kalimah Fi'il & Isim Musytaq (Bab 20 - 33)</p>
       </div>
 
-      <!-- Bab 20 - 22: Wazan Madhi, Mudhari, Amar -->
       <article class="module-card">
         <div class="card-header"><span class="badge">Bab 20-22</span> <h3>20, 21, 22. Wazan Fi'il Madhi, Mudhari & Amar</h3></div>
         <div class="arabic-box">
-          <strong>Madhi:</strong> فَعَلَ فَعِلَ فَعُلَ (Tsulatsi) | أَفْعَلَ فَعَّلَ فَاعَلَ (Ruba'iy) | تَفَعَّلَ تَفَاعَلَ اِنْفَعَلَ اِفْتَعَلَ اِفْعَلَّ (Khumasi) | اِسْتَفْعَلَ (Sudasi) | فَعْلَلَ (Ruba'iy Mujarrad)<br>
-          <strong>Mudhari:</strong> يَفْعُلُ يَفْعَلُ يَفْعِلُ | يُفْعِلُ يُفَعِّلُ يُفَاعِلُ | يَتَفَعَّلُ يَتَفَاعَلُ يَنْفَعِلُ يَفْتَعِلُ يَفْعَلُّ | يَسْتَفْعِلُ | يُفَعْلِلُ<br>
-          <strong>Amar:</strong> اُفْعُلْ اِفْعَلْ اِفْعِلْ | أَفْعِلْ فَعِّلْ فَاعِلْ | تَفَعَّلْ تَفَاعَلْ اِنْفَعِلْ اِفْتَعِلْ اِفْعَلِلْ | اِسْتَفْعِلْ | فَعْلِلْ
+          <strong>Madhi:</strong> فَعَلَ فَعِلَ فَعُلَ | أَفْعَلَ فَعَّلَ فَاعَلَ | تَفَعَّلَ تَفَاعَلَ اِنْفَعَلَ اِفْتَعَلَ اِفْعَلَّ | اِسْتَفْعَلَ<br>
+          <strong>Mudhari:</strong> يَفْعُلُ يَفْعَلُ يَفْعِلُ | يُفْعِلُ يُفَعِّلُ يُفَاعِلُ | يَتَفَعَّلُ يَتَفَاعَلُ يَنْفَعِلُ يَفْتَعِلُ | يَسْتَفْعِلُ<br>
+          <strong>Amar:</strong> اُفْعُلْ اِفْعَلْ اِفْعِلْ | أَفْعِلْ فَعِّلْ فَاعِلْ | تَفَعَّلْ تَفَاعَلْ اِنْفَعِلْ اِفْتَعِلْ | اِسْتَفْعِلْ
         </div>
         <button class="melody-toggle" onclick="toggleMelody(this)">🎵 Irama Lagu</button>
         <div class="melody-box">
@@ -203,28 +268,8 @@
         </div>
       </article>
 
-      <!-- Bab 23 - 25: Tashrif 14 Dhamir -->
       <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 23-25</span> <h3>23, 24, 25. Tashrif Lughawi 14 Dhamir (Madhi, Mudhari, Amar)</h3></div>
-        <div class="table-responsive">
-          <table class="tashrif-table">
-            <thead>
-              <tr><th>Dhamir</th><th>Fi'il Madhi</th><th>Fi'il Mudhari</th><th>Fi'il Amar</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>هُوَ / هُمَا / هُمْ</td><td>فَعَلَ - فَعَلَا - فَعَلُوْا</td><td>يَفْعُلُ - يَفْعُلَانِ - يَفْعُلُوْنَ</td><td>-</td></tr>
-              <tr><td>هِيَ / هُمَا / هُنَّ</td><td>فَعَلَتْ - فَعَلَتَا - فَعَلْنَ</td><td>تَفْعُلُ - تَفْعُلَانِ - يَفْعُلْنَ</td><td>-</td></tr>
-              <tr><td>أَنْتَ / أَنْتُمَا / أَنْتُمْ</td><td>فَعَلْتَ - فَعَلْتُمَا - فَعَلْتُمْ</td><td>تَفْعُلُ - تَفْعُلَانِ - تَفْعُلُوْنَ</td><td>اُفْعُلْ - اُفْعُلَا - اُفْعُلُوْا</td></tr>
-              <tr><td>أَنْتِ / أَنْتُمَا / أَنْتُنَّ</td><td>فَعَلْتِ - فَعَلْتُمَا - فَعَلْتُنَّ</td><td>تَفْعُلِيْنَ - تَفْعُلَانِ - تَفْعُلْنَ</td><td>اُفْعُلِيْ - اُفْعُلَا - اُفْعُلْنَ</td></tr>
-              <tr><td>أَنَا / نَحْنُ</td><td>فَعَلْتُ - فَعَلْنَا</td><td>أَفْعُلُ - نَفْعُلُ</td><td>-</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <!-- Bab 26: Majhul -->
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 26</span> <h3>26. Kaidah Fi'il Madhi & Mudhari Majhul (Pasif)</h3></div>
+        <div class="card-header"><span class="badge">Bab 26</span> <h3>26. Kaidah Fi'il Madhi & Mudhari Majhul (Bentuk Pasif)</h3></div>
         <div class="grid-two">
           <div class="rule-box">
             <h4>Fi'il Madhi Majhul</h4>
@@ -238,161 +283,93 @@
           </div>
         </div>
       </article>
-
-      <!-- Bab 27 - 33: Jamid, Mashdar, Fail, Maful, Mubalaghah, Sifat Musyabbahah -->
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 27-33</span> <h3>27 s/d 33. Mashdar Mazid, Isim Fa'il, Maf'ul, Mubalaghah & Sifat Musyabbahah</h3></div>
-        <div class="arabic-box">
-          <strong>27. Fi'il Jamid:</strong> عَسَى (Semoga) ، بِئْسَ (Seburuk-buruknya) ، نِعْمَ (Sebaik-baiknya) ، هَاتِ (Tunjukkan/Berikan) ، تَعَالَ (Kemarilah)<br>
-          <strong>28. Mashdar Tsulatsi Mazid:</strong> أَفْعَلَ إِفْعَالًا | فَعَّلَ تَفْعِيْلًا | فَاعَلَ مُفَاعَلَةً وَفِعَالًا | تَفَعَّلَ تَفَعُّلًا | تَفَاعَلَ تَفَاعُلًا | اِنْفَعَلَ اِنْفِعَالًا | اِفْتَعَلَ اِفْتِعَالًا | اِفْعَلَّ اِفْعِلَالًا | اِسْتَفْعَلَ اِسْتِفْعَالًا<br>
-          <strong>29. Wazan Isim Fa'il:</strong> فَاعِل ، مُفْعِل ، مُفَعِّل ، مُفَاعِل ، مُتَفَعِّل ، مُتَفَاعِل ، مُنْفَعِل ، مُفْتَعِل ، مُفْعَلّ ، مُسْتَفْعِل<br>
-          <strong>30. Wazan Isim Maf'ul:</strong> مَفْعُوْل ، مُفْعَل ، مُفَعَّل ، مُفَاعَل ، مُتَفَعَّل ، مُتَفَاعَل ، مُنْفَعَل ، مُفْتَعَل ، مُفْعَلّ ، مُسْتَفْعَل<br>
-          <strong>31. Wazan Mubalaghah:</strong> فَعَّال (قَهَّار) ، مِفْعَال (مِدْرَار) ، فِعِّيْل (صِدِّيْق) ، مِفْعِيْل (مِسْكِيْن) ، فَعُوْل (غَفُوْر) ، فُعُّوْل (قُدُّوْس) ، فَعِيْل (سَمِيْع) ، فَعِل (فَرِح) ، فُعَّال (كُبَّار) ، فَيْعُوْل (قَيُّوْم) ، فَعَّالَة (عَلَّامَة)<br>
-          <strong>32. Mashdar Sima'iy:</strong> فَعْلًا (نَصْرًا) ، فِعْلًا (عِلْمًا) ، فِعَالَةً (قِرَاءَةً) ، فَعَالَةً (نَظَافَةً) ، فُعُوْلًا (سُجُوْدًا) ، فَعَلًا (فَرَحًا) ، فُعُوْلَةً (سُهُوْلَةً)<br>
-          <strong>33. Sifat Musyabbahah:</strong> فَعِلَ-أَفْعَلُ (حَمِرَ أَحْمَرُ) ، فَعِلَ-فَعِلٌ (فَرِحَ فَرِحٌ) ، فَعِلَ-فَعْلَانُ (عَطِشَ عَطْشَانُ) ، فَعُلَ-سَهْلٌ ، حَسَنٌ ، شُلْبٌ ، شُجَاعٌ ، حَصَانٌ ، كَرِيْمٌ
-        </div>
-      </article>
     </section>
 
-    <!-- ============================================================== -->
-    <!-- LEVEL 3: BAB 34 - 42                                            -->
-    <!-- ============================================================== -->
+    <!-- LEVEL 3 -->
     <section id="lvl3" class="tab-pane">
       <div class="section-title-box">
-        <h2>IDENTIFIKASI KALIMAH LEVEL 3</h2>
-        <p>Muannats, Ma'rifah/Nakirah, Marfu'at, Manshubat, Kaana, Inna, I'rab & Rumus Nyoret (Bab 34 - 42)</p>
+        <h2>IDENTIFIKASI KALIMAH LEVEL 3 (LANJUTAN)</h2>
+        <p>Marfu'at, Manshubat, Kaana, Inna, I'rab Lengkap & Rumus Coret (Bab 34 - 42)</p>
       </div>
 
-      <!-- Bab 34 & 35 -->
       <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 34 & 35</span> <h3>34. Isim Muannats & 35. Isim Ma'rifah & Nakirah</h3></div>
+        <div class="card-header"><span class="badge">Bab 36 & 37</span> <h3>36. Marfu'at al-Asma & 37. Manshubat al-Asma</h3></div>
         <div class="arabic-box">
-          <strong>Muannats:</strong> Nama wanita & Ta Marbuthah (فَاطِمَةُ ، مَدْرَسَةٌ) | Anggota badan berpasangan (عَيْنٌ ، يَدٌ ، رِجْلٌ ، أُذُنٌ) | Alif Ta'nits (حُبْلَى ، حُسْنَى ، صَحْرَاءُ) | Anggapan bangsa Arab (شَمْسٌ ، نَارٌ ، دَارٌ ، جَهَنَّمُ ، نَفْسٌ ، أَرْضٌ ، سَمَاءٌ) | Sifat khusus wanita (حَائِضٌ ، طَالِقٌ ، حَامِلٌ)<br><br>
-          <strong>6 Isim Ma'rifah:</strong> 1. Isim Dhamir (أَنَا) | 2. Isim Alam/Nama (نُوْحٌ) | 3. Beralif Lam (الْيَدُ) | 4. Isim Maushul (الَّذِي) | 5. Isim Isyarah (ذَاكَ) | 6. Diidhafatkan ke Ma'rifah (وَلَدُ نُوْحٍ ، بَابُ هٰذَا الْبِنَاءِ)
+          <strong>7 Marfu'at (Rafa'):</strong> Fa'il, Naibul Fa'il, Mubtada, Khabar, Isim Kaana, Khabar Inna, Tawabi' lil Marfu'.<br><br>
+          <strong>13 Manshubat (Nashab):</strong> Maf'ul Bih, Zharaf Zaman/Makan, Maf'ul Muthlaq, Maf'ul Ma'ah, Maf'ul Li Ajlih, Hal, Tamyiz, Munada, Mustatsna, Khabar Kaana, Isim Inna, Isim Laa, Tawabi' lil Manshub.
         </div>
       </article>
 
-      <!-- Bab 36 & 37 -->
       <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 36 & 37</span> <h3>36. Marfu'at al-Asma (7) & 37. Manshubat al-Asma (13)</h3></div>
-        <div class="arabic-box">
-          <strong>7 Marfu'at (Rafa'):</strong> الفَاعِل ، نَائِبُ الفَاعِل ، المُبْتَدَأ ، الخَبَر ، اِسْمُ كَانَ ، خَبَرُ إِنَّ ، التَّوَابِعُ لِلْمَرْفُوْعِ (النَّعْت ، العَطْف ، التَّوْكِيْد ، البَدَل)<br><br>
-          <strong>13 Manshubat (Nashab):</strong> مَفْعُوْل بِهِ ، مَفْعُوْل فِيْهِ (ظَرْف) ، مَفْعُوْل مُطْلَق (مَصْدَر) ، مَفْعُوْل مَعَهُ ، مَفْعُوْل لِأَجْلِهِ ، الحَال ، التَّمْيِيْز ، المُنَادَى ، المُسْتَثْنَى ، خَبَرُ كَانَ ، اِسْمُ إِنَّ ، اِسْمُ لَا النَّافِيَة لِلْجِنْس ، التَّوَابِعُ لِلْمَنْصُوْبِ
-        </div>
-      </article>
-
-      <!-- Bab 38 & 39 -->
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 38 & 39</span> <h3>38. Kaana wa Akhawatiha & 39. Inna wa Akhawatiha</h3></div>
-        <div class="arabic-box">
-          <strong>Kaana dkk (Rafa' Isim, Nashab Khabar):</strong> كَانَ ، أَصْبَحَ ، أَضْحَى ، ظَلَّ ، أَمْسَى ، بَاتَ ، صَارَ ، لَيْسَ ، مَا بَرِحَ ، مَا زَالَ ، مَا انْفَكَّ ، مَا فَتِئَ ، مَا دَامَ<br>
-          <em>Contoh: كَانَ زَيْدٌ نَاصِرًا ، كُنْ بَرًّا</em><br><br>
-          <strong>Inna dkk (Nashab Isim, Rafa' Khabar):</strong> إِنَّ (Taukid) ، أَنَّ (Taukid) ، لَكِنَّ (Istidrak) ، لَيْتَ (Tamanni) ، لَعَلَّ (Tarajji/Tawaqqu') ، كَأَنَّ (Tasybih)<br>
-          <em>Contoh: إِنَّ مَلِكًا لَعَالِمٌ ، لَيْتَ الحَبِيْبَ قَادِمٌ</em>
-        </div>
-      </article>
-
-      <!-- Bab 40: Tabel I'rab Mu'rab Lengkap -->
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 40</span> <h3>40. I'rab Isim Mu'rab Lengkap</h3></div>
+        <div class="card-header"><span class="badge">Bab 40</span> <h3>40. Tabel I'rab Isim Mu'rab Lengkap</h3></div>
         <div class="table-responsive">
           <table class="tashrif-table">
             <thead>
-              <tr><th>Jenis Isim Mu'rab</th><th>Rafa'</th><th>Nashab</th><th>Khafadl (Jar)</th><th>Contoh Lengkap</th></tr>
+              <tr><th>Jenis Isim</th><th>Rafa'</th><th>Nashab</th><th>Khafadl (Jar)</th><th>Contoh</th></tr>
             </thead>
             <tbody>
-              <tr><td>Isim Mufrad</td><td>ـُ / ـٌ</td><td>ـَ / ـً</td><td>ـِ / ـٍ</td><td>رَجُلٌ / إِنَّ رَجُلًا / مِنْ رَجُلٍ</td></tr>
-              <tr><td>Jamak Taksir</td><td>ـُ / ـٌ</td><td>ـَ / ـً</td><td>ـِ / ـٍ</td><td>رِجَالٌ / إِنَّ رِجَالًا / مِنْ رِجَالٍ</td></tr>
-              <tr><td>Ghair Munsharif</td><td>ـُ</td><td>ـَ</td><td>ـَ</td><td>أَحْمَدُ / إِنَّ أَحْمَدَ / مِنْ أَحْمَدَ</td></tr>
-              <tr><td>Asma'ul Khamsah</td><td>و (ـُوْ)</td><td>ا (ـَا)</td><td>ي (ـِيْ)</td><td>أَبُوْكَ / إِنَّ أَبَاكَ / مِنْ أَبِيْكَ</td></tr>
-              <tr><td>Isim Mutsanna</td><td>ـَانِ</td><td>ـَيْنِ</td><td>ـَيْنِ</td><td>زَيْدَانِ / إِنَّ زَيْدَيْنِ / مِنْ زَيْدَيْنِ</td></tr>
-              <tr><td>Jamak Mudzakkar Salim</td><td>ـُوْنَ</td><td>ـِيْنَ</td><td>ـِيْنَ</td><td>المُسْلِمُوْنَ / إِنَّ المُسْلِمِيْنَ / مِنَ المُسْلِمِيْنَ</td></tr>
-              <tr><td>Jamak Muannats Salim</td><td>ـَاتُ / ـَاتٌ</td><td>ـَاتِ / ـَاتٍ</td><td>ـَاتِ / ـَاتٍ</td><td>المُسْلِمَاتُ / إِنَّ مُسْلِمَاتٍ / مِنْ مُسْلِمَاتٍ</td></tr>
+              <tr><td>Isim Mufrad</td><td>ـُ / ـٌ</td><td>ـَ / ـً</td><td>ـِ / ـٍ</td><td>رَجُلٌ / رَجُلًا / رَجُلٍ</td></tr>
+              <tr><td>Jamak Taksir</td><td>ـُ / ـٌ</td><td>ـَ / ـً</td><td>ـِ / ـٍ</td><td>رِجَالٌ / رِجَالًا / رِجَالٍ</td></tr>
+              <tr><td>Ghair Munsharif</td><td>ـُ</td><td>ـَ</td><td>ـَ</td><td>أَحْمَدُ / أَحْمَدَ / أَحْمَدَ</td></tr>
+              <tr><td>Asma'ul Khamsah</td><td>و (ـُوْ)</td><td>ا (ـَا)</td><td>ي (ـِيْ)</td><td>أَبُوْكَ / أَبَاكَ / أَبِيْكَ</td></tr>
+              <tr><td>Isim Mutsanna</td><td>ـَانِ</td><td>ـَيْنِ</td><td>ـَيْنِ</td><td>زَيْدَانِ / زَيْدَيْنِ / زَيْدَيْنِ</td></tr>
+              <tr><td>Jamak Mudzakkar</td><td>ـُوْنَ</td><td>ـِيْنَ</td><td>ـِيْنَ</td><td>المُسْلِمُوْنَ / المُسْلِمِيْنَ</td></tr>
             </tbody>
           </table>
         </div>
       </article>
 
-      <!-- Bab 41 & 42 -->
       <article class="module-card">
-        <div class="card-header"><span class="badge">Bab 41 & 42</span> <h3>41. Isim Mabni & 42. Rumus Lambang Nyoret Pegon</h3></div>
-        <div class="arabic-box">
-          <strong>41. Isim Mabni:</strong> Isim Dhamir, Maushul, Istifham, Isim Fiil, Syarat, Isyarah, 'Adad Murakkab, Isim berakhiran -waih (سِيْبَوَيْهِ).<br>
-          <em>Pengecualian (Mu'rab): اللَّذَانِ ، اللَّتَانِ ، أَيّ ، هٰذَانِ ، هَاتَانِ ، ذَانِكَ ، تَانِكَ ، اِثْنَا عَشَرَ ، اِثْنَتَا عَشْرَةَ.</em>
-        </div>
-        <div class="grid-coret" style="margin-top:15px;">
-          <div class="coret-item"><span>م (Mim)</span> = Mubtada ("Adapun")</div>
-          <div class="coret-item"><span>خ (Kha)</span> = Khabar ("Itu adalah")</div>
-          <div class="coret-item"><span>ف (Fa)</span> = Fa'il ("Siapa/Apa")</div>
-          <div class="coret-item"><span>نف (Na-Fa)</span> = Naibul Fa'il</div>
-          <div class="coret-item"><span>نص (Nun-Shad)</span> = Na'at ("Yang")</div>
-          <div class="coret-item"><span>مف (Mim-Fa)</span> = Maf'ul Bih ("Terhadap")</div>
-          <div class="coret-item"><span>مط (Mim-Tha)</span> = Maf'ul Muthlaq ("Dengan")</div>
-          <div class="coret-item"><span>هـ (Haa)</span> = Hal ("Secara/Keadaan")</div>
-          <div class="coret-item"><span>بد (Ba-Dal)</span> = Badal ("Yaitu")</div>
-          <div class="coret-item"><span>مل (Mim-Lam)</span> = Maf'ul Li Ajlih ("Karena")</div>
+        <div class="card-header"><span class="badge">Bab 42</span> <h3>42. Rumus Lambang Makna Gandul / Nyoret Pegon</h3></div>
+        <div class="grid-coret">
+          <div class="coret-item"><span>م</span> = Mubtada ("Adapun")</div>
+          <div class="coret-item"><span>خ</span> = Khabar ("Itu adalah")</div>
+          <div class="coret-item"><span>ف</span> = Fa'il ("Siapa/Apa")</div>
+          <div class="coret-item"><span>نف</span> = Naibul Fa'il</div>
+          <div class="coret-item"><span>نص</span> = Na'at ("Yang")</div>
+          <div class="coret-item"><span>مف</span> = Maf'ul Bih ("Terhadap")</div>
+          <div class="coret-item"><span>هـ</span> = Hal ("Secara/Keadaan")</div>
         </div>
       </article>
     </section>
 
-    <!-- ============================================================== -->
-    <!-- BAGIAN II: BANK LATIHAN BACA BANGUNAN KALIMAH (PDF HAL 24-206) -->
-    <!-- ============================================================== -->
+    <!-- LATIHAN TEKS GUNDUL -->
     <section id="latihan" class="tab-pane">
       <div class="section-title-box">
-        <h2>BUKU LATIHAN I: MEMBACA BANGUNAN KALIMAH</h2>
-        <p>Bank Kosakata Lengkap Fi'il Shahih, Ajwaf, Naqish, Mitsal & Mudha'af</p>
+        <h2>BUKU LATIHAN MEMBACA BANGUNAN KALIMAH</h2>
+        <p>Praktik Kosakata Fi'il Shahih, Ajwaf, Naqish, Mitsal & Mudha'af (Teks Gundul)</p>
       </div>
 
-      <!-- Sahih Tsulatsi & Mazid -->
       <article class="module-card">
-        <div class="card-header"><span class="badge">Shahih</span> <h3>1. Pola Wazan Fi'il Shahih (Madhi & Mudhari)</h3></div>
+        <div class="card-header"><span class="badge">Shahih</span> <h3>Pola Wazan Fi'il Shahih (Madhi & Mudhari)</h3></div>
         <div class="arabic-box">
-          <strong>فَعَلَ - يَفْعُلُ:</strong> نَصَرَ يَنْصُرُ ، خَلَقَ يَخْلُقُ ، رَزَقَ يَرْزُقُ ، قَتَلَ يَقْتُلُ ، سَلَكَ يَسْلُكُ ، كَتَبَ يَكْتُبُ<br>
-          <strong>فَعِلَ - يَفْعَلُ:</strong> عَلِمَ يَعْلَمُ ، فَهِمَ يَفْهَمُ ، رَحِمَ يَرْحَمُ ، سَمِعَ يَسْمَعُ ، حَفِظَ يَحْفَظُ ، شَهِدَ يَشْهَدُ<br>
-          <strong>فَعُلَ - يَفْعُلُ:</strong> حَسُنَ يَحْسُنُ ، صَعُبَ يَصْعُبُ ، كَبُرَ يَكْبُرُ ، صَغُرَ يَصْغُرُ ، جَمُلَ يَجْمُلُ ، كَرُمَ يَكْرُمُ<br>
-          <strong>أَفْعَلَ - يُفْعِلُ:</strong> أَكْرَمَ يُكْرِمُ ، أَحْسَنَ يُحْسِنُ ، أَدْرَكَ يُدْرِكُ ، أَخْرَجَ يُخْرِجُ ، أَرْسَلَ يُرْسِلُ ، أَسْلَمَ يُسْلِمُ<br>
-          <strong>فَعَّلَ - يُفَعِّلُ:</strong> نَفَّذَ يُنَفِّذُ ، طَبَّقَ يُطَبِّقُ ، عَظَّمَ يُعَظِّمُ ، سَهَّلَ يُسَهِّلُ ، رَتَّلَ يُرَتِّلُ ، عَلَّمَ يُعَلِّمُ<br>
-          <strong>فَاعَلَ - يُفَاعِلُ:</strong> قَاتَلَ يُقَاتِلُ ، شَاوَرَ يُشَاوِرُ ، شَارَكَ يُشَارِكُ ، جَاهَدَ يُجَاهِدُ ، عَامَلَ يُعَامِلُ ، صَالَحَ يُصَالِحُ<br>
-          <strong>اِنْفَعَلَ - يَنْفَعِلُ:</strong> اِنْكَسَرَ يَنْكَسِرُ ، اِنْسَجَمَ يَنْسَجِمُ ، اِنْفَتَحَ يَنْفَتِحُ ، اِنْفَصَلَ يَنْفَصِلُ ، اِنْقَلَبَ يَنْقَلِبُ<br>
-          <strong>اِفْتَعَلَ - يَفْتَعِلُ:</strong> اِجْتَمَعَ يَجْتَمِعُ ، اِقْتَصَدَ يَقْتَصِدُ ، اِجْتَهَدَ يَجْتَهِدُ ، اِخْتَلَفَ يَخْتَلِفُ ، اِنْتَخَبَ يَنْتَخِبُ<br>
-          <strong>تَفَعَّلَ - يَتَفَعَّلُ:</strong> تَحَدَّثَ يَتَحَدَّثُ ، تَكَلَّمَ يَتَكَلَّمُ ، تَقَدَّمَ يَتَقَدَّمُ ، تَدَبَّرَ يَتَدَبَّرُ ، تَفَكَّرَ يَتَفَكَّرُ ، تَعَلَّمَ يَتَعَلَّمُ<br>
-          <strong>تَفَاعَلَ - يَتَفَاعَلُ:</strong> تَقَاتَلَ يَتَقَاتَلُ ، تَنَازَعَ يَتَنَازَعُ ، تَدَافَعَ يَتَدَافَعُ ، تَعَاوَنَ يَتَعَاوَنُ ، تَبَادَلَ يَتَبَادَلُ<br>
-          <strong>اِسْتَفْعَلَ - يَسْتَفْعِلُ:</strong> اِسْتَخْلَفَ يَسْتَخْلِفُ ، اِسْتَغْفَرَ يَسْتَغْفِرُ ، اِسْتَسْلَمَ يَسْتَسْلِمُ ، اِسْتَنْبَطَ يَسْتَنْبِطُ ، اِسْتَخْدَمَ يَسْتَخْدِمُ
+          <strong>فَعَلَ - يَفْعُلُ:</strong> نَصَرَ يَنْصُرُ ، خَلَقَ يَخْلُقُ ، رَزَقَ يَرْزُقُ ، قَتَلَ يَقْتُلُ ، كَتَبَ يَكْتُبُ<br>
+          <strong>فَعِلَ - يَفْعَلُ:</strong> عَلِمَ يَعْلَمُ ، فَهِمَ يَفْهَمُ ، رَحِمَ يَرْحَمُ ، سَمِعَ يَسْمَعُ ، حَفِظَ يَحْفَظُ<br>
+          <strong>أَفْعَلَ - يُفْعِلُ:</strong> أَكْرَمَ يُكْرِمُ ، أَحْسَنَ يُحْسِنُ ، أَدْرَكَ يُدْرِكُ ، أَرْسَلَ يُرْسِلُ ، أَسْلَمَ يُسْلِمُ<br>
+          <strong>فَعَّلَ - يُفَعِّلُ:</strong> نَفَّذَ يُنَفِّذُ ، طَبَّقَ يُطَبِّقُ ، عَظَّمَ يُعَظِّمُ ، سَهَّلَ يُسَهِّلُ ، عَلَّمَ يُعَلِّمُ
         </div>
       </article>
 
-      <!-- Bina Mu'tal Lengkap -->
       <article class="module-card">
-        <div class="card-header"><span class="badge">Mu'tal & Mudha'af</span> <h3>2. Bangunan Ajwaf, Naqish, Mitsal & Mudha'af</h3></div>
+        <div class="card-header"><span class="badge">Mu'tal</span> <h3>Pola Wazan Ajwaf, Naqish & Mitsal</h3></div>
         <div class="grid-two">
           <div class="rule-box">
             <h4>Bina Ajwaf (Tengah 'Illat)</h4>
-            <p class="ar-example">قَالَ يَقُوْلُ قُلْ | بَاعَ يَبِيْعُ بِعْ | خَافَ يَخَافُ خَفْ | اِسْتَقَامَ يَسْتَقِيْمُ اِسْتَقِمْ | مَصُوْن ، مَبِيْع</p>
+            <p class="ar-example">قَالَ يَقُوْلُ قُلْ | بَاعَ يَبِيْعُ بِعْ | خَافَ يَخَافُ خَفْ | اِسْتَقَامَ يَسْتَقِيْمُ</p>
           </div>
           <div class="rule-box">
             <h4>Bina Naqish (Akhir 'Illat)</h4>
-            <p class="ar-example">دَعَا يَدْعُوْ اُدْعُ | رَمَى يَرْمِي اِرْمِ | سَعَى يَسْعَى اِسْعَ | اِسْتَهْدَى يَسْتَهْدِي اِسْتَهْدِ | دَاعٍ ، مَرْمِيّ</p>
-          </div>
-          <div class="rule-box">
-            <h4>Bina Mitsal (Awal Wawu/Ya)</h4>
-            <p class="ar-example">وَجَدَ يَجِدُ جِدْ | وَصَفَ يَصِفُ صِفْ | وَقَفَ يَقِفُ قِفْ | اِتَّصَلَ يَتَّصِلُ اِتَّصِلْ | مَوْجُوْد ، مَوْقُوْف</p>
-          </div>
-          <div class="rule-box">
-            <h4>Bina Mudha'af (Tasydid)</h4>
-            <p class="ar-example">مَدَّ يَمُدُّ مُدَّ | شَدَّ يَشُدُّ شُدَّ | رَدَّ يَرُدُّ رُدَّ | اِسْتَقَرَّ يَسْتَقِرُّ اِسْتَقِرَّ | مَمْدُوْد ، مَرْدُوْد</p>
+            <p class="ar-example">دَعَا يَدْعُوْ اُدْعُ | رَمَى يَرْمِي اِرْمِ | سَعَى يَسْعَى اِسْعَ | اِسْتَهْدَى يَسْتَهْدِي</p>
           </div>
         </div>
       </article>
     </section>
 
-    <!-- ============================================================== -->
-    <!-- BAGIAN III: NAZHAM JURUMIYAH INDONESIA (PDF HAL 207-222)       -->
-    <!-- ============================================================== -->
+    <!-- NAZHAM JURUMIYAH -->
     <section id="nazham" class="tab-pane">
       <div class="section-title-box">
         <h2>NAZHAM JURUMIYAH BAHASA INDONESIA</h2>
-        <p>Karya: Uwais al-Qarny (Terinspirasi Nazham asy-Syinqithi)</p>
+        <p>Karya: Uwais al-Qarny (24 Bab Nadhom Berima)</p>
       </div>
 
       <article class="module-card">
@@ -405,115 +382,67 @@
           <strong>BAB KALAM:</strong><br>
           Sesungguhnya had kalam menurut kami # Lafaz murakkab mufid wadha’ arabi<br>
           Pembagian kalam ada tiga warna # Isim, fiil kemudian haraf makna<br>
-          Isim dikenal dengan khafadl dan tanwin # Kemasukan alif lam dengannya mungkin<br>
-          Dengan huruf khafadl yakni min dan ilaa # ‘An, fii dan rubba, serta ba juga ‘alaa<br>
-          Kaf, lam dan mudz mundzu juga huruf qasam # Jangan lupa hatta disbagian maqam<br>
-          Ada qad, sin dan saufa diawalnya # Berujung ta sukun fiil dikenalnya<br>
-          Sedang kalimah huruf tidak terima # Tanda isim dan fiil seperti tsumma
+          Isim dikenal dengan khafadl dan tanwin # Kemasukan alif lam dengannya mungkin
         </div>
       </article>
 
       <article class="module-card">
-        <div class="card-header"><span class="badge">Bait 11-30</span> <h3>Bab I'rab & Alamat I'rab (Rafa', Nashab, Khafadl, Jazm)</h3></div>
+        <div class="card-header"><span class="badge">Bait 11-25</span> <h3>Bab I'rab & Alamat Rafa'</h3></div>
         <div class="lyrics-block">
           <strong>BAB I'RAB:</strong><br>
           I’rab itu perubahan ujung kalim # Taqdiran lafzhan dengannya harus yakin<br>
           Perubahan kalim mu’rab diujungnya # Karna amil berbeda memasukinya<br>
-          I’rab dibagi jadi empat warnanya # Rafa, nashab, khafadl, jazm istilahnya<br>
-          Rafa nashab tidak bisa dipungkiri # Hanya dalam isim dan fiil mudhari<br>
-          Khafadl hanya untuk isim lain tidak # Sedang jazm untuk mudhari semata<br><br>
+          I’rab dibagi jadi empat warnanya # Rafa, nashab, khafadl, jazm istilahnya<br><br>
           <strong>BAB ALAMAT RAFA':</strong><br>
           Dhammah dan wawu juga alif serta nun # Tanda rafa dengannya umdah tersusun<br>
-          Isim mufrad dirofakan dengan dommah # Jaa’a zaydun contoh yang kokoh tak lemah<br>
-          Yang dengannya jamak taksir dirofakan # Jamak muanats salim pun disertakan<br>
-          Dengan wawu isim lima dirofakan # Abu akhu hamu fu dzu idhofatkan<br>
-          Rofa jama mudzakar salim dengannya # Isim tasniyah dengan alif tandanya<br>
-          Rofakan dengan nun pada yaf’alani # Yaf’aluna, taf’aluna, taf’alani, lafazh taf’alina...
+          Isim mufrad dirofakan dengan dommah # Jaa’a zaydun contoh yang kokoh tak lemah
         </div>
       </article>
-
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Bait 31-60</span> <h3>Bab Kaana, Inna, Zhanna & Tawabi' (Na'at, Athaf, Taukid, Badal)</h3></div>
-        <div class="lyrics-block">
-          <strong>BAB KAANA & INNA:</strong><br>
-          Isim dirofakan khobar dinasabkan # Dengan af’al naqish harap perhatikan<br>
-          Kaana ashbaha amsa zhalla dan adhhaa # Baata shaara laisa juga maa bariha...<br>
-          Kebalikan kaana berlaku tuk inna # Anna lakinna layta la’alla ka’anna<br>
-          Contohnya inna malikan la alimu # Semisalnya laytal habiba qadimu...<br><br>
-          <strong>BAB TAWABI':</strong><br>
-          Naat mengikuti man’ut sebelumnya # Dalam rafa nashab dan khafadl tentunya<br>
-          Mathuf pada mathuf alaih mengikuti # Jika ada huruf sepuluh teliti: Wawu dan fa bal lakin aw serta immaa, lakin hatta dan laa juga huruf tsumma...<br>
-          Ingat taukid mengikuti muakkad: An-nafsu dan ainu kullu ajma'u...<br>
-          Badal ada empat: Badal syai min syai, badal ba'dhi minal kulli, badal isytimal, dan badal ghalath.
-        </div>
-      </article>
-
-      <article class="module-card">
-        <div class="card-header"><span class="badge">Bait 61-90</span> <h3>Bab Manshubat al-Asma & Penutup Nazham</h3></div>
-        <div class="lyrics-block">
-          <strong>BAB MANSHUBAT:</strong><br>
-          Isim dinashabkan jika menempati # Salah satu dari 13 pasti:<br>
-          Jika jadi salah satu maful lima: Bih, fih, muthlaq, ma’ah, liajlih utama<br>
-          Hal dan tamyiz serta munada istisna # Juga khabar kana serta isim inna<br>
-          La nafiyah lil jinsi dan at-tawabi’ # Naat athaf taukid badal lil manshubi...<br><br>
-          <strong>PENUTUP:</strong><br>
-          Nazham ini disusun sempurna sudah # Tahun sribu sratus dua puluh hijrah<br>
-          Ditutup dengan pujian pada Tuhan # Atas nikmat yang tidak berkesudahan<br>
-          Dengan lafazh sederhana dibuatnya # Tidak susah mubtadi memahaminya...<br>
-          Alhamdulillah nazham ini selesai (Senin, 16/11/2015).
-        </div>
-      </article>
-    </section>
-
-    <!-- ============================================================== -->
-    <!-- KUIS & EVALUASI INTERAKTIF                                      -->
-    <!-- ============================================================== -->
-    <section id="kuis" class="tab-pane">
-      <div class="section-title-box">
-        <h2>⚔️ EVALUASI & UJI PEMAHAMAN NAHWU</h2>
-        <p>Jawab pertanyaan berikut berdasarkan kaidah yang telah dipelajari!</p>
-      </div>
-
-      <div class="quiz-container">
-        <div class="quiz-card" id="q1">
-          <h4>1. Manakah di bawah ini yang seluruhnya merupakan Haraf Jar?</h4>
-          <div class="options">
-            <button onclick="checkAnswer(1, false, this)">A. إِنَّ ، أَنَّ ، لَكِنَّ ، لَيْتَ</button>
-            <button onclick="checkAnswer(1, true, this)">B. مِنْ ، إِلَى ، عَنْ ، عَلَى ، فِيْ ، رُبَّ</button>
-            <button onclick="checkAnswer(1, false, this)">C. أَنْ ، لَنْ ، إِذَنْ ، كَيْ</button>
-          </div>
-          <div class="feedback"></div>
-        </div>
-
-        <div class="quiz-card" id="q2">
-          <h4>2. Huruf awal fi'il madhi didhommahkan dan huruf sebelum terakhir dikasrahkan (contoh: نُصِرَ) adalah rumus untuk...</h4>
-          <div class="options">
-            <button onclick="checkAnswer(2, true, this)">A. Fi'il Madhi Majhul (Bentuk Pasif)</button>
-            <button onclick="checkAnswer(2, false, this)">B. Fi'il Mudhari Ma'lum (Bentuk Aktif)</button>
-            <button onclick="checkAnswer(2, false, this)">C. Fi'il Amar (Kata Perintah)</button>
-          </div>
-          <div class="feedback"></div>
-        </div>
-
-        <div class="quiz-card" id="q3">
-          <h4>3. Tanda I'rab Nashab untuk Asma'ul Khamsah (أَبُوْكَ) adalah dengan huruf...</h4>
-          <div class="options">
-            <button onclick="checkAnswer(3, false, this)">A. Wawu (أَبُوْكَ)</button>
-            <button onclick="checkAnswer(3, true, this)">B. Alif (أَبَاكَ)</button>
-            <button onclick="checkAnswer(3, false, this)">C. Ya (أَبِيْكَ)</button>
-          </div>
-          <div class="feedback"></div>
-        </div>
-
-        <div class="score-box" id="scoreResult" style="display:none;">
-          <h3>Alhamdulillah! 🎉</h3>
-          <p id="scoreText"></p>
-        </div>
-      </div>
     </section>
 
   </main>
 
-  <script src="materi.js"></script>
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+      const targetPane = document.getElementById(tabId);
+      const targetBtn = document.getElementById('btn-' + tabId);
+
+      if (targetPane) targetPane.classList.add('active');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+
+    function toggleMelody(btn) {
+      const box = btn.nextElementSibling;
+      if (!box) return;
+      if (box.style.display === 'block') {
+        box.style.display = 'none';
+        btn.innerText = '🎵 Irama Lagu';
+      } else {
+        box.style.display = 'block';
+        btn.innerText = '🔼 Sembunyikan Irama';
+      }
+    }
+
+    // Inisialisasi Saat Halaman Dimuat
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Tampilkan Nama Santri
+      const nama = localStorage.getItem('namaSantri');
+      if (nama) {
+        document.getElementById('userNamaDisplay').innerText = nama;
+      }
+
+      // 2. Baca Target Tab dari URL Hash atau LocalStorage
+      let target = window.location.hash ? window.location.hash.replace('#', '') : localStorage.getItem('targetTabAwal');
+      
+      if (!target || !document.getElementById(target)) {
+        target = 'lvl1';
+      }
+
+      switchTab(target);
+    });
+  </script>
 </body>
 </html>
