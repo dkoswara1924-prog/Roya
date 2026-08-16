@@ -254,7 +254,7 @@
 
   <script>
     // ==============================================================
-    // DATA LENGKAP BAB 1 SAMPAI 42
+    // DATA TERPADU: BAB 1 S/D BAB 42 LENGKAP
     // ==============================================================
     const dataLagu = [
       // --- LEVEL 1 ---
@@ -426,7 +426,7 @@
         judul: "Lagu Fiil Madhi Tsulatsi plus Rubaiy Mujarrod",
         arab: "فَاعَلَ | فَعَّلَ | أَفْعَلَ | فَعُلَ | فَعِلَ | فَعَلَ\nاِسْتَفْعَلَ | اِفْعَلَّ | اِفْتَعَلَ | اِنْفَعَلَ | تَفَاعَلَ | تَفَعَّلَ\nفَعْلَلَ",
         irama: "Pelangi-pelangi / Mustaf'ilun 6x / Mustafilun Failun",
-        lirik: "• Versi 1 (pelangi-pelangi):\nFa’ala, fa’ila fa’ula tsulatsi\nAf’ala, fa’’ala, faa’ala ruba’iy\nTafa’’ala, tafaa’ala, infa’ala, ifta’ala\nif’alla khumasi Istaf’ala sudasi\n\n• Versi 2 (mustaf’ilun6x):\nTsulatsi fa’ala, fa’ila fa’ula\nRuba’iy af’ala, fa’’ala, faa’ala\nKhumasinya infa’ala ifta’ala\nIf’alla dan tafa’’ala tafaa’ala\nLafazh Istaf’ala itu sudasinya\nFa’lala untuk ruba’i mujarrodnya\nPerhatikan fa ain serta huruf lamnya\nAgar tidak salah mengeja mawzunnya\n\n• Versi 3 (mustafilun failun):\nFa’ala dan fa’ila fa’ula madhi tsulatsi\nAf’ala, fa’’ala, faa’ala itu madhi ruba’iy\nTafa’’ala, tafaa’ala, infa’ala ifta’ala\nif’alla itu khumasi dan Istaf’ala sudasy"
+        lirik: "• Versi 1 (pelangi-pelangi alangkah indahmu):\nFa’ala, fa’ila fa’ula tsulatsi\nAf’ala, fa’’ala, faa’ala ruba’iy\nTafa’’ala, tafaa’ala, infa’ala, ifta’ala\nif’alla khumasi Istaf’ala sudasi\n\n• Versi 2 (mustaf’ilun6x):\nTsulatsi fa’ala, fa’ila fa’ula\nRuba’iy af’ala, fa’’ala, faa’ala\nKhumasinya infa’ala ifta’ala\nIf’alla dan tafa’’ala tafaa’ala\nLafazh Istaf’ala itu sudasinya\nFa’lala untuk ruba’i mujarrodnya\nPerhatikan fa ain serta huruf lamnya\nAgar tidak salah mengeja mawzunnya\n\n• Versi 3 (mustafilun failun):\nFa’ala dan fa’ila fa’ula madhi tsulatsi\nAf’ala, fa’’ala, faa’ala itu madhi ruba’iy\nTafa’’ala, tafaa’ala, infa’ala ifta’ala\nif’alla itu khumasi dan Istaf’ala sudasy"
       },
       {
         level: 2,
@@ -449,7 +449,7 @@
         bab: 23,
         judul: "Lagu Tashrifan Fiil Madhi",
         arab: "فَعَلْنَ | فَعَلَتَا | فَعَلَتْ | فَعَلُوْا | فَعَلَا | فَعَلَ\nفَعَلْتُنَّ | فَعَلْتُمَا | فَعَلْتِ | فَعَلْتُمْ | فَعَلْتُمَا | فَعَلْتَ\nفَعَلْنَا | فَعَلْتُ",
-        irama: "Tashrif Lughawi 14 Dhamir",
+        irama: "Bahar / Melodi Tashrif Lughawi 14 Dhamir",
         lirik: "Fa’ala fa’alaa fa’aluu fa’alat\nFa’alataa fa’alna jangan dilewat\nFa’alta fa’altuma fa’altum lana\nFa’alti fa’altuma dan fa’altunna\nFa’altu dan yang terakhirnya fa’alnaa\nSemwa empat belas jangan kau terlena\nHarus jeli Fiil madhi ditashrifnya\nAgar faham dan ahli engkau akhirnya"
       },
       {
@@ -696,7 +696,6 @@ Khafadl hanya untuk isim lain tidak # Sedang jazm untuk mudhari semata`
       // TAB 1: LAGU NAHWIYAH
       if (currentMainTab === 'lagu') {
         const filtered = dataLagu.filter(item => {
-          // Logika perbandingan level fleksibel (string vs integer)
           const matchLevel = currentLaguLevel === 'all' || String(item.level) === String(currentLaguLevel);
           const matchSearch = query === '' || 
             item.judul.toLowerCase().includes(query) || 
@@ -792,7 +791,7 @@ Khafadl hanya untuk isim lain tidak # Sedang jazm untuk mudhari semata`
       renderContent(q);
     }
 
-    // Inisialisasi
+    // Inisialisasi Otomatis
     window.addEventListener('DOMContentLoaded', () => {
       const nama = localStorage.getItem('namaSantri');
       if (nama) {
