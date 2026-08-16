@@ -104,7 +104,7 @@
     }
     .main-tab-btn.active span.sub { color: #1e272e; font-weight: 500; }
 
-    /* Sub-Filter Tab Lagu */
+    /* Sub-Filter Tab Wrapper */
     .sub-filter-wrapper {
       display: flex;
       justify-content: center;
@@ -236,13 +236,8 @@
     </button>
   </div>
 
-  <!-- Sub-Filter Tab Lagu -->
-  <div id="subFilterArea" class="sub-filter-wrapper">
-    <button id="sub-lvl-all" class="sub-filter-btn active" onclick="setSubLevel('all')">Semua Level</button>
-    <button id="sub-lvl-1" class="sub-filter-btn" onclick="setSubLevel(1)">Level 1 (Bab 1-19)</button>
-    <button id="sub-lvl-2" class="sub-filter-btn" onclick="setSubLevel(2)">Level 2 (Bab 20-33)</button>
-    <button id="sub-lvl-3" class="sub-filter-btn" onclick="setSubLevel(3)">Level 3 (Bab 34-42)</button>
-  </div>
+  <!-- Sub-Filter Area (Dinamis untuk Tab Lagu & Tab Latihan) -->
+  <div id="subFilterArea" class="sub-filter-wrapper"></div>
 
   <!-- Kolom Pencarian -->
   <div class="search-wrapper">
@@ -252,13 +247,14 @@
   <!-- Area Konten -->
   <main id="mainContainer" class="content-container"></main>
 
-  <!-- 1. MEMANGGIL DATASET EKSTERNAL DARI data.js -->
+  <!-- 1. MEMANGGIL DATABASE EKSTERNAL data.js -->
   <script src="data.js"></script>
 
   <!-- 2. MESIN LOGIKA INTERFACE & NAVIGASI -->
   <script>
     let currentMainTab = 'lagu';
     let currentLaguLevel = 'all';
+    let currentLatihanLevel = 'all';
 
     function selectMainTab(tab) {
       currentMainTab = tab;
@@ -269,7 +265,24 @@
 
       const subArea = document.getElementById('subFilterArea');
       if (subArea) {
-        subArea.style.display = tab === 'lagu' ? 'flex' : 'none';
+        if (tab === 'lagu') {
+          subArea.style.display = 'flex';
+          subArea.innerHTML = `
+            <button id="sub-lvl-all" class="sub-filter-btn ${currentLaguLevel === 'all' ? 'active' : ''}" onclick="setSubLevel('all')">Semua Level</button>
+            <button id="sub-lvl-1" class="sub-filter-btn ${currentLaguLevel === 1 ? 'active' : ''}" onclick="setSubLevel(1)">Level 1 (Bab 1-19)</button>
+            <button id="sub-lvl-2" class="sub-filter-btn ${currentLaguLevel === 2 ? 'active' : ''}" onclick="setSubLevel(2)">Level 2 (Bab 20-33)</button>
+            <button id="sub-lvl-3" class="sub-filter-btn ${currentLaguLevel === 3 ? 'active' : ''}" onclick="setSubLevel(3)">Level 3 (Bab 34-42)</button>
+          `;
+        } else if (tab === 'latihan') {
+          subArea.style.display = 'flex';
+          subArea.innerHTML = `
+            <button class="sub-filter-btn ${currentLatihanLevel === 'all' ? 'active' : ''}" onclick="setLatihanLevel('all')">Semua Latihan</button>
+            <button class="sub-filter-btn ${currentLatihanLevel === 1 ? 'active' : ''}" onclick="setLatihanLevel(1)">Level 1 (Bentuk Dasar)</button>
+            <button class="sub-filter-btn ${currentLatihanLevel === 2 ? 'active' : ''}" onclick="setLatihanLevel(2)">Level 2 (Tashrif Dhomir 2A/2B)</button>
+          `;
+        } else {
+          subArea.style.display = 'none';
+        }
       }
 
       document.getElementById('searchInput').value = '';
@@ -278,11 +291,12 @@
 
     function setSubLevel(lvl) {
       currentLaguLevel = lvl;
-      document.querySelectorAll('.sub-filter-btn').forEach(b => b.classList.remove('active'));
-      const activeBtn = document.getElementById('sub-lvl-' + lvl);
-      if (activeBtn) activeBtn.classList.add('active');
+      selectMainTab('lagu');
+    }
 
-      renderContent();
+    function setLatihanLevel(lvl) {
+      currentLatihanLevel = lvl;
+      selectMainTab('latihan');
     }
 
     function renderContent(filterQuery = '') {
@@ -291,9 +305,8 @@
       container.innerHTML = '';
       const query = filterQuery.toLowerCase().trim();
 
-      // Cek apakah array data.js sudah terbaca
-      if (typeof dataLagu === 'undefined') {
-        container.innerHTML = `<div class="empty-state">File data.js tidak ditemukan atau mengalami error sintaks.</div>`;
+      if (typeof dataLagu === 'undefined' || typeof dataLatihan === 'undefined' || typeof dataNazham === 'undefined') {
+        container.innerHTML = `<div class="empty-state">File data.js tidak ditemukan atau sedang mengalami kendala.</div>`;
         return;
       }
 
@@ -333,7 +346,12 @@
       // TAB 2: LATIHAN BACA
       else if (currentMainTab === 'latihan') {
         const filtered = dataLatihan.filter(item => {
-          return query === '' || item.kategori.toLowerCase().includes(query) || item.wazan.includes(query) || item.contoh.includes(query);
+          const matchLevel = currentLatihanLevel === 'all' || String(item.level || 1) === String(currentLatihanLevel);
+          const matchSearch = query === '' || 
+            item.kategori.toLowerCase().includes(query) || 
+            item.wazan.includes(query) || 
+            item.contoh.includes(query);
+          return matchLevel && matchSearch;
         });
 
         if (filtered.length === 0) {
@@ -345,8 +363,8 @@
           const card = document.createElement('article');
           card.className = 'module-card';
           card.innerHTML = `
-            <div class="card-header"><span class="badge">Wazan</span> <h3>${item.kategori}</h3></div>
-            <p style="font-size:0.85rem; color:#f9e295; margin-bottom:8px;">Pola: <strong>${item.wazan}</strong></p>
+            <div class="card-header"><span class="badge">Level ${item.level || 1}</span> <h3>${item.kategori}</h3></div>
+            <p style="font-size:0.85rem; color:#f9e295; margin-bottom:8px;">Wazan / Pola: <strong>${item.wazan}</strong></p>
             <div class="arabic-box">${item.contoh}</div>
           `;
           container.appendChild(card);
