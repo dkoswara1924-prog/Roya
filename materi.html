@@ -278,8 +278,7 @@
           subArea.innerHTML = `
             <button class="sub-filter-btn ${currentLatihanLevel === 'all' ? 'active' : ''}" onclick="setLatihanLevel('all')">Semua Latihan</button>
             <button class="sub-filter-btn ${currentLatihanLevel === 1 ? 'active' : ''}" onclick="setLatihanLevel(1)">Level 1 (Bentuk Dasar)</button>
-            <button class="sub-filter-btn ${currentLatihanLevel === '2A' ? 'active' : ''}" onclick="setLatihanLevel('2A')">Level 2A (Pola & Penerapan)</button>
-            <button class="sub-filter-btn ${currentLatihanLevel === '2B' ? 'active' : ''}" onclick="setLatihanLevel('2B')">Level 2B (Tashrif Acak)</button>
+            <button class="sub-filter-btn ${currentLatihanLevel === 2 ? 'active' : ''}" onclick="setLatihanLevel(2)">Level 2 (Tashrif 2A & 2B)</button>
           `;
         } else {
           subArea.style.display = 'none';
@@ -347,8 +346,7 @@
       // TAB 2: LATIHAN BACA
       else if (currentMainTab === 'latihan') {
         const filtered = dataLatihan.filter(item => {
-          const itemLvl = String(item.level || 1);
-          const matchLevel = currentLatihanLevel === 'all' || itemLvl === String(currentLatihanLevel);
+          const matchLevel = currentLatihanLevel === 'all' || Number(item.level) === Number(currentLatihanLevel);
           const matchSearch = query === '' || 
             item.kategori.toLowerCase().includes(query) || 
             item.wazan.includes(query) || 
@@ -365,7 +363,7 @@
           const card = document.createElement('article');
           card.className = 'module-card';
           card.innerHTML = `
-            <div class="card-header"><span class="badge">Level ${item.level || 1}</span> <h3>${item.kategori}</h3></div>
+            <div class="card-header"><span class="badge">Level ${item.level}</span> <h3>${item.kategori}</h3></div>
             <p style="font-size:0.85rem; color:#f9e295; margin-bottom:8px;">Wazan / Pola: <strong>${item.wazan}</strong></p>
             <div class="arabic-box">${item.contoh}</div>
           `;
