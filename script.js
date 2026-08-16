@@ -1,4 +1,3 @@
-// Struktur Pertanyaan & Pilihan Funnel Belajar
 const steps = [
   {
     title: "Pilih Fokus Pembelajaran Anda",
@@ -87,34 +86,32 @@ const steps = [
 
 let currentStep = 0;
 let userChoices = {
-  targetMateri: "lvl1",
+  targetTab: "lvl1",
   levelSantri: "",
   targetWaktu: "",
   namaSantri: ""
 };
 
-// Render Langkah Saat Ini
 function renderStep() {
   const step = steps[currentStep];
   const total = steps.length;
   const progressPercent = ((currentStep + 1) / total) * 100;
 
-  // Update Progress & Indikator
-  document.getElementById('progressBar').style.width = progressPercent + '%';
-  document.getElementById('stepIndicator').innerText = `Langkah ${currentStep + 1} / ${total}`;
-
-  // Tombol Kembali
+  const progressBar = document.getElementById('progressBar');
+  const stepIndicator = document.getElementById('stepIndicator');
   const btnBack = document.getElementById('btnBack');
-  btnBack.style.visibility = currentStep > 0 ? "visible" : "hidden";
-
-  // Update Judul
-  document.getElementById('questionTitle').innerText = step.title;
-  document.getElementById('questionSub').innerText = step.subtitle;
-
-  // Update Pilihan
+  const questionTitle = document.getElementById('questionTitle');
+  const questionSub = document.getElementById('questionSub');
   const container = document.getElementById('optionsContainer');
+
+  if (progressBar) progressBar.style.width = progressPercent + '%';
+  if (stepIndicator) stepIndicator.innerText = `Langkah ${currentStep + 1} / ${total}`;
+  if (btnBack) btnBack.style.visibility = currentStep > 0 ? "visible" : "hidden";
+  if (questionTitle) questionTitle.innerText = step.title;
+  if (questionSub) questionSub.innerText = step.subtitle;
+
+  if (!container) return;
   container.innerHTML = "";
-  container.className = "options-container slide-in";
 
   if (step.type === "options") {
     step.options.forEach(opt => {
@@ -130,7 +127,7 @@ function renderStep() {
         </div>
         <div class="option-arrow">→</div>
       `;
-      card.onclick = () => handleSelectOption(step.targetKey, opt);
+      card.onclick = () => selectOption(opt);
       container.appendChild(card);
     });
   } else if (step.type === "input_name") {
@@ -146,20 +143,16 @@ function renderStep() {
   }
 }
 
-// Handler Saat Pilihan Diklik
-function handleSelectOption(key, opt) {
-  userChoices[key] = opt.title;
+function selectOption(opt) {
   if (opt.targetTab) {
     userChoices.targetTab = opt.targetTab;
   }
-
   currentStep++;
   if (currentStep < steps.length) {
     renderStep();
   }
 }
 
-// Handler Tombol Kembali
 function prevStep() {
   if (currentStep > 0) {
     currentStep--;
@@ -167,23 +160,25 @@ function prevStep() {
   }
 }
 
-// Handler Selesai & Pindah ke Materi
 function handleFinalSubmit(event) {
   event.preventDefault();
-  const nama = document.getElementById('inputNama').value.trim();
+  const inputEl = document.getElementById('inputNama');
+  const nama = inputEl ? inputEl.value.trim() : "";
+
   if (nama !== "") {
-    userChoices.namaSantri = nama;
     localStorage.setItem('namaSantri', nama);
     localStorage.setItem('targetTabAwal', userChoices.targetTab || "lvl1");
 
     const quizArea = document.getElementById('quizArea');
-    quizArea.innerHTML = `
-      <div class="question-header slide-in" style="padding: 20px 0;">
-        <span class="bismillah-mini">بَارَكَ اللَّهُ فِيْكُمْ</span>
-        <h2 class="question-title" style="color:var(--gold-glow); margin-top:10px;">Ahlan wa Sahlan, ${nama}!</h2>
-        <p class="question-sub" style="font-size:0.95rem; margin-top:8px;">Modul pembelajaran interaktif Anda sedang disiapkan...</p>
-      </div>
-    `;
+    if (quizArea) {
+      quizArea.innerHTML = `
+        <div class="question-header" style="padding: 20px 0;">
+          <span class="bismillah-mini">بَارَكَ اللَّهُ فِيْكُمْ</span>
+          <h2 class="question-title" style="color:var(--gold-glow); margin-top:10px;">Ahlan wa Sahlan, ${nama}!</h2>
+          <p class="question-sub" style="font-size:0.95rem; margin-top:8px;">Modul pembelajaran interaktif Anda sedang disiapkan...</p>
+        </div>
+      `;
+    }
 
     setTimeout(() => {
       window.location.href = "materi.html";
@@ -191,5 +186,6 @@ function handleFinalSubmit(event) {
   }
 }
 
-// Jalankan langkah pertama saat web dibuka
-renderStep();
+document.addEventListener('DOMContentLoaded', () => {
+  renderStep();
+});
