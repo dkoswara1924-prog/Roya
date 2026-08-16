@@ -41,23 +41,47 @@
     .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
   </style>
 </head>
-<body class="bg-[#f4f7fb] text-slate-800 font-sans antialiased min-h-screen flex">
+<body class="bg-[#f4f7fb] text-slate-800 font-sans antialiased min-h-screen flex flex-col md:flex-row overflow-x-hidden">
 
-  <!-- ================= SIDEBAR KIRI ================= -->
-  <aside class="w-64 bg-white border-r border-slate-200 flex flex-col justify-between p-4 sticky top-0 h-screen z-20">
-    <div>
-      <!-- Logo Header -->
-      <div class="flex items-center gap-3 px-2 mb-6">
-        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold font-arabic text-2xl shadow-md shadow-blue-200">
-          ق
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <h1 class="font-extrabold text-slate-900 leading-none">QAIDATY</h1>
-            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-100 text-blue-700">JILID 1</span>
+  <!-- ================= TOPBAR MOBILE (KHUSUS HP) ================= -->
+  <header class="md:hidden bg-white border-b border-slate-200 px-4 py-3 flex items-center justify-between sticky top-0 z-30 shadow-sm">
+    <div class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold font-arabic text-xl shadow-sm">
+        ق
+      </div>
+      <div>
+        <h1 class="font-extrabold text-slate-900 leading-none text-sm">QAIDATY</h1>
+        <span class="text-[9px] font-bold text-blue-600">JILID 1 • METODE ABI YASIN</span>
+      </div>
+    </div>
+    <button onclick="toggleMobileSidebar()" class="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition text-lg">
+      ☰
+    </button>
+  </header>
+
+  <!-- BACKDROP OVERLAY SIDEBAR DI HP -->
+  <div id="sidebar-backdrop" onclick="toggleMobileSidebar(false)" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-40 hidden md:hidden transition-opacity"></div>
+
+  <!-- ================= SIDEBAR RESPOMSIF ================= -->
+  <aside id="main-sidebar" class="fixed inset-y-0 left-0 -translate-x-full md:translate-x-0 md:static w-72 md:w-64 bg-white border-r border-slate-200 flex flex-col justify-between p-4 h-screen z-50 transition-transform duration-300 ease-in-out shadow-2xl md:shadow-none">
+    <div class="overflow-y-auto custom-scrollbar flex-1 pr-1">
+      <!-- Logo Header & Tombol Close HP -->
+      <div class="flex items-center justify-between px-2 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold font-arabic text-2xl shadow-md shadow-blue-200">
+            ق
           </div>
-          <p class="text-[11px] text-slate-400 font-medium">Metode Qaidaty by Abi Yasin</p>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="font-extrabold text-slate-900 leading-none">QAIDATY</h1>
+              <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-100 text-blue-700">JILID 1</span>
+            </div>
+            <p class="text-[11px] text-slate-400 font-medium">Metode Qaidaty by Abi Yasin</p>
+          </div>
         </div>
+        <button onclick="toggleMobileSidebar(false)" class="md:hidden text-slate-400 hover:text-slate-700 text-lg font-bold p-1">
+          ✕
+        </button>
       </div>
 
       <!-- Switcher Santri / Guru -->
@@ -118,8 +142,8 @@
     </div>
 
     <!-- User Profile Footer -->
-    <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center gap-3">
-      <div class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm">
+    <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center gap-3 mt-4">
+      <div class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
         DK
       </div>
       <div class="overflow-hidden">
@@ -130,50 +154,50 @@
   </aside>
 
   <!-- ================= VIEWPORT KONTEN UTAMA ================= -->
-  <main class="flex-1 p-8 overflow-y-auto max-h-screen custom-scrollbar">
+  <main class="flex-1 p-4 md:p-8 overflow-y-auto max-h-screen custom-scrollbar w-full">
 
     <!-- 1. VIEW: BERANDA -->
-    <section id="view-beranda" class="space-y-6">
+    <section id="view-beranda" class="space-y-5 md:space-y-6">
       <div>
-        <h2 class="text-2xl font-extrabold text-slate-900">Mari Kita Belajar Qaidaty Bersama</h2>
-        <p class="text-sm text-slate-500 mt-1">Mulai perjalanan memahami kaidah dan membaca Arab gundul metode Qaidaty.</p>
+        <h2 class="text-xl md:text-2xl font-extrabold text-slate-900">Mari Kita Belajar Qaidaty Bersama</h2>
+        <p class="text-xs md:text-sm text-slate-500 mt-1">Mulai perjalanan memahami kaidah dan membaca Arab gundul metode Qaidaty.</p>
       </div>
 
       <!-- Top Banner Hero Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
         <!-- Hero Bab Terkini -->
-        <div class="lg:col-span-2 bg-gradient-to-br from-brand-900 to-brand-700 rounded-2xl p-7 text-white shadow-xl flex flex-col justify-between relative overflow-hidden">
-          <div class="absolute right-4 bottom-0 text-[160px] font-arabic font-bold text-white/5 pointer-events-none select-none">ق</div>
+        <div class="lg:col-span-2 bg-gradient-to-br from-brand-900 to-brand-700 rounded-2xl p-5 md:p-7 text-white shadow-xl flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute right-2 bottom-0 text-[110px] md:text-[160px] font-arabic font-bold text-white/5 pointer-events-none select-none">ق</div>
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-bold tracking-wider uppercase text-blue-200 bg-white/10 px-2.5 py-1 rounded-md">Materi Unggulan</span>
+              <span class="text-[10px] md:text-xs font-bold tracking-wider uppercase text-blue-200 bg-white/10 px-2.5 py-1 rounded-md">Materi Unggulan</span>
               <span class="text-lg opacity-80 cursor-pointer hover:opacity-100">🔊</span>
             </div>
-            <h3 class="text-2xl font-black mb-2" id="hero-bab-title">Bab 01: Haraf Jar</h3>
-            <p class="text-sm text-blue-100/90 max-w-md leading-relaxed" id="hero-bab-desc">Mengenal huruf-huruf penjer isim beserta pola lirik lagu bahar mustaf'ilun.</p>
+            <h3 class="text-xl md:text-2xl font-black mb-2" id="hero-bab-title">Bab 01: Haraf Jar</h3>
+            <p class="text-xs md:text-sm text-blue-100/90 max-w-md leading-relaxed" id="hero-bab-desc">Mengenal huruf-huruf penjer isim beserta pola lirik lagu bahar mustaf'ilun.</p>
           </div>
-          <div class="flex gap-3 mt-6">
-            <button onclick="bukaBabPilihan(1)" class="px-5 py-2.5 bg-white text-blue-900 rounded-xl font-bold text-xs hover:bg-blue-50 transition shadow">Pelajari Bab Ini →</button>
-            <button onclick="navigateTab('kuis')" class="px-5 py-2.5 bg-white/10 text-white border border-white/20 rounded-xl font-bold text-xs hover:bg-white/20 transition">Kuis Bab Ini</button>
+          <div class="flex flex-wrap gap-2.5 mt-5 md:mt-6">
+            <button onclick="bukaBabPilihan(1)" class="px-4 md:px-5 py-2 md:py-2.5 bg-white text-blue-900 rounded-xl font-bold text-xs hover:bg-blue-50 transition shadow">Pelajari Bab Ini →</button>
+            <button onclick="navigateTab('kuis')" class="px-4 md:px-5 py-2 md:py-2.5 bg-white/10 text-white border border-white/20 rounded-xl font-bold text-xs hover:bg-white/20 transition">Kuis Bab Ini</button>
           </div>
         </div>
 
         <!-- AI Tutor Mini Card -->
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="bg-white rounded-2xl p-5 md:p-6 border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
           <div>
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-2">
-                <span class="text-xl">🤖</span>
-                <span class="font-bold text-sm text-slate-800">Qaidaty AI Tutor</span>
+                <span class="text-lg md:text-xl">🤖</span>
+                <span class="font-bold text-xs md:text-sm text-slate-800">Qaidaty AI Tutor</span>
               </div>
-              <span class="text-[11px] font-bold text-blue-600 cursor-pointer">Buka Chat →</span>
+              <span onclick="navigateTab('bedah')" class="text-[11px] font-bold text-blue-600 cursor-pointer">Buka Chat →</span>
             </div>
             <p class="text-xs text-slate-600 bg-slate-50 p-3 rounded-xl border border-slate-100 italic">
               "Ahlan wa Sahlan! Ada pertanyaan seputar wazan, tashrif, atau ingin bedah tarkib hari ini?"
             </p>
           </div>
           <div>
-            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Tanya Cepat AI:</p>
+            <p class="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Tanya Cepat AI:</p>
             <div class="flex flex-wrap gap-1.5">
               <button onclick="setQueryBedah('قَامَ زَيْدٌ فِي الْمَسْجِدِ')" class="text-[11px] bg-slate-100 hover:bg-blue-50 hover:text-blue-600 text-slate-600 font-medium px-2.5 py-1 rounded-lg border border-slate-200">8 Tanda Isim</button>
               <button onclick="setQueryBedah('نَصَرَ مُحَمَّدٌ')" class="text-[11px] bg-slate-100 hover:bg-blue-50 hover:text-blue-600 text-slate-600 font-medium px-2.5 py-1 rounded-lg border border-slate-200">Pola Fi'il Madhi</button>
@@ -184,63 +208,63 @@
       </div>
 
       <!-- Quick Bedah Kalimah Preview Widget -->
-      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-        <div class="flex items-center justify-between mb-4">
+      <div class="bg-white rounded-2xl p-4 md:p-6 border border-slate-200 shadow-sm">
+        <div class="flex items-center justify-between mb-3 md:mb-4">
           <div>
-            <h4 class="font-bold text-slate-900 text-base">Quick Bedah Kalimah</h4>
-            <p class="text-xs text-slate-500">Uji kaidah & bedah struktur kalimat Arab gundul / berharakat</p>
+            <h4 class="font-bold text-slate-900 text-sm md:text-base">Quick Bedah Kalimah</h4>
+            <p class="text-[11px] md:text-xs text-slate-500">Uji kaidah & bedah struktur kalimat Arab gundul / berharakat</p>
           </div>
           <button onclick="navigateTab('bedah')" class="text-xs font-bold text-blue-600 hover:underline">Buka Studio ↗</button>
         </div>
 
-        <div class="flex gap-2 mb-4">
-          <input type="text" id="quick-input" value="قَامَ مُحَمَّدٌ فِي الْفَصْلِ" class="flex-1 px-4 py-2.5 border border-slate-200 rounded-xl text-right arabic-text text-xl focus:outline-none focus:border-blue-600">
-          <button onclick="analisisQuick()" class="px-6 py-2.5 bg-blue-600 text-white rounded-xl font-bold text-xs hover:bg-blue-700 transition flex items-center gap-1.5 shadow-sm shadow-blue-200">
+        <div class="flex flex-col sm:flex-row gap-2 mb-4">
+          <input type="text" id="quick-input" value="قَامَ مُحَمَّدٌ فِي الْفَصْلِ" class="flex-1 px-4 py-2 md:py-2.5 border border-slate-200 rounded-xl text-right arabic-text text-lg md:text-xl focus:outline-none focus:border-blue-600">
+          <button onclick="analisisQuick()" class="px-5 py-2.5 bg-blue-600 text-white rounded-xl font-bold text-xs hover:bg-blue-700 transition flex items-center justify-center gap-1.5 shadow-sm shadow-blue-200">
             <span>🔍</span> Bedah
           </button>
         </div>
 
         <!-- Result Pills Area -->
-        <div id="quick-result" class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div id="quick-result" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 md:gap-3">
           <!-- Dinamis oleh JS -->
         </div>
       </div>
     </section>
 
     <!-- 2. VIEW: MATERI NAHWIYAH (BAB 1-42) -->
-    <section id="view-materi" class="hidden space-y-6">
-      <div class="bg-gradient-to-r from-brand-900 to-brand-700 p-8 rounded-2xl text-white shadow-md">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-200">KURIKULUM METODE QAIDATY</span>
-        <h2 class="text-3xl font-extrabold mt-1">Materi Himpunan Lagu Nahwiyah</h2>
-        <p class="text-sm text-blue-100/90 mt-2 max-w-2xl">Kaidah Nahwu dan Sharaf yang dipermudah dengan bait dan lirik lagu bahar terstruktur.</p>
+    <section id="view-materi" class="hidden space-y-5 md:space-y-6">
+      <div class="bg-gradient-to-r from-brand-900 to-brand-700 p-5 md:p-8 rounded-2xl text-white shadow-md">
+        <span class="text-[10px] md:text-xs font-bold uppercase tracking-wider text-blue-200">KURIKULUM METODE QAIDATY</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold mt-1">Materi Himpunan Lagu Nahwiyah</h2>
+        <p class="text-xs md:text-sm text-blue-100/90 mt-2 max-w-2xl">Kaidah Nahwu dan Sharaf yang dipermudah dengan bait dan lirik lagu bahar terstruktur.</p>
       </div>
 
       <!-- Sub Filter Level Lagu -->
-      <div class="flex items-center justify-between flex-wrap gap-3">
-        <div class="flex gap-2">
-          <button onclick="filterLaguLevel('all')" id="btn-lvl-all" class="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-white shadow-sm">Semua Level</button>
-          <button onclick="filterLaguLevel(1)" id="btn-lvl-1" class="px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Level 1 (Bab 1-19)</button>
-          <button onclick="filterLaguLevel(2)" id="btn-lvl-2" class="px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Level 2 (Bab 20-33)</button>
-          <button onclick="filterLaguLevel(3)" id="btn-lvl-3" class="px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Level 3 (Bab 34-42)</button>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex flex-wrap gap-1.5 md:gap-2">
+          <button onclick="filterLaguLevel('all')" id="btn-lvl-all" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-white shadow-sm">Semua</button>
+          <button onclick="filterLaguLevel(1)" id="btn-lvl-1" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Lvl 1 (1-19)</button>
+          <button onclick="filterLaguLevel(2)" id="btn-lvl-2" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Lvl 2 (20-33)</button>
+          <button onclick="filterLaguLevel(3)" id="btn-lvl-3" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Lvl 3 (34-42)</button>
         </div>
-        <input type="text" id="materi-search" oninput="cariMateri(this.value)" placeholder="🔍 Cari bab / kaidah..." class="px-4 py-2 text-xs border border-slate-200 rounded-xl w-64 focus:outline-none focus:border-blue-600">
+        <input type="text" id="materi-search" oninput="cariMateri(this.value)" placeholder="🔍 Cari bab / kaidah..." class="px-4 py-2 text-xs border border-slate-200 rounded-xl w-full sm:w-64 focus:outline-none focus:border-blue-600">
       </div>
 
       <!-- Grid Kartu Materi -->
-      <div id="grid-materi-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div id="grid-materi-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- Dirender oleh JS -->
       </div>
     </section>
 
     <!-- 3. VIEW: BUKU LATIHAN I (ARAB GUNDUL) -->
-    <section id="view-latihan" class="hidden space-y-6">
-      <div class="bg-slate-900 p-8 rounded-2xl text-white shadow-md">
-        <span class="text-xs font-bold uppercase tracking-wider text-amber-400">STUDIO LATIHAN BACA</span>
-        <h2 class="text-3xl font-extrabold mt-1">Buku Latihan I (Bangunan Kalimah)</h2>
-        <p class="text-sm text-slate-300 mt-2">Membiasakan membaca teks Arab gundul bertingkat mulai dari pola dasar hingga pola tashrif dhomir.</p>
+    <section id="view-latihan" class="hidden space-y-5 md:space-y-6">
+      <div class="bg-slate-900 p-5 md:p-8 rounded-2xl text-white shadow-md">
+        <span class="text-[10px] md:text-xs font-bold uppercase tracking-wider text-amber-400">STUDIO LATIHAN BACA</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold mt-1">Buku Latihan I (Bangunan Kalimah)</h2>
+        <p class="text-xs md:text-sm text-slate-300 mt-2">Membiasakan membaca teks Arab gundul bertingkat mulai dari pola dasar hingga pola tashrif dhomir.</p>
       </div>
 
-      <div class="flex gap-2">
+      <div class="flex flex-wrap gap-2">
         <button onclick="filterLatihanLevel('all')" id="btn-lat-all" class="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-white shadow-sm">Semua Latihan</button>
         <button onclick="filterLatihanLevel(1)" id="btn-lat-1" class="px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Level 1 (Bentuk Dasar)</button>
         <button onclick="filterLatihanLevel(2)" id="btn-lat-2" class="px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">Level 2 (Tashrif 2A & 2B)</button>
@@ -252,11 +276,11 @@
     </section>
 
     <!-- 4. VIEW: NAZHAM JURUMIYAH -->
-    <section id="view-nazham" class="hidden space-y-6">
-      <div class="bg-gradient-to-r from-amber-700 to-amber-900 p-8 rounded-2xl text-white shadow-md">
-        <span class="text-xs font-bold uppercase tracking-wider text-amber-200">HAFALAN SYAIR</span>
-        <h2 class="text-3xl font-extrabold mt-1">Buku Nazham Jurumiyah (2015)</h2>
-        <p class="text-sm text-amber-100 mt-2">Kaidah Matan Jurumiyah dalam bait syair Bahasa Indonesia berima indah.</p>
+    <section id="view-nazham" class="hidden space-y-5 md:space-y-6">
+      <div class="bg-gradient-to-r from-amber-700 to-amber-900 p-5 md:p-8 rounded-2xl text-white shadow-md">
+        <span class="text-[10px] md:text-xs font-bold uppercase tracking-wider text-amber-200">HAFALAN SYAIR</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold mt-1">Buku Nazham Jurumiyah (2015)</h2>
+        <p class="text-xs md:text-sm text-amber-100 mt-2">Kaidah Matan Jurumiyah dalam bait syair Bahasa Indonesia berima indah.</p>
       </div>
 
       <div id="grid-nazham-cards" class="space-y-4">
@@ -265,33 +289,33 @@
     </section>
 
     <!-- 5. VIEW: BEDAH KALIMAH (RULE ENGINE) -->
-    <section id="view-bedah" class="hidden space-y-6">
+    <section id="view-bedah" class="hidden space-y-5 md:space-y-6">
       <div>
-        <h2 class="text-2xl font-extrabold text-slate-900">Studio Bedah Kalimah</h2>
-        <p class="text-sm text-slate-500 mt-1">Sistem analisis sintaksis kata per kata berdasarkan 5 langkah Qaidaty.</p>
+        <h2 class="text-xl md:text-2xl font-extrabold text-slate-900">Studio Bedah Kalimah</h2>
+        <p class="text-xs md:text-sm text-slate-500 mt-1">Sistem analisis sintaksis kata per kata berdasarkan 5 langkah Qaidaty.</p>
       </div>
 
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-        <label class="text-xs font-bold text-slate-600 uppercase">Tulis Kalimat Arab (Gundul / Berharakat):</label>
-        <div class="flex gap-2">
-          <input type="text" id="studio-bedah-input" value="خَلَقَ اللهُ السَّمَاوَاتِ" class="flex-1 px-4 py-3 border border-slate-200 rounded-xl text-right arabic-text text-2xl focus:outline-none focus:border-blue-600">
-          <button onclick="eksekusiStudioBedah()" class="px-8 py-3 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-sm shadow-blue-200">
+      <div class="bg-white p-4 md:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+        <label class="text-[11px] md:text-xs font-bold text-slate-600 uppercase">Tulis Kalimat Arab (Gundul / Berharakat):</label>
+        <div class="flex flex-col sm:flex-row gap-2">
+          <input type="text" id="studio-bedah-input" value="خَلَقَ اللهُ السَّمَاوَاتِ" class="flex-1 px-4 py-2.5 md:py-3 border border-slate-200 rounded-xl text-right arabic-text text-xl md:text-2xl focus:outline-none focus:border-blue-600">
+          <button onclick="eksekusiStudioBedah()" class="px-6 py-2.5 md:py-3 bg-blue-600 text-white rounded-xl font-bold text-xs md:text-sm hover:bg-blue-700 transition shadow-sm shadow-blue-200">
             Analisis Tarkib
           </button>
         </div>
 
-        <div id="studio-bedah-output" class="pt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div id="studio-bedah-output" class="pt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
           <!-- Hasil Analisis -->
         </div>
       </div>
     </section>
 
     <!-- 6. VIEW: KUIS & EVALUASI -->
-    <section id="view-kuis" class="hidden space-y-6">
-      <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm max-w-2xl mx-auto space-y-6">
+    <section id="view-kuis" class="hidden space-y-5 md:space-y-6">
+      <div class="bg-white p-5 md:p-8 rounded-2xl border border-slate-200 shadow-sm max-w-2xl mx-auto space-y-5 md:space-y-6">
         <div class="flex items-center justify-between border-b border-slate-100 pb-4">
           <div>
-            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">KUIS EVALUASI QAIDATY</span>
+            <span class="text-[10px] md:text-xs font-bold text-blue-600 uppercase tracking-wider">KUIS EVALUASI QAIDATY</span>
             <p class="text-xs text-slate-400 mt-0.5" id="kuis-soal-counter">Soal #1 dari 5</p>
           </div>
           <div class="text-right">
@@ -301,10 +325,10 @@
         </div>
 
         <div id="kuis-box-content">
-          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">KLASIFIKASI KALIMAH</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-1 mb-4" id="kuis-pertanyaan">Tentukan jenis kalimah untuk lafazh berikut:</h3>
+          <span class="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider">KLASIFIKASI KALIMAH</span>
+          <h3 class="text-base md:text-lg font-bold text-slate-900 mt-1 mb-4" id="kuis-pertanyaan">Tentukan jenis kalimah untuk lafazh berikut:</h3>
 
-          <div class="bg-brand-900 text-amber-300 p-8 rounded-2xl text-center arabic-text text-4xl mb-6 shadow-inner" id="kuis-lafazh">
+          <div class="bg-brand-900 text-amber-300 p-6 md:p-8 rounded-2xl text-center arabic-text text-3xl md:text-4xl mb-5 shadow-inner" id="kuis-lafazh">
             مِنْ
           </div>
 
@@ -312,7 +336,7 @@
             <!-- Opsi Tombol Dinamis -->
           </div>
 
-          <button id="kuis-next-btn" onclick="nextSoal()" class="w-full mt-6 py-3 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition hidden">
+          <button id="kuis-next-btn" onclick="nextSoal()" class="w-full mt-5 py-3 bg-blue-600 text-white rounded-xl font-bold text-xs md:text-sm hover:bg-blue-700 transition hidden">
             Lanjut ke Soal Berikutnya →
           </button>
         </div>
@@ -320,33 +344,33 @@
     </section>
 
     <!-- 7. VIEW: MODUL RPP 45 MENIT (KHUSUS GURU) -->
-    <section id="view-rpp" class="hidden space-y-6">
-      <div class="bg-gradient-to-r from-blue-900 to-indigo-900 p-8 rounded-2xl text-white shadow-md flex items-center justify-between flex-wrap gap-4">
+    <section id="view-rpp" class="hidden space-y-5 md:space-y-6">
+      <div class="bg-gradient-to-r from-blue-900 to-indigo-900 p-5 md:p-8 rounded-2xl text-white shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-blue-200">MODUL PENGAJAR TERSTANDAR</span>
-          <h2 class="text-3xl font-extrabold mt-1">Rangkuman Guru & RPP 45 Menit</h2>
-          <p class="text-sm text-blue-100 mt-1">Struktur modul pengajaran siap ajar sesuai kurikulum Qaidaty.</p>
+          <span class="text-[10px] md:text-xs font-bold uppercase tracking-wider text-blue-200">MODUL PENGAJAR TERSTANDAR</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold mt-1">Rangkuman Guru & RPP 45 Menit</h2>
+          <p class="text-xs md:text-sm text-blue-100 mt-1">Struktur modul pengajaran siap ajar sesuai kurikulum Qaidaty.</p>
         </div>
         <div class="flex gap-2">
-          <button onclick="salinRPP()" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
-            📋 Salin RPP
+          <button onclick="salinRPP()" class="px-3.5 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+            📋 Salin
           </button>
-          <button onclick="window.print()" class="px-4 py-2 bg-white text-blue-950 rounded-xl text-xs font-bold hover:bg-blue-50 transition flex items-center gap-1.5 shadow">
+          <button onclick="window.print()" class="px-3.5 py-2 bg-white text-blue-950 rounded-xl text-xs font-bold hover:bg-blue-50 transition flex items-center gap-1.5 shadow">
             🖨️ Cetak
           </button>
         </div>
       </div>
 
       <!-- Selector Bab RPP -->
-      <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
+      <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
         <label class="text-xs font-bold text-slate-600 whitespace-nowrap">Pilih Materi Bab:</label>
-        <select id="rpp-bab-selector" onchange="renderRPPBab(this.value)" class="flex-1 p-2.5 text-xs font-semibold border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600">
+        <select id="rpp-bab-selector" onchange="renderRPPBab(this.value)" class="w-full sm:flex-1 p-2.5 text-xs font-semibold border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600">
           <!-- Opsi Dinamis -->
         </select>
       </div>
 
       <!-- Dokumen RPP Paper -->
-      <div id="rpp-paper" class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+      <div id="rpp-paper" class="bg-white p-5 md:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
         <!-- Rendered by JS -->
       </div>
     </section>
@@ -358,10 +382,10 @@
     <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh]">
       
       <!-- Header Modal -->
-      <div class="px-6 py-4 bg-gradient-to-r from-brand-900 to-brand-700 text-white flex items-center justify-between">
+      <div class="px-5 py-4 bg-gradient-to-r from-brand-900 to-brand-700 text-white flex items-center justify-between">
         <div>
           <span class="text-[10px] font-bold uppercase tracking-wider text-blue-200" id="modal-bab-tag">Bab 01</span>
-          <h3 class="text-base font-bold" id="modal-judul-lagu">Judul Materi</h3>
+          <h3 class="text-sm md:text-base font-bold" id="modal-judul-lagu">Judul Materi</h3>
         </div>
         <button onclick="tutupModalLirik()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold text-sm transition">
           ✕
@@ -369,19 +393,19 @@
       </div>
 
       <!-- Isi Modal -->
-      <div class="p-6 overflow-y-auto space-y-4 custom-scrollbar">
+      <div class="p-5 md:p-6 overflow-y-auto space-y-4 custom-scrollbar">
         <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 text-xs text-amber-900">
           <span class="font-bold">🎵 Irama:</span> <span id="modal-irama-lagu">-</span>
         </div>
 
         <div>
-          <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Lirik Lagu & Senandung:</label>
-          <pre id="modal-isi-lirik" class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-800 font-sans whitespace-pre-line leading-relaxed italic"></pre>
+          <label class="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Lirik Lagu & Senandung:</label>
+          <pre id="modal-isi-lirik" class="bg-slate-50 p-3.5 md:p-4 rounded-xl border border-slate-200 text-xs text-slate-800 font-sans whitespace-pre-line leading-relaxed italic"></pre>
         </div>
       </div>
 
       <!-- Footer Modal -->
-      <div class="px-6 py-3 bg-slate-50 border-t border-slate-100 flex justify-end gap-2">
+      <div class="px-5 py-3 bg-slate-50 border-t border-slate-100 flex justify-end gap-2">
         <button onclick="salinLirikModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
           📋 Salin Lirik
         </button>
@@ -401,6 +425,23 @@
     let currentRole = 'santri';
     let currentLaguFilter = 'all';
     let currentLatihanFilter = 'all';
+
+    // 0. Toggle Drawer Mobile
+    function toggleMobileSidebar(forceState) {
+      const sidebar = document.getElementById('main-sidebar');
+      const backdrop = document.getElementById('sidebar-backdrop');
+      
+      const isOpen = !sidebar.classList.contains('-translate-x-full');
+      const nextState = forceState !== undefined ? forceState : !isOpen;
+
+      if (nextState) {
+        sidebar.classList.remove('-translate-x-full');
+        backdrop.classList.remove('hidden');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+        backdrop.classList.add('hidden');
+      }
+    }
 
     // 1. Inisialisasi Aplikasi
     window.addEventListener('DOMContentLoaded', () => {
@@ -435,6 +476,10 @@
         activeNav.classList.remove('text-slate-600', 'hover:bg-slate-100');
         activeNav.classList.add('bg-blue-600', 'text-white', 'shadow-sm', 'shadow-blue-200');
       }
+
+      // Tutup otomatis drawer di layar HP setelah klik menu
+      toggleMobileSidebar(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // 3. Switcher Peran (Santri vs Guru)
@@ -472,7 +517,7 @@
 
       filtered.forEach((item) => {
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 hover:shadow-md transition';
+        card.className = 'bg-white rounded-2xl p-4 md:p-5 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 hover:shadow-md transition';
         const babLabel = item.bab === "Kaidah" ? "Kaidah" : "Bab " + String(item.bab).padStart(2, '0');
         const paramBab = item.bab === "Kaidah" ? "'Kaidah'" : item.bab;
         
@@ -488,7 +533,7 @@
             </div>
           </div>
           <div>
-            <div class="bg-amber-50/70 p-2.5 rounded-lg border border-amber-100 mb-3 text-[11px] text-amber-900 truncate">
+            <div class="bg-amber-50/70 p-2 rounded-lg border border-amber-100 mb-3 text-[11px] text-amber-900 truncate">
               <span class="font-bold">🎵 Irama:</span> ${item.irama}
             </div>
             <button onclick="bukaModalLirik(${paramBab})" class="w-full py-2 bg-blue-50 hover:bg-blue-600 hover:text-white rounded-xl text-xs font-bold text-blue-700 transition">
@@ -506,9 +551,9 @@
         const b = document.getElementById('btn-lvl-' + l);
         if (b) {
           if (String(lvl) === l) {
-            b.className = 'px-4 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-white shadow-sm';
+            b.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-white shadow-sm';
           } else {
-            b.className = 'px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50';
+            b.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50';
           }
         }
       });
@@ -555,14 +600,14 @@
 
       filtered.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3';
+        card.className = 'bg-white rounded-2xl p-4 md:p-6 border border-slate-200 shadow-sm space-y-3';
         card.innerHTML = `
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">Level ${item.level}</span>
             <span class="text-xs text-slate-400 font-medium">Wazan: <strong class="text-slate-700 arabic-text">${item.wazan}</strong></span>
           </div>
-          <h4 class="font-bold text-slate-900 text-base">${item.kategori}</h4>
-          <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 arabic-text text-xl text-slate-800 leading-loose text-right">
+          <h4 class="font-bold text-slate-900 text-sm md:text-base">${item.kategori}</h4>
+          <div class="bg-slate-50 p-4 md:p-5 rounded-xl border border-slate-200 arabic-text text-lg md:text-xl text-slate-800 leading-loose text-right">
             ${item.contoh}
           </div>
         `;
@@ -593,14 +638,14 @@
 
       dataNazham.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-3';
+        card.className = 'bg-white rounded-2xl p-4 md:p-6 border border-slate-200 shadow-sm space-y-3';
         card.innerHTML = `
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200">${item.bait}</span>
             <span class="text-xs font-bold text-slate-400">Nazham Indonesia</span>
           </div>
-          <h4 class="font-bold text-slate-900 text-base">${item.bab}</h4>
-          <pre class="bg-amber-50/40 p-5 rounded-xl border border-amber-100 text-slate-700 text-xs font-sans whitespace-pre-line leading-relaxed italic">${item.syair}</pre>
+          <h4 class="font-bold text-slate-900 text-sm md:text-base">${item.bab}</h4>
+          <pre class="bg-amber-50/40 p-4 md:p-5 rounded-xl border border-amber-100 text-slate-700 text-xs font-sans whitespace-pre-line leading-relaxed italic">${item.syair}</pre>
         `;
         container.appendChild(card);
       });
@@ -629,11 +674,11 @@
 
       res.forEach(item => {
         const card = document.createElement('div');
-        card.className = `p-3.5 rounded-xl border border-slate-200 bg-white flex flex-col justify-between`;
+        card.className = `p-3 rounded-xl border border-slate-200 bg-white flex flex-col justify-between`;
         card.innerHTML = `
-          <div class="flex justify-between items-center mb-2">
-            <span class="arabic-text text-xl font-bold text-slate-900">${item.kata}</span>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-${item.color}-50 text-${item.color}-700 border border-${item.color}-200">${item.tag}</span>
+          <div class="flex justify-between items-center mb-1.5">
+            <span class="arabic-text text-lg font-bold text-slate-900">${item.kata}</span>
+            <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-${item.color}-50 text-${item.color}-700 border border-${item.color}-200">${item.tag}</span>
           </div>
           <div>
             <p class="text-xs font-bold text-slate-800">${item.role}</p>
@@ -652,15 +697,15 @@
 
       res.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'p-5 rounded-2xl border border-slate-200 bg-slate-50 space-y-3';
+        card.className = 'p-4 md:p-5 rounded-2xl border border-slate-200 bg-slate-50 space-y-2.5';
         card.innerHTML = `
           <div class="flex justify-between items-center">
-            <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-blue-100 text-blue-800">${item.tag}</span>
-            <span class="arabic-text text-3xl font-bold text-slate-900">${item.kata}</span>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">${item.tag}</span>
+            <span class="arabic-text text-2xl font-bold text-slate-900">${item.kata}</span>
           </div>
-          <div class="border-t border-slate-200 pt-3">
-            <p class="text-sm font-bold text-slate-800">${item.role}</p>
-            <p class="text-xs text-slate-500 mt-1">${item.sub}</p>
+          <div class="border-t border-slate-200 pt-2.5">
+            <p class="text-xs md:text-sm font-bold text-slate-800">${item.role}</p>
+            <p class="text-[11px] text-slate-500 mt-0.5">${item.sub}</p>
           </div>
         `;
         container.appendChild(card);
@@ -686,10 +731,10 @@
     function initKuis() {
       if (kuisIdx >= kuisBank.length) {
         document.getElementById('kuis-box-content').innerHTML = `
-          <div class="text-center py-8 space-y-3">
-            <span class="text-5xl">🎉</span>
-            <h3 class="text-2xl font-bold text-slate-900">Kuis Selesai!</h3>
-            <p class="text-sm text-slate-500">Skor Akhir Anda: <strong class="text-blue-600 text-lg">${kuisScore} / ${kuisBank.length * 20}</strong></p>
+          <div class="text-center py-6 md:py-8 space-y-3">
+            <span class="text-4xl md:text-5xl">🎉</span>
+            <h3 class="text-xl md:text-2xl font-bold text-slate-900">Kuis Selesai!</h3>
+            <p class="text-xs md:text-sm text-slate-500">Skor Akhir Anda: <strong class="text-blue-600 text-base md:text-lg">${kuisScore} / ${kuisBank.length * 20}</strong></p>
             <button onclick="kuisIdx=0; kuisScore=0; initKuis();" class="px-6 py-2.5 bg-blue-600 text-white rounded-xl text-xs font-bold mt-4">Ulangi Kuis</button>
           </div>
         `;
@@ -708,7 +753,7 @@
 
       opsiList.forEach(opsi => {
         const btn = document.createElement('button');
-        btn.className = 'w-full p-4 text-left border border-slate-200 rounded-xl font-bold text-xs hover:border-blue-600 hover:bg-blue-50/50 transition';
+        btn.className = 'w-full p-3.5 md:p-4 text-left border border-slate-200 rounded-xl font-bold text-xs hover:border-blue-600 hover:bg-blue-50/50 transition';
         btn.innerText = opsi;
         btn.onclick = () => jawabKuis(btn, opsi, q.benar);
         cont.appendChild(btn);
@@ -757,9 +802,9 @@
       if (!b || !paper) return;
 
       paper.innerHTML = `
-        <div class="text-center border-b border-slate-100 pb-6">
-          <span class="text-xs font-bold text-blue-600 tracking-wider uppercase">RENCANA PELAKSANAAN PEMBELAJARAN (RPP) METODE QAIDATY</span>
-          <h3 class="text-2xl font-black text-slate-900 mt-1">Bab ${b.bab}: ${b.judul}</h3>
+        <div class="text-center border-b border-slate-100 pb-4 md:pb-6">
+          <span class="text-[10px] md:text-xs font-bold text-blue-600 tracking-wider uppercase">RENCANA PELAKSANAAN PEMBELAJARAN (RPP) METODE QAIDATY</span>
+          <h3 class="text-xl md:text-2xl font-black text-slate-900 mt-1">Bab ${b.bab}: ${b.judul}</h3>
           <p class="text-xs text-slate-400 mt-1">Alokasi Waktu: <strong>45 Menit</strong> • Tingkat: <strong>Level ${b.level}</strong></p>
         </div>
 
@@ -767,7 +812,7 @@
           <div class="flex items-start gap-3">
             <span class="w-6 h-6 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center flex-shrink-0">1</span>
             <div>
-              <h4 class="font-bold text-slate-900 text-sm">TUJUAN PEMBELAJARAN</h4>
+              <h4 class="font-bold text-slate-900 text-xs md:text-sm">TUJUAN PEMBELAJARAN</h4>
               <ul class="text-xs text-slate-600 list-disc ml-4 mt-1.5 space-y-1">
                 <li>Santri mampu menghafal wazan dan lafazh materi <strong>${b.judul}</strong> melalui senandung lagu.</li>
                 <li>Santri mampu mengidentifikasi kaidah dasar pada teks kalimat bahasa Arab gundul.</li>
@@ -778,8 +823,8 @@
           <div class="flex items-start gap-3">
             <span class="w-6 h-6 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center flex-shrink-0">2</span>
             <div class="w-full">
-              <h4 class="font-bold text-slate-900 text-sm">MATERI INTI & TEKS PAPAN TULIS</h4>
-              <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 arabic-text text-xl text-blue-950 mt-2 text-right leading-loose">
+              <h4 class="font-bold text-slate-900 text-xs md:text-sm">MATERI INTI & TEKS PAPAN TULIS</h4>
+              <div class="bg-slate-50 p-3 md:p-4 rounded-xl border border-slate-200 arabic-text text-lg md:text-xl text-blue-950 mt-2 text-right leading-loose">
                 ${b.arab}
               </div>
             </div>
@@ -788,8 +833,8 @@
           <div class="flex items-start gap-3">
             <span class="w-6 h-6 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center flex-shrink-0">3</span>
             <div class="w-full">
-              <h4 class="font-bold text-slate-900 text-sm">SENANDUNG BAHAR / IRAMA QAIDATY</h4>
-              <div class="bg-amber-50/50 p-4 rounded-xl border border-amber-100 text-xs text-amber-900 italic whitespace-pre-line mt-2 leading-relaxed">
+              <h4 class="font-bold text-slate-900 text-xs md:text-sm">SENANDUNG BAHAR / IRAMA QAIDATY</h4>
+              <div class="bg-amber-50/50 p-3 md:p-4 rounded-xl border border-amber-100 text-xs text-amber-900 italic whitespace-pre-line mt-2 leading-relaxed">
                 <strong>Nada: ${b.irama}</strong>\n\n${b.lirik}
               </div>
             </div>
