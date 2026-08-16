@@ -282,7 +282,81 @@ const dataLagu = [
     lirik: "fa’ila-af’alu rumus pertamanya\nfa’ila-fa’ilun macam keduanya\nfa’ila-fa’laanu itu ketiganya\nfa’ula-fa’lun juga fa’ula fu’lun\nselanjutnya ada fa’ula-fa’alun\nlalu ada juga fa’ula-fu’aalun\nfa’ula-fa’aalun faula-fa’iilun,\nhamira ahmaru fariha farihun"
   }
 ];
-
+  // ------------------------------------------------------------
+  // LEVEL 3: IDENTIFIKASI KALIMAH (BAB 34 - 42)
+  // ------------------------------------------------------------
+  {
+    level: 3,
+    bab: 34,
+    judul: "Isim Muannats",
+    arab: "فَاطِمَةُ | مَدْرَسَةٌ | رَابِطَةٌ | عَيْنٌ | يَدٌّ | رِجْلٌ\nأُذُنٌ | حُبْلَى | حُسْنَى | سَكْرَى | صَحْرَاءُ | فُقَهَاءُ\nشَمْسٌ | نَارٌ | دَارٌ | جَهَنَّمُ | نَفْسٌ | أَرْضٌ\nسَمَاءٌ | حَائِضٌ | طَالِقٌ | حَامِلٌ",
+    irama: "mustafilun 3x",
+    lirik: "nama wanita dan yang ber ta marbuthah\nfathimatu madrasatun dan rabithah\nanggota badan sepasang telah lumrah\n‘aynun yadun rijlun udzunun ingatlah\nberujung alif ta’nits seperti hubla\nhusna sakra dzikra shahraa’u fuqaha\njuga kalimah yang dianggap muannats\noleh bangsa arab yang dikenal cerdas\nsyamsun narun daarun jahanamu serta\nnafsun ardhun samaaun jangan dilupa\njuga sifat untuk perempuan saja,\nhaidhun, thaliqun, hamilun contohnya"
+  },
+  {
+    level: 3,
+    bab: 35,
+    judul: "Lagu Isim Marifah dan Nakirah",
+    arab: "نُوْحٌ | اليَدُ | ..هُ\nالَّذِيْنَ | ذَاكَ | وَلَدُ نُوْحٍ\nوَلَدُنَا | وَلَدُ الرَّجُلِ | بَابُ هٰذَا البِنَاءِ\nوَلَدُ الَّذِيْ يَتَعَلَّمُ مَعَنَا",
+    irama: "mustafilun 3x",
+    lirik: "• Syarat & Kaidah Ma'rifah:\nIsim marifah menurut ahli nahwu\nAda enam itu semwa harus tahu\nIsim dhamir kemudian isim alam\nIsim yang beralif lam dan isim mubham\nYakni isim maushul yang butuh shilah\nItu pertama dan kedwanya isyarah\nSelanjutnya isim yang diidhafatkan\nPada salah satu yang lima contohkan\nAna wa hindun wal ghulamu dzalika\nAlladzi dan terakhir ibnu ‘ammika\n\n• Irama Lagu & Kaidah Nakirah:\nIsim marifah menurut ahli nahwu\nItu ada enam semua harus tahu\nAlam ber-AL dhamir maushul isyarah\nYang terakhir mudhaf kepada marifah\nContoh nuuhun, al yadu, huu, alladzina\nDzaka, waladu nuuhin dan waladuna\nWaladurrajuli, babu hadzal bina\nWaladulladzi yata’allam ma’anaa\nJika kau lihat isim dalam jenisnya\nBelum tertentu nakirah disebutnya\nJika ingin dita’rifi lebih mudah\nTuk pemula hadnya lebih jelas sudah\nisim yang bisa menerima alif lam\nfarasun baladun baitun dan Ghulam\ndan mudhaf pada nakiroh terakhirnya\nghulamurajulin menjadi contohnya"
+  },
+  {
+    level: 3,
+    bab: 36,
+    judul: "Lagu Marfu'at al-Asma",
+    arab: "الفَاعِلُ | نَائِبُ الفَاعِلِ | المُبْتَدَأُ | الخَبَرُ | اِسْمُ كَانَ | خَبَرُ إِنَّ | التَّوَابِعُ لِلْمَرْفُوْعِ (النَّعْتُ ، العَطْفُ ، التَّوْكِيْدُ ، البَدَلُ)",
+    irama: "Bahar / Melodi Jurumiyah",
+    lirik: "Rofakan tujuh rupa didalam jumlah\nFail naibul fail jumlah fi’liyah\nMubtada khabar dalam jumlah ismiyah\nDengan kana dan inna telah dinasakh\nYakni isim kaana wa akhawatiha\nLalu khabar inna wa akhawatiha\nDan tawabi lil marfu’i mengikuti\nNaat athaf taukid badal menuruti"
+  },
+  {
+    level: 3,
+    bab: 37,
+    judul: "Lagu Manshubat al-Asma",
+    arab: "مَفْعُوْل بِهِ | مَفْعُوْل فِيْهِ | مَفْعُوْل مُطْلَق | مَفْعُوْل مَعَهُ | مَفْعُوْل لِأَجْلِهِ | الحَال | التَّمْيِيْز | المُنَادَى | المُسْتَثْنَى | خَبَر كَانَ | اِسْم إِنَّ | اِسْم لَا نَافِيَة لِلْجِنْس | التَّوَابِع لِلْمَنْصُوْب",
+    irama: "Bahar / Melodi Jurumiyah",
+    lirik: "Isim dinashabkan jika menempati\nSalah satu dari 13 pasti\nJika ada salah satu maful lima\nBih fih muthlak ma’ah liajlih utama\nHal dan tamyiz serta munada istisna\nJuga khabar kana serta isim inna\nLa nafiyah lil jinsi dan at-tawabi’\nNaat athaf taukid badal lil manshubi"
+  },
+  {
+    level: 3,
+    bab: 38,
+    judul: "Kaana dan Saudara-Saudaranya (Kaana dkk)",
+    arab: "أَمْسَى | ظَلَّ | أَضْحَى | أَصْبَحَ | كَانَ\nمَا بَرِحَ | مَا دَامَ | لَيْسَ | صَارَ | بَاتَ\nمَا انْفَكَّ | مَا زَالَ | مَا فَتِئَ",
+    irama: "mustafilun 3x",
+    lirik: "Isim dirofakan khobar dinasabkan\nDengan af’al naqish harap perhatikan\nKaana ashbaha amsa zhalla dan adhhaa\nBaata shaara laisa juga maa bariha\nMaa zaala manfakka serta maa fatia\n\nJuga dengan tashrifan salah satunya\nDalam jumlah kaana zaidun nashiran\nJuga kun barran serta ashbih shaaiman"
+  },
+  {
+    level: 3,
+    bab: 39,
+    judul: "Bab Inna dan Saudara-Saudaranya",
+    arab: "لَعَلَّ | لَيْتَ | لٰكِنَّ | أَنَّ | إِنَّ\nكَأَنَّ",
+    irama: "mustafilun 3x",
+    lirik: "Kebalikan kaana berlaku tuk inna\nAnna lakinn layta la’alla ka’anna\nContohnya inna malikan la ‘aalimun\nSemisalnya laytal habiba qadimun"
+  },
+  {
+    level: 3,
+    bab: 40,
+    judul: "I'rab Isim Mu'rab",
+    arab: "رَجُلٌ | رَجُلًا | رَجُلٍ | رِجَالٌ | رِجَالًا | رِجَالٍ\nأَحْمَدُ | أَحْمَدَ | أَحْمَدَ | أَبُوْكَ | أَبَاكَ | أَبِيْكَ\nزَيْدَانِ | زَيْدَيْنِ | زَيْدَيْنِ\nالمُسْلِمُوْنَ | إِنَّ المُسْلِمِيْنَ | مِنَ المُسْلِمِيْنَ\nالمُسْلِمَاتُ | إِنَّ المُسْلِمَاتِ | مِنَ المُسْلِمَاتِ",
+    irama: "Kaidah I'rab Isim Mu'rab",
+    lirik: "Akhir isim mufrod u-un a-an i-in\nRajulun inna rajulan min rajulin\nAkhir jamak taksir u-un a-an i-in\nRijaalun inna rijaalan min rijaalin\n\nUjung Isim Ghoir munshorif u a a\nAhmadu inna ahmada min ahmada\nAkhir Asmaul khomsah waw uu alif aa\nYaa-nya ii abuuka abaaka abiika\n\nAkhir mutsanna aani aini aini\nZaidaani inna wa min zaidaini\nJamak mudzakkar salim berujung uuna\niina dan iina contoh al-muslimuuna\nDinashabkan jadi innal muslimiina\nDikhafadlkan maka minal muslimina\n\nUntuk Jamak muannats salim akhirin\nAatu aatun aati aatin aati aatin\nalmuslimatu muslimatun contohnya\ninna muslimatin di irab nashabnya\nmin muslimatin ketika dikhafadlkan\nnashab khafadl diujungnya kasrahkan"
+  },
+  {
+    level: 3,
+    bab: 41,
+    judul: "Lagu Isim Mabni",
+    arab: "اللَّذَانِ | اللَّتَانِ | أَيُّ | هٰذَانِ | هَاتَانِ | ذَانِكَ\nتَانِكَ | اِثْنَا عَشَرَ | اِثْنَتَا عَشْرَةَ",
+    irama: "mustafilun 3x",
+    lirik: "Isim mabni tu ada bermacam-macam\nAda isim Dhamir maushul istifham\nIsim fiil, Syarat dan juga isyaroh\nMabni sukun fathah dhommah juga kasroh\nadad murakkab dan waih di ujungnya\nsemwa itu tidak berubah akhirnya\n\nkecuali alladzani allataani\nayyun juga lafazh hadzaani haataani\ndzanika taanika itsnata asyarah\nitsna asyara tadi semwa mu’rabah"
+  },
+  {
+    level: 3,
+    bab: 42,
+    judul: "Lagu Rumus Nyoret (Makna Pegon / Gandul)",
+    arab: "م (مُبْتَدَأ) | خ (خَبَر) | ف (فَاعِل) | نف (نَائِبُ الفَاعِل)\nنص (نَعْت / صِفَة) | مط (مَفْعُوْل مُطْلَق) | مف (مَفْعُوْل بِهِ)\nبد (بَدَل) | هـ (حَال)",
+    irama: "mustafilun failun 3x",
+    lirik: "‘adapun’ mim untuk mubtada\n‘itu adalah’ kha khabar\n‘siapa apa’ fa’nya fail\njika majhul naibul fail\n‘yang’ nun shad untuk naatnya\n‘dengan’ mim tha maful muthlaqnya\n‘terhadap’ mim fa maful bih\nsemua baca tidak berlebih\n\n‘yaitu’ ba dan dal badal\n‘secara’ haa tuk tanda hal\ntanda dibawah dhomirnya\nsama dengan diatas marjanya\n(mustafilun failun3x)"
+  }
 // ==============================================================
 // 2. DATA LATIHAN MEMBACA BANGUNAN KALIMAH (BANK LATIHAN)
 // ==============================================================
