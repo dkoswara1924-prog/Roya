@@ -204,19 +204,39 @@ const dataLagu = [
   }
 
 // ==============================================================
-      // IDENTIFIKASI KALIMAH LEVEL 2 (MENGENAL BACAAN BANGUNAN KALIMAH)
-      // ==============================================================
+// IDENTIFIKASI KALIMAH LEVEL 2 (MENGENAL BACAAN BANGUNAN KALIMAH)
+// ==============================================================
       
-      // --- BAB 20 ---
+    // --- BAB 20 ---
       {
         level: 2,
         bab: 20,
         judul: "Lagu Fiil Madhi Tsulatsi plus Rubaiy Mujarrod",
-        arab: "فَاعَلَ | فَعَّلَ | أَفْعَلَ | فَعُلَ | فَعِلَ | فَعَلَ\nاِسْتَفْعَلَ | اِفْعَلَّ | اِفْتَعَلَ | اِنْفَعَلَ | تَفَاعَلَ | تَفَعَّلَ\nفَعْلَلَ",
+        arab: `فَاعَلَ | فَعَّلَ | أَفْعَلَ | فَعُلَ | فَعِلَ | فَعَلَ
+اِسْتَفْعَلَ | اِفْعَلَّ | اِفْتَعَلَ | اِنْفَعَلَ | تَفَاعَلَ | تَفَعَّلَ
+فَعْلَلَ`,
         irama: "Pelangi-pelangi / Mustaf'ilun 6x / Mustafilun Failun",
-        lirik: "• Versi 1 (pelangi-pelangi alangkah indahmu):\nFa’ala, fa’ila fa’ula tsulatsi\nAf’ala, fa’’ala, faa’ala ruba’iy\nTafa’’ala, tafaa’ala, infa’ala, ifta’ala\nif’alla khumasi Istaf’ala sudasi\n\n• Versi 2 (mustaf’ilun6x):\nTsulatsi fa’ala, fa’ila fa’ula\nRuba’iy af’ala, fa’’ala, faa’ala\nKhumasinya infa’ala ifta’ala\nIf’alla dan tafa’’ala tafaa’ala\nLafazh Istaf’ala itu sudasinya\nFa’lala untuk ruba’i mujarrodnya\nPerhatikan fa ain serta huruf lamnya\nAgar tidak salah mengeja mawzunnya\n\n• Versi 3 (mustafilun failun):\nFa’ala dan fa’ila fa’ula madhi tsulatsi\nAf’ala, fa’’ala, faa’ala itu madhi ruba’iy\nTafa’’ala, tafaa’ala, infa’ala ifta’ala\nif’alla itu khumasi dan Istaf’ala sudasy"
-      },
+        lirik: `• Versi 1 (pelangi-pelangi alangkah indahmu):
+Fa’ala, fa’ila fa’ula tsulatsi
+Af’ala, fa’’ala, faa’ala ruba’iy
+Tafa’’ala, tafaa’ala, infa’ala, ifta’ala
+if’alla khumasi Istaf’ala sudasi
 
+• Versi 2 (mustaf’ilun6x):
+Tsulatsi fa’ala, fa’ila fa’ula
+Ruba’iy af’ala, fa’’ala, faa’ala
+Khumasinya infa’ala ifta’ala
+If’alla dan tafa’’ala tafaa’ala
+Lafazh Istaf’ala itu sudasinya
+Fa’lala untuk ruba’i mujarrodnya
+Perhatikan fa ain serta huruf lamnya
+Agar tidak salah mengeja mawzunnya
+
+• Versi 3 (mustafilun failun):
+Fa’ala dan fa’ila fa’ula madhi tsulatsi
+Af’ala, fa’’ala, faa’ala itu madhi ruba’iy
+Tafa’’ala, tafaa’ala, infa’ala ifta’ala
+if’alla itu khumasi dan Istaf’ala sudasy`
       // --- BAB 21 ---
       {
         level: 2,
