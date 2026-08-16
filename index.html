@@ -5,26 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Belajar Nahwu Bersama AHMAD ZAKIN JAISYURROYA</title>
   
-  <!-- Font Google Kaligrafi & Serif Klasik -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@700&family=Philosopher:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@700&family=Philosopher:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="stars-bg"></div>
-
-  <!-- Kartu Funnel Utama -->
+  <!-- Bingkai Utama Onboarding -->
   <main class="funnel-card">
     <div class="corner-ornament top-left"></div>
     <div class="corner-ornament top-right"></div>
 
-    <!-- Header & Progress Bar Dinamis -->
+    <!-- Header & Progress Bar -->
     <div class="funnel-header">
       <div class="nav-top">
-        <button id="btnBack" class="btn-back" onclick="prevStep()">← Kembali</button>
+        <button id="btnBack" class="btn-back" type="button" onclick="prevStep()">← Kembali</button>
         <span class="step-indicator" id="stepIndicator">Langkah 1 / 4</span>
       </div>
       <div class="progress-track">
@@ -32,16 +29,14 @@
       </div>
     </div>
 
-    <!-- Area Konten Pertanyaan Interaktif -->
+    <!-- Konten Pertanyaan Dinamis -->
     <div id="quizArea" class="quiz-content">
-      <!-- Judul Dinamis -->
       <div class="question-header">
         <span class="bismillah-mini">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
         <h2 id="questionTitle" class="question-title">Pilih Fokus Pembelajaran Anda</h2>
         <p id="questionSub" class="question-sub">Setiap modul dirancang interaktif untuk memudahkan pemahaman kaidah bahasa Arab.</p>
       </div>
 
-      <!-- Container Pilihan Jawaban -->
       <div id="optionsContainer" class="options-container"></div>
     </div>
 
