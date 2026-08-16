@@ -1,10 +1,8 @@
 // ==============================================================
-// 1. DATA HIMPUNAN LAGU NAHWIYAH (LEVEL 1, 2 & 3 LENGKAP)
+// 1. DATA HIMPUNAN LAGU NAHWIYAH (LEVEL 1, 2, & 3 LENGKAP)
 // ==============================================================
 const dataLagu = [
-  // ------------------------------------------------------------
-  // LEVEL 1: IDENTIFIKASI KALIMAH (BAB 1 - 19)
-  // ------------------------------------------------------------
+  // --- LEVEL 1: IDENTIFIKASI KALIMAH (BAB 1 - 19) ---
   {
     level: 1,
     bab: 1,
@@ -166,9 +164,7 @@ const dataLagu = [
     lirik: "Tanda madhi tiga mari kita susun,\nTa fail qad laqad ta tanits yang sukun\nAnita lam alam qad sa dan saufa\nItu tanda mudhari janganlah lupa\n(qaidaty)"
   },
 
-  // ------------------------------------------------------------
-  // LEVEL 2: MENGENAL BACAAN BANGUNAN KALIMAH (BAB 20 - 33)
-  // ------------------------------------------------------------
+  // --- LEVEL 2: MENGENAL BACAAN BANGUNAN KALIMAH (BAB 20 - 33) ---
   {
     level: 2,
     bab: 20,
@@ -282,9 +278,7 @@ const dataLagu = [
     lirik: "fa’ila-af’alu rumus pertamanya\nfa’ila-fa’ilun macam keduanya\nfa’ila-fa’laanu itu ketiganya\nfa’ula-fa’lun juga fa’ula fu’lun\nselanjutnya ada fa’ula-fa’alun\nlalu ada juga fa’ula-fu’aalun\nfa’ula-fa’aalun faula-fa’iilun,\nhamira ahmaru fariha farihun"
   },
 
-  // ------------------------------------------------------------
-  // LEVEL 3: IDENTIFIKASI KALIMAH (BAB 34 - 42)
-  // ------------------------------------------------------------
+  // --- LEVEL 3: IDENTIFIKASI KALIMAH (BAB 34 - 42) ---
   {
     level: 3,
     bab: 34,
